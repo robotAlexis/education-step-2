@@ -1,0 +1,13 @@
+mixin text-field(values)
+    -
+        var labeled = ("label" in values) && (values.label != "");
+        var label = labeled ? values.label : "";
+        var inputClassName = "text-field__input";
+        inputClassName += (labeled) ? " text-field__input_labeled" : "";
+    label(class = 'text-field')= label
+        input(
+            class=inputClassName
+            type='text'
+            nane=values.name
+            value=values.value
+        )

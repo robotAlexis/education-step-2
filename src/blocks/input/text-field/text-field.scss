@@ -1,0 +1,42 @@
+.text-field {
+    display: block;
+    width: 320px;
+    padding: 0;
+    margin: 0;
+    background-color: none;
+
+    color: $dark-shade-100;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.text-field__input {
+    display: block;
+    width: 288px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+
+    color: $dark-shade-25;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.text-field__input_labeled {
+    margin-top: 5px;
+}
+
+.text-field__input:hover,
+.text-field__input:focus {
+    border-color: $dark-shade-50;
+    color: $dark-shade-75;
+}

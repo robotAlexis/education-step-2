@@ -1,0 +1,67 @@
+$check-image: url(./blocks/input/checkbox-button/check-image.svg);
+
+.checkbox-button {
+    display: block;
+    position: relative;
+    width: 236px;
+    min-height: 19px;
+    padding: 1px 0 0 30px;
+    margin: 0;
+    background: none;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+}
+
+.checkbox-button__input {
+    display: none;
+}
+
+.checkbox-button__label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+}
+.checkbox-button__input:checked + .checkbox-button__label::before {
+    border-color: $purlpe;
+}
+
+.checkbox-button__label::after {
+    content: "";
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.checkbox-button__input:checked + .checkbox-button__label::after {
+    background: $check-image no-repeat 50% 50%;
+}
+
+.checkbox-button__label {
+    margin: 0;
+    padding: 0;
+}
+
+.checkbox-button__label_rich {
+    color: $dark-shade-75;
+    font-weight: bold;
+}
+
+.checkbox-button__description {
+    margin: 0;
+    padding: 6px 0 0;
+    font-size: 12px;
+    line-height: 14px;
+}

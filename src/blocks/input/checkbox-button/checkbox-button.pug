@@ -1,0 +1,24 @@
+-
+    /*
+        checkbox-button ({
+            name: string,
+            checked: bool,
+            label: string,
+            description: string,
+            isRich: bool
+        })
+    */
+mixin checkbox-button(values)
+    -
+        var labelClass = "checkbox-button__label";
+        labelClass += (values.isRich) ? " checkbox-button__label_rich" : "";
+    label(class='checkbox-button')
+        input(
+            class='checkbox-button__input'
+            type='checkbox'
+            nane=values.name
+            checked=values.checked
+        )
+        p(class=labelClass)= values.label
+        if (values.isRich)
+            p(class='checkbox-button__description')= values.description

@@ -1,0 +1,17 @@
+-
+    /*
+        toggle ({
+            name: string,
+            checked: bool,
+            label: string
+        })
+    */
+mixin toggle(values)
+    label(class='toggle')
+        input(
+            class='toggle__input'
+            type='checkbox'
+            name=values.name
+            checked=values.checked
+        )
+        p(class='toggle__label')= values.label

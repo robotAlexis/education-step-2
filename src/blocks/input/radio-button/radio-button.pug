@@ -1,0 +1,19 @@
+-
+    /*
+        radio-button ({
+            name: string,
+            value: string,
+            checked: bool,
+            label: string
+        })
+    */
+mixin radio-button(values)
+    label(class='radio-button')
+        input(
+            class='radio-button__input'
+            type='radio'
+            name=values.name
+            value=values.value
+            checked=values.checked
+        )
+        p(class='radio-button__label')= values.label

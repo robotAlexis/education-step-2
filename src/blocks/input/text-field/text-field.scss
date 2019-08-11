@@ -11,10 +11,23 @@
     color: $dark-shade-25;
     font-size: 14px;
     font-weight: normal;
+    outline: none;
 }
 
 .text-field:hover,
 .text-field:focus {
     border-color: $dark-shade-50;
     color: $dark-shade-75;
+}
+
+.text-field::placeholder {
+    color: $dark-shade-25;
+}
+
+.text-field::-webkit-input-placeholder, /* Chrome/Opera/Safari */
+.text-field::-moz-placeholder,          /* Firefox 19+ */
+.text-field:-ms-input-placeholder,      /* IE 10+ */
+.text-field:-moz-placeholder            /* Firefox 18- */
+{
+    color: $dark-shade-25;
 }

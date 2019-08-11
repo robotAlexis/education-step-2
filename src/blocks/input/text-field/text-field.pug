@@ -2,13 +2,16 @@
     /*
         text-field ({
             name: string,
-            value: string
+            value: string,
+            placeholder: string;
         })
     */
 mixin text-field(values)
+    - var placeholderValue = ("placeholder" in values) ? values.placeholder : "";
     input(
         class = 'text-field'
         type='text'
-        nane=values.name
+        name=values.name
         value=values.value
+        placeholder=placeholderValue
     )

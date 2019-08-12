@@ -1,0 +1,106 @@
+$bg-color: white;
+
+/* Default theme: Gradient fill */
+
+.button-block {
+    position: relative;
+    display: inline-block;
+    width: 99px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 22px;
+    outline: none;
+    @include linear-gradient-background($purple, $gradient-end);
+
+    color: white;
+    line-height: 44px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+.button-block:active {
+    @include linear-gradient-background(rgba($purple, 0.5), rgba($gradient-end, 0.5));
+}
+
+.button-block__text {
+    margin: 0;
+    padding: 0;
+    background: none;
+    height: 44px;
+    vertical-align: middle;
+}
+
+
+/* Gradient border theme*/
+
+.button-block_bordered {
+    padding: 2px;
+
+    color: $purple;
+}
+
+.button-block__text_bordered {
+    background: $bg-color;
+    height: 40px;
+    border-radius: 20px;
+
+    line-height: 40px;
+}
+
+
+/* Theme without background */
+
+.button-block_backgroundless {
+    width: auto;
+    height: 12px;
+    background: none;
+    border-radius: 0;
+
+    color: $purple;
+    line-height: 12px;
+}
+.button-block_backgroundless:active {
+    background: none;
+    color: $dark-shade-50;
+}
+
+.button-block__text_backgroundless {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    height: 12px;
+}
+
+
+/* Long button theme  */
+
+.button-block_long {
+    width: 320px;
+}
+
+.button-block__text_long::after {
+    content: "\e5c8";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-transform: none;
+    direction: ltr;
+    white-space: nowrap;
+    word-wrap: normal;
+}

@@ -1,3 +1,19 @@
+@mixin linear-gradient-background($start-color, $end-color) {
+    background: $start-color;
+    // Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+    // Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3
+    background-image: -webkit-linear-gradient(top, $start-color, $end-color);
+    // Firefox 3.6 - 15
+    background-image: -moz-linear-gradient(top, $start-color, $end-color);
+    // Opera 11.1 - 12
+    background-image: -o-linear-gradient(top, $start-color, $end-color);
+    // IE 10
+    background-image: -ms-linear-gradient(top, $start-color, $end-color);
+    // Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+
+    background-image: linear-gradient(to bottom, $start-color, $end-color);
+}
+
 /* Colors */
 
 $dark-shade-100: rgba(31, 32, 65, 1.0);
@@ -8,4 +24,4 @@ $dark-shade-5: rgba(31, 32, 65, 0.05);
 
 $purple: #bc9cff;
 $green: #6fcf97;
-$gradient-end: #8ba4f9
+$gradient-end: #8ba4f9;

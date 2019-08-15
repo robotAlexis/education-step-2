@@ -1,0 +1,55 @@
+include ../../input/text-field/text-field.pug
+include ../../input/radio-button/radio-button.pug
+include ../../input/toggle/toggle.pug
+include ../../input/button-block/button-block.pug
+-
+    /*
+        registration-form ({})
+    */
+mixin registration-form()
+    div(class='registration-form')
+        p(class='registration-form__form-title') Регистрация аккаунта
+
+        div(class='registration-form__text-field')
+            +text-field({name: "first-name", value: "", placeholder: "Имя"})
+        div(class='registration-form__text-field')
+            +text-field({name: "last-name", value: "", placeholder: "Фамилия"})
+
+        div(class='registration-form__radio-button')
+            +radio-button({name: "gender", value: "male", label: "Мужчина"})
+        div(class='registration-form__radio-button')
+            +radio-button({name: "gender", value: "female", label: "Женщина"})
+
+        p(class='registration-form__field-title') Дата рождения
+        div(class='registration-form__text-field')
+            +text-field({name: "be", value: "", type: "date"})
+
+        p(class='registration-form__field-title') Данные для входа в сервис
+        div(class='registration-form__text-field')
+            +text-field({name: "email", value: "", placeholder: "Email", type: "text"})
+        div(class='registration-form__text-field')
+            +text-field({name: "pass", value: "", placeholder: "Пароль", type: "password"})
+
+        div(class='registration-form__toggle')
+            +toggle({name: "toggle", checked: false, label: "Получать спецпредложения"})
+
+        div(class='registration-form__button-block')
+            +button-block({
+                type: "submit",
+                name: "submit",
+                value: "submit",
+                text: "Перейти к оплате",
+                theme: "long"
+            })
+        div(class='registration-form__button-block')
+            div(class='registration-form__registration-button')
+                +button-block({
+                    type: "button",
+                    name: "registration",
+                    value: "registration",
+                    text: "Войти",
+                    theme: "bordered"
+                })
+            div(class='registration-form__registration-tip')
+                p(class='registration-form__registration-tip-text') Уже есть аккаунт на Toxin?
+

@@ -2,9 +2,9 @@ $bg-color: white;
 
 /* Default theme: Gradient fill */
 
-.button-block {
+.button {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 99px;
     height: 44px;
     margin: 0;
@@ -23,28 +23,28 @@ $bg-color: white;
     text-transform: uppercase;
     text-align: center;
 }
-.button-block:active {
+.button:active {
     @include linear-gradient-background(rgba($purple, 0.5), rgba($gradient-end, 0.5));
 }
 
-.button-block__text {
+.button__text {
+    display: block;
     margin: 0;
     padding: 0;
     background: none;
     height: 44px;
-    vertical-align: middle;
 }
 
 
 /* Gradient border theme*/
 
-.button-block_bordered {
+.button_bordered {
     padding: 2px;
 
     color: $purple;
 }
 
-.button-block__text_bordered {
+.button__text_bordered {
     background: $bg-color;
     height: 40px;
     border-radius: 20px;
@@ -55,7 +55,7 @@ $bg-color: white;
 
 /* Theme without background */
 
-.button-block_backgroundless {
+.button_backgroundless {
     width: auto;
     height: 12px;
     background: none;
@@ -64,12 +64,12 @@ $bg-color: white;
     color: $purple;
     line-height: 12px;
 }
-.button-block_backgroundless:active {
+.button_backgroundless:active {
     background: none;
     color: $dark-shade-50;
 }
 
-.button-block__text_backgroundless {
+.button__text_backgroundless {
     margin: 0;
     padding: 0;
     border: 0;
@@ -80,11 +80,11 @@ $bg-color: white;
 
 /* Long button theme  */
 
-.button-block_long {
+.button_with-arrow {
     width: 320px;
 }
 
-.button-block__text_long::after {
+.button__text_with-arrow::after {
     content: "\e5c8";
     position: absolute;
     display: block;

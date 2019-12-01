@@ -1,0 +1,141 @@
+.rooms-dropdown {
+    position: relative;
+    display: block;
+    width: 205px;
+    height: 42px;
+    padding: 0 45px 0 14px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px 4px 0 0;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 41px;
+    font-weight: normal;
+}
+
+.rooms-dropdown_opened {
+    border-color: $dark-shade-50;
+}
+
+.rooms-dropdown__text {
+    padding: 0;
+    margin: 0;
+}
+
+.rooms-dropdown__text::after {
+    content: "\e5cf";
+    position: absolute;
+    display: block;
+    width: 42px;
+    height: 44px;
+    top: 0;
+    right: 0;
+
+    color: $dark-shade-75;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 43px;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    text-align: center;
+}
+
+.rooms-dropdown__item-list {
+    position: absolute;
+    display: block;
+    width: 244px;
+    height: 111px;
+    top: 43px;
+    left: -1px;
+    padding: 6px 6px 0 14px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid $dark-shade-50;
+    border-top-width: 0;
+    border-radius: 0 0 4px 4px;
+
+    visibility: hidden;
+}
+
+.rooms-dropdown__item-list_opened {
+    visibility: visible;
+}
+
+.rooms-dropdown__item {
+    display: block;
+    height: 30px;
+    padding: 0 0 7px 0;
+    margin: 0;
+
+    line-height: 25px;
+}
+
+.rooms-dropdown__item-text {
+    display: inline;
+    padding: 0;
+    margin: 0 0 0 0;
+    vertical-align: middle;
+
+    color: $dark-shade-100;
+    font-size: 12px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.rooms-dropdown__count-button {
+    position: relative;
+    display: block;
+    float: right;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 15px;
+
+    color: $dark-shade-50;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+}
+.rooms-dropdown__count-button_inactive {
+    opacity: 0.38;
+}
+.rooms-dropdown__count-button_decrease::after {
+    content: "-";
+    position: absolute;
+    width: 28px;
+    top: 0;
+    left: 0;
+}
+.rooms-dropdown__count-button_increase::after {
+    content: "+";
+    position: absolute;
+    width: 28px;
+    top: 0;
+    left: 0;
+}
+
+.rooms-dropdown__count-text {
+    display: block;
+    float: right;
+    width: 32px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+
+    color: $dark-shade-100;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}

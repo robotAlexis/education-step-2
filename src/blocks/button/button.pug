@@ -12,7 +12,7 @@ mixin button(values)
     -
         values.class = "button"
 
-        if(!(values.type == "button" || values.type == "reset" || values.type == "submit")) values.type == "submit";
+        if(!(values.type == "button" || values.type == "reset" || values.type == "submit")) values.type = "submit";
 
         values["text class"] = "button__text";
         switch(values.theme){

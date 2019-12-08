@@ -1,0 +1,19 @@
+-
+    /*
+        toggle ({
+            name: string,
+            checked: bool,
+            title: string
+        })
+    */
+mixin toggle(values)
+    -
+        if(values.checked != true) values.checked = undefined;
+    label(class="toggle")
+        input(
+            class="toggle__input"
+            type="checkbox"
+            name=values.name
+            checked=values.checked
+        )
+        p(class='toggle__title')= values.title

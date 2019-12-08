@@ -1,0 +1,19 @@
+-
+    /*
+        checkbox-button ({
+            name: string,
+            checked: bool,
+            title: string
+        })
+    */
+mixin checkbox-button(values)
+    -
+        if(values.checked != true) values.checked = undefined;
+    label(class="checkbox-button")
+        input(
+            class="checkbox-button__input"
+            type="checkbox"
+            name=values.name
+            checked=values.checked
+        )
+        p(class="checkbox-button__title")= values.title

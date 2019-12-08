@@ -1,0 +1,56 @@
+.radio-button {
+    display: block;
+    position: relative;
+    min-height: 20px;
+    padding: 0 0 0 30px;
+    margin: 0;
+    background: none;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+}
+
+.radio-button__input {
+    display: none;
+}
+
+.radio-button__title {
+    margin: 0;
+    padding: 0;
+}
+.radio-button__input:checked + .radio-button__title {
+    color: $dark-shade-75;
+}
+
+.radio-button__title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    border: 1px solid $dark-shade-25;
+    border-radius: 10px;
+}
+.radio-button__input:checked + .radio-button__title::before {
+    border-color: $purple;
+}
+
+.radio-button__title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 4px;
+    left: 4px;
+    border-radius: 6px;
+    background: none;
+}
+.radio-button__input:checked + .radio-button__title::after {
+    @include linear-gradient-background($purple, $gradient-end);
+}

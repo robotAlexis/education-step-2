@@ -4,16 +4,18 @@
             name: string,
             value: string,
             checked: bool,
-            label: string
+            title: string
         })
     */
 mixin radio-button(values)
-    label(class='radio-button')
+    -
+        if(values.checked != true) values.checked = undefined;
+    label(class="radio-button")
         input(
-            class='radio-button__input'
-            type='radio'
+            class="radio-button__input"
+            type="radio"
             name=values.name
             value=values.value
             checked=values.checked
         )
-        p(class='radio-button__label')= values.label
+        p(class="radio-button__title")= values.title

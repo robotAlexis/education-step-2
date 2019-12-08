@@ -1,0 +1,18 @@
+-
+    /*
+        subscription-text-field ({
+            name: string,
+            value: string,
+            placeholder: string
+        })
+    */
+mixin subscription-text-field(values)
+    div(class="subscription-text-field")
+        input(
+            class="subscription-text-field__text-field"
+            type="text"
+            name=values.name
+            value=values.value
+            placeholder=values.placeholder
+        )
+        button(class="subscription-text-field__button") &#xe5c8;

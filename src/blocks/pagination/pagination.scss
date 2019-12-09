@@ -1,0 +1,50 @@
+.pagination {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.pagination__button {
+    display: inline-block;
+    height: 40px;
+    min-width: 40px;
+    text-decoration: none;
+    border-radius: 20px;
+    vertical-align: top;
+
+    color: $dark-shade-50;
+}
+
+.pagination__button_current {
+    @include linear-gradient-background($purple, $gradient-end);
+
+    color: white;
+    font-weight: bold;
+}
+
+.pagination__button_navigational {
+    @include linear-gradient-background($green, #66d2ea);
+
+    color: white;
+    font-family: 'Material Icons';
+    font-size: 24px;
+}
+
+.pagination__button_disabled {
+    display: none;
+}
+
+.pagination__result-text {
+    display: block;
+    margin-top: 13px;
+
+    color: $dark-shade-75;
+    font-size: 14px;
+    line-height: 14px;
+}

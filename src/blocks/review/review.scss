@@ -1,0 +1,51 @@
+@import "../like-button/like-button.scss";
+
+.review {
+    position: relative;
+    display: block;
+    min-height: 77px;
+    padding: 0 0 0 58px;
+    margin: 0;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.review__author {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.review__author:first-line {
+    font-weight: bold;
+}
+
+.review__photo {
+    position: absolute;
+    display: block;
+    width: 44px;
+    height: 44px;
+    top: 0;
+    left: 0;
+    border: 2px solid white;
+    border-radius: 24px;
+
+    background: gray;
+}
+
+.review__text {
+    display: block;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+.review__like-button {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 20px;
+    top: 57px;
+    left: 4px;
+}

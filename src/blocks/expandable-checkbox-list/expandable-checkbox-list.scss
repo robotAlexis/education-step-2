@@ -1,0 +1,54 @@
+@import "../checkbox/checkbox-button/checkbox-button.scss";
+
+.expandable-checkbox-list {
+    display: block;
+    width: 256px;
+
+    color: $dark-shade-100;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.expandable-checkbox-list__title {
+    position: relative;
+    display: block;
+    min-height: 20px;
+    margin: 0;
+    padding: 4px 24px 0 0;
+
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.expandable-checkbox-list__title::after {
+    content: "\e5cf";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    right: 0;
+    
+    color: $dark-shade-50;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: none;
+}
+.expandable-checkbox-list__title_expanded::after {
+    content: "\e5ce";
+}
+
+.expandable-checkbox-list__body {
+    display: none;
+    padding-top: 2px;
+}
+.expandable-checkbox-list__body_expanded {
+    display: block;
+}
+
+.expandable-checkbox-list__checkbox-button {
+    padding-top: 10px;
+}

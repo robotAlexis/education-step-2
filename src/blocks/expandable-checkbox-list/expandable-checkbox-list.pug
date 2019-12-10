@@ -1,0 +1,17 @@
+include ../checkbox/checkbox-button/checkbox-button.pug
+
+-
+    /*
+        expandable-checkbox-list ({
+            title: string,
+            records: array of checkbox-button values
+        })
+    */
+mixin expandable-checkbox-list(values)
+    div(class="expandable-checkbox-list")
+        p(class="expandable-checkbox-list__title")= values.title
+        div(class="expandable-checkbox-list__body")
+            each record in values.records
+                div(class="expandable-checkbox-list__checkbox-button")
+                    +checkbox-button(record)
+

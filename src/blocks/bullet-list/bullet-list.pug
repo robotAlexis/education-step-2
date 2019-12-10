@@ -1,0 +1,11 @@
+-
+    /*
+        bullet-list (
+            records: Array
+        )
+    */
+mixin bullet-list(records)
+    div(class="bullet-list")
+        each record in records
+            p(class="bullet-list__record")= record
+

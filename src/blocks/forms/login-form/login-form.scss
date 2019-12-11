@@ -1,5 +1,5 @@
-@import "../../input/text-field/text-field.scss";
-@import "../../input/button-block/button-block.scss";
+@import "../../text-field/text-field.scss";
+@import "../../button/button.scss";
 
 .login-form {
     width: 320px;
@@ -36,7 +36,7 @@
     padding: 5px 0;
 }
 
-.login-form__button-block {
+.login-form__button {
     margin: 0;
     padding: 15px 0;
 }

@@ -1,0 +1,52 @@
+include ../../dropdown/date-dropdown/date-dropdown.pug
+include ../../dropdown/customers-dropdown/customers-dropdown.pug
+include ../../button/button.pug
+-
+    /*
+        reservation-form ({
+            action: string
+        })
+    */
+mixin reservation-form(values)
+    - if(!("action" in values)) values.action = "#";
+    form(
+        class="reservation-form"
+        action=values.action
+    )
+
+        p(class="reservation-form__room-price") 9 990&#x20bd; 
+        p(class="reservation-form__room-number") 888 
+
+        div(class="reservation-form__date-field")
+            p(class="reservation-form__field-title") Прибытие
+            +date-dropdown()
+        div(class="reservation-form__date-field")
+            p(class="reservation-form__field-title") Выезд
+            +date-dropdown()
+
+        div(class="reservation-form__customers-field")
+            p(class="reservation-form__field-title") Гости
+            +customers-dropdown()
+
+        div(class="reservation-form__check-item")
+            p(class="reservation-form__check-item-text") 9 990&#x20bd; х 4 суток
+            p(class="reservation-form__check-item-cost") 39 960&#x20bd;
+        div(class="reservation-form__check-item")
+            p(class="reservation-form__check-item-text") Сбор за услуги: скидка 2 179&#x20bd;
+            p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 0&#x20bd;
+        div(class="reservation-form__check-item")
+            p(class="reservation-form__check-item-text") Сбор за дополнительные услуги
+            p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 300&#x20bd;
+
+        div(class="reservation-form__check-total")
+            p(class="reservation-form__check-total-text") Итого
+            p(class="reservation-form__check-total-cost") 38 081&#x20bd;
+
+        div(class="reservation-form__button")
+            +button({
+                type: "submit",
+                name: "submit",
+                value: "submit",
+                text: "Забронировать",
+                theme: "with-arrow"
+            })

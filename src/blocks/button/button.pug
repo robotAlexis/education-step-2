@@ -5,7 +5,8 @@
             name: string,
             value: string,
             text: string,
-            theme: string   // default(any value) | bordered | backgroundless | with-arrow
+            theme: string,  // default(any value) | bordered | backgroundless | with-arrow
+            low: boolean    // for header
         })
     */
 mixin button(values)
@@ -17,8 +18,8 @@ mixin button(values)
         values["text class"] = "button__text";
         switch(values.theme){
             case "bordered":
-                values["class"] += " button_bordered";
-                values["text class"] += " button__text_bordered";
+                values["class"] += values.low == true ? " button_low-bordered" : " button_bordered";
+                values["text class"] += values.low == true ? " button__text_low-bordered" : " button__text_bordered";
                 break;
             case "backgroundless":
                 values["class"] += " button_backgroundless";
@@ -27,6 +28,12 @@ mixin button(values)
             case "with-arrow":
                 values["class"] += " button_with-arrow";
                 values["text class"] += " button__text_with-arrow";
+                break;
+            default:
+                if(values.low == true) {
+                    values["class"] += " button_low";
+                    values["text class"] += " button__text_low";
+                }
                 break;
         }
     button(

@@ -1,0 +1,37 @@
+include ../../dropdown/date-dropdown/date-dropdown.pug
+include ../../dropdown/customers-dropdown/customers-dropdown.pug
+include ../../button/button.pug
+-
+    /*
+        search-form ({
+            action: string
+        })
+    */
+mixin search-form(values)
+    - if(!("action" in values)) values.action = "#";
+    form(
+        class="search-form"
+        action=values.action
+    )
+
+        p(class="search-form__title") Найдём номера под ваши пожелания
+
+        div(class="search-form__date-field")
+            p(class="search-form__field-title") Прибытие
+            +date-dropdown()
+        div(class="search-form__date-field")
+            p(class="search-form__field-title") Выезд
+            +date-dropdown()
+
+        div(class="search-form__customers-field")
+            p(class="search-form__field-title") Гости
+            +customers-dropdown()
+
+        div(class="search-form__button")
+            +button({
+                type: "submit",
+                name: "submit",
+                value: "submit",
+                text: "Подобрать номер",
+                theme: "with-arrow"
+            })

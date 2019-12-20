@@ -1,0 +1,84 @@
+@import "../../text-field/text-field.scss";
+@import "../../masked-text-field/masked-text-field.scss";
+@import "../../radio-button/radio-button.scss";
+@import "../../toggle/toggle.scss";
+@import "../../button/button.scss";
+
+.registration-form {
+    width: 320px;
+    margin: 0;
+    padding: 17px 30px;
+    padding-bottom: 17px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
+    color: black;
+    line-height: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    text-transform: none;
+}
+
+.registration-form__form-title {
+    margin: 0;
+    padding: 23px 0 15px 0;
+
+    line-height: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.registration-form__field-title {
+    margin: 0;
+    padding: 15px 0 0 0;
+
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.registration-form__text-field {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.registration-form__radio-button {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 20px 10px 0;
+}
+
+.registration-form__toggle {
+    margin: 0;
+    padding: 5px 0 9px 0;
+}
+
+.registration-form__button {
+    margin: 0;
+    padding: 15px 0;
+}
+
+.registration-form__registration-tip {
+    display: table;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+}
+
+.registration-form__registration-tip-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.registration-form__registration-button {
+    margin: 0;
+    padding: 0;
+    float: right;
+}

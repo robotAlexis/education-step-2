@@ -1,0 +1,110 @@
+include ../button/button.pug
+-
+    /*
+        calendar ()
+    */
+mixin calendar()
+    div(class="calendar")
+        div(class="calendar__left-arrow") &#xe5c4;
+        div(class="calendar__right-arrow") &#xe5c8;
+        div(class="calendar__title") Август 2019
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Пн
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Вт
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Ср
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Чт
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Пт
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Сб
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_title") Вс
+
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_another-month") 29
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_another-month") 30
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_another-month") 31
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 1
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 2
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 3
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 4
+
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 5
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 6
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 7
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_holiday") 8
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 9
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 10
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 11
+
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 12
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 13
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 14
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 15
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 16
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 17
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 18
+
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell calendar__day-cell_first-selected")
+                p(class="calendar__day-text calendar__day-text_theme_selected") 19
+            li(class="calendar__day-cell calendar__day-cell_selected")
+                p(class="calendar__day-text") 20
+            li(class="calendar__day-cell calendar__day-cell_selected")
+                p(class="calendar__day-text") 21
+            li(class="calendar__day-cell calendar__day-cell_selected")
+                p(class="calendar__day-text") 22
+            li(class="calendar__day-cell calendar__day-cell_last-selected")
+                p(class="calendar__day-text calendar__day-text_theme_selected") 23
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 24
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 25
+
+        ul(class="calendar__week-row")
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 26
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 27
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 28
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 29
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 30
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text") 31
+            li(class="calendar__day-cell")
+                p(class="calendar__day-text calendar__day-text_theme_another-month") 1
+
+        div(class="calendar__ok-button")
+            +button({text: "Применить", type: "button", theme: "backgroundless"})
+        div(class="calendar__clear-button")
+            +button({text: "Очистить", type: "reset", theme: "backgroundless"})        

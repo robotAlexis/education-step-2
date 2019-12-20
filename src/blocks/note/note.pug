@@ -1,0 +1,18 @@
+-
+    /*
+        note ({
+            title: string,
+            description: string,
+            icon: string    // "\uXXXX"
+        })
+    */
+mixin note(values)
+    div(class="note")
+        div(class="note__body")
+            p(class="note__text")
+                | #{values.title}
+                br
+                | #{values.description}
+            p(class="note__icon")= values.icon
+
+

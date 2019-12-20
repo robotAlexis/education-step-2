@@ -1,0 +1,27 @@
+include ../rate-button/rate-button.pug
+-
+    /*
+        preview ()
+    */
+mixin preview()
+
+    div(class="preview")
+
+        div(class="preview__photo")
+            div(class="preview__left-photo-side")
+                p(class="preview__side-button") &#xe5cb;
+            div(class="preview__right-photo-side")
+                p(class="preview__side-button") &#xe5cc;
+
+            div(class="preview__round-button-list")
+                div(class="preview__round-button preview__round-button_current")
+                div(class="preview__round-button")
+                div(class="preview__round-button")
+                div(class="preview__round-button")
+
+        p(class="preview__room-price") 9 990&#x20bd; 
+        p(class="preview__room-number") 888 
+
+        p(class="preview__reviews-numbers") 145 
+        div(class="preview__rate-button")
+            +rate-button()

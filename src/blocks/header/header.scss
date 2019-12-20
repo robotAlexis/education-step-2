@@ -1,0 +1,110 @@
+@import "../button/button.scss";
+
+
+.header {
+    box-shadow: 0 10px 20px $dark-shade-5;
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.header__content {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__logo {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 106px;
+    background: $logo 0 50% no-repeat;
+}
+
+.header__buttons {
+    float: right;
+
+    text-align: right;
+}
+
+.header__buttons_disabled {
+    display: none;
+}
+
+.header__button {
+    display: inline-block;
+    margin-left: 15px;
+}
+.header__button:first-of-type {
+    margin-right: 4px;
+}
+
+.header__account {
+    float: right;
+    padding: 5px 0;
+    margin-left: 16px;
+}
+
+.header__account_disabled {
+    display: none;
+}
+
+.header__account-name {
+    height: 30px;
+    margin: 0;
+    padding-left: 30px;
+    border-left: 1px solid $dark-shade-10;
+
+    line-height: 30px;
+}
+
+.header__menu {
+    display: block;
+
+    line-height: 40px;
+    text-align: right;
+}
+.header__menu::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header__menu-item {
+    display: inline-block;
+    margin: 0 15px;
+
+    white-space: nowrap;
+}
+
+.header__menu-item_with-arrow {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 20px;
+}
+.header__menu-item_with-arrow::after {
+    content: "\e5cf";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    right: -3px;
+
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+.header__menu-item_current {
+
+    color: $dark-shade-75;
+    font-weight: bold;
+}

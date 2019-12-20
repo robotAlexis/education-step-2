@@ -1,0 +1,44 @@
+include ../../text-field/text-field.pug
+include ../../button/button.pug
+-
+    /*
+        login-form ({
+            action: string
+        })
+    */
+mixin login-form(values)
+    -
+        if(!("action" in values)) values.action = "#";
+    form(
+        class="login-form"
+        action=values.action
+    )
+
+        p(class="login-form__title") Войти
+
+        div(class="login-form__field")
+            +text-field({name: "email", value: "", placeholder: "Email"})
+        div(class="login-form__field")
+            +text-field({name: "pass", value: "", placeholder: "Пароль", password: true})
+
+        div(class="login-form__button")
+            +button({
+                type: "submit",
+                name: "submit",
+                value: "submit",
+                text: "Войти",
+                theme: "with-arrow"
+            })
+            
+        div(class="login-form__button")
+            div(class="login-form__registration-button")
+                +button({
+                    type: "button",
+                    name: "registration",
+                    value: "registration",
+                    text: "Создать",
+                    theme: "bordered"
+                })
+            div(class="login-form__registration-tip")
+                p(class="login-form__registration-tip-text") Нет аккаунта на Toxin?
+

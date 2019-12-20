@@ -1,0 +1,52 @@
+.note {
+    display: block;
+    min-height: 48px;
+    padding: 0 0 0 58px;
+    margin: 0;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.note + .note{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $dark-shade-10;
+}
+
+.note__body {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.note__text {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.note__text:first-line {
+    font-weight: bold;
+}
+
+.note__icon {
+    position: absolute;
+    display: block;
+    width: 48px;
+    height: 48px;
+    top: 0;
+    left: -58px;
+    margin: 0;
+    padding: 0;
+    @include linear-gradient-background($purple, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: 'Material Icons';
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+}

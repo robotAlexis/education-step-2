@@ -1,0 +1,19 @@
+-
+    /*
+        text-field ({
+            name: string,
+            value: string,
+            password: boolean,
+            placeholder: string
+        })
+    */
+mixin text-field(values)
+    -
+        values.type = values.password == true ? "password" : "text";
+    input(
+        class="text-field"
+        type=values.type
+        name=values.name
+        value=values.value
+        placeholder=values.placeholder
+    )

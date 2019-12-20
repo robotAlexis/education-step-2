@@ -1,0 +1,45 @@
+-
+    /*
+        button ({
+            type: string,   // button | reset | submit
+            name: string,
+            value: string,
+            text: string,
+            theme: string,  // default(any value) | bordered | backgroundless | with-arrow
+            low: boolean    // for header
+        })
+    */
+mixin button(values)
+    -
+        values.class = "button"
+
+        if(!(values.type == "button" || values.type == "reset" || values.type == "submit")) values.type = "submit";
+
+        values["text class"] = "button__text";
+        switch(values.theme){
+            case "bordered":
+                values["class"] += values.low == true ? " button_low-bordered" : " button_bordered";
+                values["text class"] += values.low == true ? " button__text_low-bordered" : " button__text_bordered";
+                break;
+            case "backgroundless":
+                values["class"] += " button_backgroundless";
+                values["text class"] += " button__text_backgroundless";
+                break;
+            case "with-arrow":
+                values["class"] += " button_with-arrow";
+                values["text class"] += " button__text_with-arrow";
+                break;
+            default:
+                if(values.low == true) {
+                    values["class"] += " button_low";
+                    values["text class"] += " button__text_low";
+                }
+                break;
+        }
+    button(
+        class=values.class
+        type=values.type
+        name=values.name
+        value=values.value
+    )
+        p(class=values["text class"])= values.text

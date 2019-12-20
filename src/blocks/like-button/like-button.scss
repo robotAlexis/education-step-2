@@ -1,0 +1,57 @@
+$bg-color: white;
+
+.like-button {
+    position: relative;
+    display: inline-block;
+    min-width: 38px;
+    height: 18px;
+    margin: 0;
+    padding: 1px;
+    background: $dark-shade-25;
+    border-radius: 10px;
+
+    color: $dark-shade-25;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    line-height: 17px;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.like-button__counter {
+    margin: 0;
+    padding: 0 4px 1px 14px;
+    background: $bg-color;
+    border-radius: 9px;
+}
+
+.like-button::before {
+    content: "\e87e";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    font-family: 'Material Icons';
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    text-align: center;
+}
+
+.like-button_liked {
+    @include linear-gradient-background($purple, $gradient-end);
+
+    color: $purple;
+}
+
+.like-button_liked::before {
+    content: "\e87d";
+    color: $purple;
+}

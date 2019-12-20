@@ -1,0 +1,70 @@
+.date-dropdown {
+    position: relative;
+    display: block;
+    height: 44px;
+    width: 320px;
+    padding: 0;
+    margin: 0;
+}
+
+.date-dropdown__field {
+    position: relative;
+    display: block;
+    float: left;
+    width: 89px;
+    height: 42px;
+    padding: 0 45px 0 14px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 39px;
+    font-weight: normal;
+}
+
+.date-dropdown__text {
+    padding: 0;
+    margin: 0;
+}
+
+.date-dropdown__text::after {
+    content: "\e5cf";
+    position: absolute;
+    display: block;
+    width: 42px;
+    height: 44px;
+    top: 0;
+    right: 0;
+
+    color: $dark-shade-50;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 43px;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    text-align: center;
+}
+
+.date-dropdown__calendar {
+    position: absolute;
+    display: block;
+    width: 320px;
+    height: 100px;
+    top: 44px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+
+    visibility: hidden;
+}
+
+.date-dropdown__calendar_opened {
+    visibility: visible;
+}

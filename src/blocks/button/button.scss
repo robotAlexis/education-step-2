@@ -1,0 +1,129 @@
+/* Default theme: Gradient fill */
+
+.button {
+    position: relative;
+    display: block;
+    width: 99px;
+    height: 44px;
+    border: none;
+    border-radius: 22px;
+    outline: none;
+    @include linear-gradient-background($purple, $gradient-end);
+
+    color: white;
+    line-height: 44px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+.button:active {
+    @include linear-gradient-background(rgba($purple, 0.5), rgba($gradient-end, 0.5));
+}
+
+.button__text {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: none;
+    height: 44px;
+}
+
+
+/* Gradient border theme*/
+
+.button_bordered {
+    padding: 2px;
+
+    color: $purple;
+}
+
+.button__text_bordered {
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+
+    line-height: 40px;
+}
+
+
+/* Theme without background */
+
+.button_backgroundless {
+    width: auto;
+    height: 12px;
+    background: none;
+    border-radius: 0;
+
+    color: $purple;
+    line-height: 12px;
+}
+.button_backgroundless:active {
+    background: none;
+    color: $dark-shade-50;
+}
+
+.button__text_backgroundless {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    height: 12px;
+}
+
+
+/* Long button theme  */
+
+.button_with-arrow {
+    width: 320px;
+}
+
+.button__text_with-arrow::after {
+    content: "\e5c8";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+
+
+
+
+/* Low (for header) */
+
+.button_low {
+    height: 34px;
+    border-radius: 17px;
+
+    line-height: 32px;
+}
+
+.button__text_low {
+    height: 34px;    
+}
+
+.button_low-bordered {
+    height: 34px;
+    padding: 2px;
+    border-radius: 17px;
+
+    color: $purple;
+    line-height: 30px;
+}
+
+.button__text_low-bordered {
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+}

@@ -1,0 +1,60 @@
+@import "../../text-field/text-field.scss";
+@import "../../button/button.scss";
+
+.login-form {
+    width: 320px;
+    margin: 0;
+    padding: 17px 30px;
+    padding-bottom: 17px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
+    color: black;
+    line-height: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    text-transform: none;
+}
+
+.login-form__title {
+    margin: 0;
+    padding: 22px 0 15px 0;
+
+    line-height: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.login-form__field {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.login-form__button {
+    margin: 0;
+    padding: 15px 0;
+}
+
+.login-form__registration-tip {
+    display: table;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+}
+
+.login-form__registration-tip-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-form__registration-button {
+    margin: 0;
+    padding: 0;
+    float: right;
+}

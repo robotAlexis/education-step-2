@@ -1,0 +1,51 @@
+include ../button/button.pug
+
+-
+    /*
+        header ({
+            logged: boolean
+        })
+    */
+mixin header(values)
+    -
+        let classes = {};
+        classes.buttons = values.logged == true ? "header__buttons header__buttons_disabled" : "header__buttons";
+        classes.account = values.logged == true ? "header__account" : "header__account header__account_disabled";
+    header(class="header")
+        div(class="header__content")
+            div(class="header__logo")
+            div(class=classes.buttons)
+                div(class="header__button")
+                    +button({
+                        type: "login",
+                        name: "login",
+                        value: "login",
+                        text: "Login",
+                        theme: "bordered",
+                        low: true
+                    })
+                div(class="header__button")
+                    +button({
+                        type: "register",
+                        name: "register",
+                        value: "register",
+                        text: "Register",
+                        low: true
+                    })
+
+            div(class=classes.account)
+                p(class="header__account-name") Cosmic Negoita
+
+            
+            nav(class="header__menu")
+                p(class="header__menu-item header__menu-item_current") Home
+                p(class="header__menu-item") About Us
+                p(class="header__menu-item header__menu-item_with-arrow") Services
+                p(class="header__menu-item") Careers
+                p(class="header__menu-item") News
+                p(class="header__menu-item") Documentation
+
+
+
+
+

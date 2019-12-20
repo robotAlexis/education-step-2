@@ -1,0 +1,15 @@
+-
+    /*
+        masked-text-field ({
+            name: string,
+            value: string
+        })
+    */
+mixin masked-text-field(values)
+    input(
+        class="masked-text-field"
+        type="text"
+        name=values.name
+        value=values.value
+        placeholder="ДД.ММ.ГГГГ"
+    )

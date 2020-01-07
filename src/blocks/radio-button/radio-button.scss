@@ -10,7 +10,6 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    font-weight: normal;
 }
 
 .radio-button__input {
@@ -52,5 +51,5 @@
     background: none;
 }
 .radio-button__input:checked + .radio-button__title::after {
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
 }

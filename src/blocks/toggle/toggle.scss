@@ -1,7 +1,6 @@
 .toggle {
-    display: block;
     position: relative;
-    width: 270px;
+    display: block;
     min-height: 20px;
     padding: 0 0 0 50px;
     margin: 0;
@@ -11,7 +10,6 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    font-weight: normal;
 }
 
 .toggle__input {
@@ -26,9 +24,9 @@
 .toggle__title::before {
     content: "";
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
-    display: block;
     width: 38px;
     height: 18px;
     border: 1px solid $dark-shade-25;
@@ -41,9 +39,9 @@
 .toggle__title::after {
     content: "";
     position: absolute;
+    display: block;
     top: 4px;
     left: 4px;
-    display: block;
     width: 12px;
     height: 12px;
     background: $dark-shade-25;
@@ -51,6 +49,5 @@
 }
 .toggle__input:checked + .toggle__title::after {
     left: 24px;
-    
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
 }

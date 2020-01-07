@@ -1,18 +1,14 @@
 @import "../checkbox/checkbox-button/checkbox-button.scss";
 
 .expandable-checkbox-list {
-    display: block;
-    width: 256px;
-
     color: $dark-shade-100;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 16px;
 }
 
 .expandable-checkbox-list__title {
     position: relative;
-    display: block;
     min-height: 20px;
     margin: 0;
     padding: 4px 24px 0 0;
@@ -30,7 +26,7 @@
     right: 0;
     
     color: $dark-shade-50;
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-size: 24px;
     line-height: 24px;
     text-align: center;
@@ -43,7 +39,7 @@
 
 .expandable-checkbox-list__body {
     display: none;
-    padding-top: 2px;
+    padding-top: 3px;
 }
 .expandable-checkbox-list__body_expanded {
     display: block;

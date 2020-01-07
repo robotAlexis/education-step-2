@@ -1,3 +1,4 @@
+
 @mixin linear-gradient-background($start-color, $end-color) {
     background: $start-color;
     // Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0
@@ -14,14 +15,10 @@
     background-image: linear-gradient(to bottom, $start-color, $end-color);
 }
 
-/* Colors */
-
-$dark-shade-100: rgba(31, 32, 65, 1.0);
-$dark-shade-75: rgba(31, 32, 65, 0.75);
-$dark-shade-50: rgba(31, 32, 65, 0.5);
-$dark-shade-25: rgba(31, 32, 65, 0.25);
-$dark-shade-5: rgba(31, 32, 65, 0.05);
-
-$purple: #bc9cff;
-$green: #6fcf97;
-$gradient-end: #8ba4f9;
+@mixin placeholder {
+    &::placeholder               {@content;}
+    &::-webkit-input-placeholder {@content;}    // Chrome/Opera/Safari
+    &:-moz-placeholder           {@content;}    // Firefox 19+
+    &::-moz-placeholder          {@content;}    // IE 10+
+    &:-ms-input-placeholder      {@content;}    // Firefox 18-
+}

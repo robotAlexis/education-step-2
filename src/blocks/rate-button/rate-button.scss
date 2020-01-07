@@ -2,12 +2,8 @@
     display: block;
     height: 24px;
     width: 120px;
-    margin: 0;
-    padding: 0;
 
     font-size: 0;
-    letter-spacing: normal;
-    word-wrap: normal;
     white-space: nowrap;
 }
 
@@ -16,7 +12,6 @@
     display: inline-block;
     width: 24px;
     height: 24px;
-
 }
 
 .rate-button__star::before {
@@ -26,21 +21,15 @@
     height: 24px;
     top: 0;
     left: 0;
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     color: $dark-shade-75;
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-size: 24px;
     line-height: 24px;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
     white-space: nowrap;
-    direction: ltr;
     text-align: center;
 }
 

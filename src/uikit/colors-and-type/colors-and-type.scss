@@ -1,0 +1,122 @@
+.colors-and-type {
+    background-color: cadetblue;
+}
+
+.colors-and-type__container {
+    width: 1440px;
+    height: 900px;
+    background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
+}
+
+.colors-and-type__colors-column {
+    float: left;
+    padding: 145px 0 0 150px;
+}
+
+.colors-and-type__color-record {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 7px 0 5px 110px;
+}
+
+.colors-and-type__color-name {
+    margin: 0;
+
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 29px;
+    text-transform: capitalize;
+}
+.colors-and-type__color-hex-code {
+    margin: 0;
+
+    font-family: "Quicksand", sans-serif;
+    font-size: 19px;
+    line-height: 29px;
+    text-transform: uppercase;
+}
+
+.colors-and-type__color-preview {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    top: 0;
+    border-radius: 6px;
+}
+
+.colors-and-type__type-column {
+    float: right;
+    width: 527px;
+    padding-top: 145px;
+}
+
+.colors-and-type__type-text {
+    position: relative;
+    margin: 0;
+    margin-bottom: 50px;
+
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+}
+.colors-and-type__type-text::before {
+    content: "tag";
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: -130px;
+
+    color: $dark-shade-25;
+    font-family: "Montserrat", sans-serif;
+    text-align: right;
+    font-weight: normal;
+}
+
+
+.colors-and-type__type-text-1 {
+    font-size: 24px;
+    line-height: 30px;
+}
+.colors-and-type__type-text-1::before {
+    content: "H1";
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.colors-and-type__type-text-2 {
+    font-size: 19px;
+    line-height: 24px;
+}
+.colors-and-type__type-text-2::before {
+    content: "H2";
+    font-size: 19px;
+    line-height: 23px;
+}
+
+.colors-and-type__type-text-3 {
+    margin-bottom: 47px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+.colors-and-type__type-text-3::before {
+    content: "H3";
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.colors-and-type__type-text-4 {
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+}
+.colors-and-type__type-text-4::before {
+    content: "Body";
+    font-size: 14px;
+    line-height: 24px;
+}

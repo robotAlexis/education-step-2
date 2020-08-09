@@ -1,9 +1,12 @@
 -
     /*
-        range-slider ()
+        range-slider ({
+            title: string
+        })
     */
-mixin range-slider()
+mixin range-slider(values)
     div(class="range-slider")
+        p(class="range-slider__title")= values.title
         p(class="range-slider__price-text") 5 000 &#8381; - 10 000 &#8381;
         div(class="range-slider__background")
             div(class="range-slider__foreground")

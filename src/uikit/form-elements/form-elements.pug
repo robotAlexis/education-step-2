@@ -1,0 +1,237 @@
+include ../../blocks/text-field/text-field.pug
+include ../../blocks/masked-text-field/masked-text-field.pug
+include ../../blocks/subscription-text-field/subscription-text-field.pug
+
+include ../../blocks/dropdown/customers-dropdown/customers-dropdown.pug
+include ../../blocks/dropdown/rooms-dropdown/rooms-dropdown.pug
+include ../../blocks/dropdown/date-dropdown/date-dropdown.pug
+include ../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.pug
+
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+
+include ../../blocks/checkbox/checkbox-button/checkbox-button.pug
+include ../../blocks/radio-button/radio-button.pug
+include ../../blocks/toggle/toggle.pug
+include ../../blocks/like-button/like-button.pug
+include ../../blocks/rate-button/rate-button.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/button/button.pug
+
+
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Form Elements
+  body(class="form-elements")
+    main(class="form-elements__container")
+
+      //- Первая колонка
+
+      div(class="form-elements__inputs-column-1")
+
+        //- TEXT FIELD (DEFAULT)
+
+        p(class="form-elements__block-name form-elements__block-name_default-text-field") Text field
+        div(class="form-elements__default-text-field")
+          p(class="form-elements__block-state form-elements__block-state_default-text-field") Default
+          +text-field({
+            name: "default-text-field",
+            value: "Email",
+            placeholder: "Email"
+          })
+
+        //- TEXT FIELD (HOVER / FOCUS)
+
+        p(class="form-elements__block-name form-elements__block-name_focus-text-field") Text field
+        div(class="form-elements__focus-text-field")
+          p(class="form-elements__block-state form-elements__block-state_focus-text-field") Hover / Focus
+          +text-field({
+            name: "hover-text-field",
+            value: "This is pretty awesome"
+          })
+
+        //- DROPDOWN (DEFAULT)
+
+        p(class="form-elements__block-name form-elements__block-name_default-customers-dropdown") Dropdown
+        div(class="form-elements__default-customers-dropdown")
+          p(class="form-elements__block-state form-elements__block-state_default-customers-dropdown") Default
+          +customers-dropdown()
+
+        //- MASKED TEXT FIELD (DEFAULT)
+
+        p(class="form-elements__block-name form-elements__block-name_masked-text-field") Masked text field
+        div(class="form-elements__masked-text-field")
+          p(class="form-elements__block-state form-elements__block-state_masked-text-field") Default
+          +masked-text-field({name: "masked-text-field"})
+
+        //- DATE DROPDOWN
+
+        div(class="form-elements__date-dropdown")
+          p(class="form-elements__block-name form-elements__block-name_date-dropdown") Date dropdown
+          +date-dropdown()
+        div(class="form-elements__date-dropdown")
+          p(class="form-elements__block-name form-elements__block-name_date-dropdown") Date dropdown
+          +date-dropdown()
+
+        //- FILTER DATE DROPDOWN
+
+        p(class="form-elements__block-name form-elements__block-name_filter-date-dropdown") Filter date dropdown
+        div(class="form-elements__filter-date-dropdown")
+          +filter-date-dropdown()
+
+        //- SUBSCRIPTION TEXT FIELD
+
+        p(class="form-elements__block-name form-elements__block-name_subscription-text-field") Subscription text field
+        div(class="form-elements__subscription-text-field")
+          +subscription-text-field({
+            name: "subscription-text-field",
+            placeholder: "Email"
+          })
+
+        //- DROPDOWN
+
+        p(class="form-elements__block-name form-elements__block-name_default-rooms-dropdown") Dropdown
+        div(class="form-elements__default-rooms-dropdown")
+          p(class="form-elements__block-state form-elements__block-state_default-rooms-dropdown") Default
+          +rooms-dropdown()
+
+        //- DROPDOWN
+
+        p(class="form-elements__block-name form-elements__block-name_expanded-rooms-dropdown") Dropdown
+        div(class="form-elements__expanded-rooms-dropdown")
+          p(class="form-elements__block-state form-elements__block-state_expanded-rooms-dropdown") Expanded
+          +rooms-dropdown()
+        
+        //- EXPANDABLE CHECKBOX LIST
+
+        div(class="form-elements__expandable-checkbox-list-1")
+          +expandable-checkbox-list({
+            title: "Expandable checkbox list",
+            items: [
+              { name: "checkbox-1", title: "Завтрак", checked: false },
+              { name: "checkbox-2", title: "Письменный стол", checked: true },
+              { name: "checkbox-3", title: "Стул для кормления", checked: true },
+              { name: "checkbox-4", title: "Кроватка", checked: true },
+              { name: "checkbox-5", title: "Телевизор", checked: false },
+              { name: "checkbox-5", title: "Шампунь", checked: false },
+              { name: "checkbox-5", title: "Телевизор", checked: false },
+              { name: "checkbox-5", title: "Шампунь", checked: false }
+            ]
+          })
+        
+        //- EXPANDABLE CHECKBOX LIST
+
+        div(class="form-elements__expandable-checkbox-list-2")
+          +expandable-checkbox-list({
+            title: "Expandable checkbox list",
+            items: [
+              { name: "checkbox-1", title: "Завтрак", checked: false },
+              { name: "checkbox-2", title: "Письменный стол", checked: true },
+              { name: "checkbox-3", title: "Стул для кормления", checked: true },
+              { name: "checkbox-4", title: "Кроватка", checked: true },
+              { name: "checkbox-5", title: "Телевизор", checked: false },
+              { name: "checkbox-5", title: "Шампунь", checked: false },
+              { name: "checkbox-5", title: "Телевизор", checked: false },
+              { name: "checkbox-5", title: "Шампунь", checked: false }
+            ]
+          })
+
+
+      //- Вторая колонка
+
+      div(class="form-elements__inputs-column-2")
+
+        //- CHECKBOX BUTTONS
+
+        p(class="form-elements__block-name form-elements__block-name_checkbox-button") Checkbox buttons
+        div(class="form-elements__checkbox-button")
+          +checkbox-button({name: "checkbox-1", title: "Можно курить"})
+        div(class="form-elements__checkbox-button")
+          +checkbox-button({name: "checkbox-2", title: "Можно с питомцами", checked: true})
+        div(class="form-elements__checkbox-button")
+          +checkbox-button({name: "checkbox-3", title: "Можно пригласить гостей (до 10 человек)", checked: true})
+
+        //- RADIO BUTTONS
+
+        p(class="form-elements__block-name form-elements__block-name_radio-button") Radio buttons
+        div(class="form-elements__radio-button")
+          +radio-button({name: "radio-button", value: "radio-button-1", title: "Мужчина", checked: true})
+        div(class="form-elements__radio-button")
+          +radio-button({name: "radio-button", value: "radio-button-2", title: "Женщина"})
+
+        //- TOGGLE
+
+        p(class="form-elements__block-name form-elements__block-name_toggle") Toggle
+        div(class="form-elements__toggle")
+          +toggle({name: "toggle-1", title: "Получать спецпредложения", checked: true})
+        div(class="form-elements__toggle")
+          +toggle({name: "toggle-2", title: "Получать спецпредложения"})
+
+        //- LIKE BUTTON
+
+        p(class="form-elements__block-name form-elements__block-name_like-button") Like button
+        div(class="form-elements__like-button")
+          +like-button()
+        div(class="form-elements__like-button")
+          +like-button()
+
+        //- RATE BUTTON
+
+        p(class="form-elements__block-name form-elements__block-name_rate-button") Rate button
+        div(class="form-elements__rate-button")
+          +rate-button()
+        div(class="form-elements__rate-button")
+          +rate-button()
+
+        //- DROPDOWN
+
+        p(class="form-elements__block-name form-elements__block-name_customers-dropdown-1") Dropdown
+        div(class="form-elements__customers-dropdown")
+          +customers-dropdown()
+
+      //- Третья колонка
+
+      div(class="form-elements__inputs-column-2")
+
+        //- RANGE SLIDER
+
+        div(class="form-elements__range-slider")
+          +range-slider({title: "Range slider"})
+
+        //- BUTTONS
+
+        p(class="form-elements__block-name form-elements__block-name_buttons") Buttons
+        div(class="form-elements__buttons")
+          div(class="form-elements__button")
+            +button({text: "Click me"})
+          div(class="form-elements__button")
+            +button({text: "Click me"})
+
+        div(class="form-elements__buttons")
+          div(class="form-elements__button")
+            +button({text: "Click me", theme: "bordered"})
+          div(class="form-elements__button")
+            +button({text: "Click me", theme: "bordered"})
+
+        div(class="form-elements__buttons")
+          div(class="form-elements__button")
+            +button({text: "Click me", theme: "backgroundless"})
+          div(class="form-elements__button")
+            +button({text: "Click me", theme: "backgroundless"})
+
+        div(class="form-elements__buttons")
+          div(class="form-elements__button")
+            +button({text: "Перйти к оплате", theme: "with-arrow"})
+
+        //- PAGINATION
+
+        p(class="form-elements__block-name form-elements__block-name_pagination") Pagination
+
+
+
+
+

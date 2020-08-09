@@ -1,11 +1,8 @@
 .filter-date-dropdown {
     position: relative;
-    display: block;
-    width: 205px;
     height: 42px;
     padding: 0 45px 0 14px;
-    margin: 0;
-    background-color: white;
+    background-color: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
 
@@ -13,7 +10,6 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 40px;
-    font-weight: normal;
 }
 
 .filter-date-dropdown_opened {
@@ -38,23 +34,16 @@
     font-family: 'Material Icons';
     font-size: 24px;
     line-height: 44px;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
     white-space: nowrap;
-    direction: ltr;
     text-align: center;
 }
 
 .filter-date-dropdown__calendar {
     position: absolute;
-    display: block;
     width: 266px;
     height: 111px;
     top: 43px;
     left: -1px;
-    padding: 0;
-    margin: 0;
 
     visibility: hidden;
 }

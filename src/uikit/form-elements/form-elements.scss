@@ -1,0 +1,310 @@
+@import "../../blocks/text-field/text-field.scss";
+@import "../../blocks/masked-text-field/masked-text-field.scss";
+@import "../../blocks/subscription-text-field/subscription-text-field.scss";
+
+@import "../../blocks/dropdown/customers-dropdown/customers-dropdown.scss";
+@import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.scss";
+@import "../../blocks/dropdown/date-dropdown/date-dropdown.scss";
+@import "../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.scss";
+
+@import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
+
+@import "../../blocks/checkbox/checkbox-button/checkbox-button.scss";
+@import "../../blocks/radio-button/radio-button.scss";
+@import "../../blocks/toggle/toggle.scss";
+@import "../../blocks/like-button/like-button.scss";
+@import "../../blocks/rate-button/rate-button.scss";
+@import "../../blocks/range-slider/range-slider.scss";
+
+
+// Страница с перечислением блоков
+
+.form-elements {
+    background-color: cadetblue;
+}
+
+// Контейнер, содержащий колонки и логотип
+
+.form-elements__container {
+    width: 1440px;
+    //height: 1500px;
+    background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
+}
+
+// Первая колонка для группировки блоков
+
+.form-elements__inputs-column-1 {
+    float: left;
+    width: 447px;
+    height: 1400px;
+    padding: 140px 0 0 140px;
+    vertical-align: top;
+}
+
+// Вторая и третья колонки группировки блоков
+
+.form-elements__inputs-column-2 {
+    display: inline-block;
+    width: 392px;
+    height: 1400px;
+    padding: 140px 0 0 0;
+    vertical-align: top;
+}
+
+// Заголовок для блока (группы блоков)
+
+.form-elements__block-name {
+    padding: 0;
+    margin: 0;
+
+    color: $dark-shade-100;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+// Текст, описывающий состояние блока (default, hover и т.п.)
+
+.form-elements__block-state {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+
+
+
+/* TEXT FIELDS */
+
+// TEXT FIELD (DEFAULT)
+
+.form-elements__default-text-field {
+    position: relative;
+    width: 320px;
+    padding-left: 1px;
+}
+.form-elements__block-name_default-text-field {
+    padding: 4px 1px;
+}
+.form-elements__block-state_default-text-field {
+    top: -22px;
+}
+
+// TEXT FIELD (HOVER / FOCUS)
+
+.form-elements__focus-text-field {
+    position: relative;
+    width: 320px;
+    padding-left: 1px;
+}
+.form-elements__block-name_focus-text-field {
+    padding: 21px 0 4px 1px;
+}
+.form-elements__block-state_focus-text-field {
+    top: -20px;
+}
+
+// MASKED TEXT FIELD (DEFAULT)
+
+.form-elements__masked-text-field {
+    position: relative;
+    width: 320px;
+    padding-left: 1px;
+}
+.form-elements__block-name_masked-text-field {
+    padding: 24px 0 4px 1px;
+}
+.form-elements__block-state_masked-text-field {
+    top: -22px;
+}
+
+// SUBSCRIPTION TEXT FIELD
+
+.form-elements__subscription-text-field {
+    max-width: 267px;
+    width: 100%;
+}
+.form-elements__block-name_subscription-text-field {
+    padding: 42px 0 4px 1px;
+}
+
+
+
+/* DROPDOWN */
+
+// Customer dropdown
+
+.form-elements__default-customers-dropdown {
+    position: relative;
+    width: 320px;
+    padding-left: 1px;
+}
+.form-elements__block-name_default-customers-dropdown {
+    padding: 21px 0 4px 1px;
+}
+.form-elements__block-state_default-customers-dropdown {
+    top: -20px;
+}
+
+.form-elements__block-name_customers-dropdown-1 {
+    padding: 192px 0 4px 0;
+}
+.form-elements__customers-dropdown {
+    width: 320px;
+}
+
+
+// Rooms dropdown
+
+.form-elements__default-rooms-dropdown {
+    position: relative;
+    width: 266px;
+}
+.form-elements__block-name_default-rooms-dropdown {
+    padding: 101px 0 4px 0;
+}
+.form-elements__block-state_default-rooms-dropdown {
+    top: -19px;
+}
+
+.form-elements__expanded-rooms-dropdown {
+    position: relative;
+    width: 266px;
+}
+.form-elements__block-name_expanded-rooms-dropdown {
+    padding: 21px 0 4px 0;
+}
+.form-elements__block-state_expanded-rooms-dropdown {
+    top: -19px;
+}
+
+// Date dropdown
+
+.form-elements__date-dropdown {
+    display: inline-block;
+    width: 150px;
+    padding: 0 19px 0 1px;
+}
+.form-elements__block-name_date-dropdown {
+    padding: 41px 0 4px 0;
+}
+
+// Filter date dropdown
+
+.form-elements__filter-date-dropdown {
+    width: 266px;
+    padding-left: 1px;
+}
+.form-elements__block-name_filter-date-dropdown {
+    padding: 42px 0 4px 1px;
+}
+
+// EXPANDABLE CHECKBOX LIST
+
+.form-elements__expandable-checkbox-list-1 {
+    width: 256px;
+    padding: 168px 0 0 1px;
+}
+.form-elements__expandable-checkbox-list-2 {
+    width: 256px;
+    padding-top: 40px;
+}
+
+
+
+
+/* CHECKBOXES */
+
+// CHECKBOX BUTTONS
+
+.form-elements__checkbox-button {
+    max-width: 230px;
+    padding: 5px 0;
+}
+.form-elements__block-name_checkbox-button {
+    padding: 4px 0 11px 0;
+}
+
+// RADIO BUTTONS
+
+.form-elements__radio-button {
+    display: inline-block;
+    width: 100px;
+    padding: 11px 18px 0 0;
+}
+.form-elements__block-name_radio-button {
+    padding: 37px 0 4px 0;
+}
+
+// TOGGLE
+
+.form-elements__toggle {
+    padding: 7px 0;
+}
+.form-elements__block-name_toggle {
+    padding: 41px 0 9px 0;
+}
+
+// LIKE BUTTON
+
+.form-elements__like-button {
+    display: inline-block;
+    width: 50px;
+}
+.form-elements__block-name_like-button {
+    padding: 38px 0 14px 0;
+}
+
+// RATE BUTTON
+
+.form-elements__rate-button {
+    display: inline-block;
+    width: 140px;
+}
+.form-elements__block-name_rate-button {
+    padding: 40px 0 16px 0;
+}
+
+// RANGE SLIDER
+
+.form-elements__range-slider {
+    width: 266px;
+    padding-top: 4px;
+}
+
+// BUTTONS
+
+.form-elements__block-name_buttons {
+    padding: 40px 0 0 0;
+}
+.form-elements__buttons {
+    padding: 15px 0;
+
+    line-height: 12px;
+}
+.form-elements__button {
+    display: inline-block;
+    padding: 0 20px 0 0;
+}
+
+
+// PAGINATION
+
+.form-elements__block-name_pagination {
+    padding: 25px 0 0 0;
+}
+.form-elements__pagination {
+    padding: 0;
+}
+
+

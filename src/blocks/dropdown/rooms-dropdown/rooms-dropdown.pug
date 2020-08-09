@@ -3,19 +3,19 @@
         rooms-dropdown ()
     */
 mixin rooms-dropdown()
-    div(class="rooms-dropdown rooms-dropdown_opened")
-        p(class="rooms-dropdown__text") 2 кровати, 2 спальни...
-        div(class="rooms-dropdown__item-list rooms-dropdown__item-list_opened")
+    div(class="rooms-dropdown")
+        p(class="rooms-dropdown__text") Текст
+        div(class="rooms-dropdown__item-list")
 
             div(class="rooms-dropdown__item")
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_increase")
-                p(class="rooms-dropdown__count-text") 2
+                p(class="rooms-dropdown__count-text") 0
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_decrease")
                 p(class="rooms-dropdown__item-text") Спальни
 
             div(class="rooms-dropdown__item")
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_increase")
-                p(class="rooms-dropdown__count-text") 2
+                p(class="rooms-dropdown__count-text") 0
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_decrease")
                 p(class="rooms-dropdown__item-text") Кровати
 

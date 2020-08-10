@@ -7,14 +7,19 @@
 @import "../../blocks/dropdown/date-dropdown/date-dropdown.scss";
 @import "../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.scss";
 
-@import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
 
 @import "../../blocks/checkbox/checkbox-button/checkbox-button.scss";
 @import "../../blocks/radio-button/radio-button.scss";
 @import "../../blocks/toggle/toggle.scss";
+@import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
+@import "../../blocks/checkbox/rich-checkbox-button/rich-checkbox-button.scss";
+
 @import "../../blocks/like-button/like-button.scss";
 @import "../../blocks/rate-button/rate-button.scss";
 @import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/button/button.scss";
+
+@import "../../blocks/pagination/pagination.scss";
 
 
 // Страница с перечислением блоков
@@ -31,25 +36,42 @@
     background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
 }
 
+// Первый ряд
+
+.form-elements__blocks-row-1 {
+    padding: 140px 0 0 140px;
+}
+
+// Второй ряд
+
+.form-elements__blocks-row-2 {
+    padding: 101px 0 0 140px;
+}
+
+// Третий ряд
+
+.form-elements__blocks-row-3 {
+    padding: 168px 0 0 140px;
+}
+
 // Первая колонка для группировки блоков
 
-.form-elements__inputs-column-1 {
-    float: left;
+.form-elements__blocks-column-1 {
+    display: inline-block;
     width: 447px;
-    height: 1400px;
-    padding: 140px 0 0 140px;
     vertical-align: top;
 }
 
 // Вторая и третья колонки группировки блоков
 
-.form-elements__inputs-column-2 {
+.form-elements__blocks-column-2 {
     display: inline-block;
     width: 392px;
-    height: 1400px;
-    padding: 140px 0 0 0;
     vertical-align: top;
 }
+
+
+
 
 // Заголовок для блока (группы блоков)
 
@@ -80,7 +102,6 @@
     line-height: 15px;
     text-transform: uppercase;
 }
-
 
 
 
@@ -156,8 +177,8 @@
     top: -20px;
 }
 
-.form-elements__block-name_customers-dropdown-1 {
-    padding: 192px 0 4px 0;
+.form-elements__block-name_customers-dropdown {
+    padding: 0 0 4px 0;
 }
 .form-elements__customers-dropdown {
     width: 320px;
@@ -171,7 +192,7 @@
     width: 266px;
 }
 .form-elements__block-name_default-rooms-dropdown {
-    padding: 101px 0 4px 0;
+    padding: 0 0 4px 0;
 }
 .form-elements__block-state_default-rooms-dropdown {
     top: -19px;
@@ -209,18 +230,6 @@
     padding: 42px 0 4px 1px;
 }
 
-// EXPANDABLE CHECKBOX LIST
-
-.form-elements__expandable-checkbox-list-1 {
-    width: 256px;
-    padding: 168px 0 0 1px;
-}
-.form-elements__expandable-checkbox-list-2 {
-    width: 256px;
-    padding-top: 40px;
-}
-
-
 
 
 /* CHECKBOXES */
@@ -254,6 +263,30 @@
 .form-elements__block-name_toggle {
     padding: 41px 0 9px 0;
 }
+
+// EXPANDABLE CHECKBOX LIST
+
+.form-elements__expandable-checkbox-list-1 {
+    width: 256px;
+    padding: 0 0 0 1px;
+}
+.form-elements__expandable-checkbox-list-2 {
+    width: 256px;
+    padding-top: 40px;
+}
+
+// RICH CHECKBOX BUTTONS
+
+.form-elements__block-name_rich-checkbox-buttons {
+    padding: 5px 0 15px 0;
+}
+.form-elements__rich-checkbox-button {
+    padding: 0 0 9px 0;
+    width: 260px;
+}
+
+
+
 
 // LIKE BUTTON
 
@@ -304,7 +337,8 @@
     padding: 25px 0 0 0;
 }
 .form-elements__pagination {
-    padding: 0;
+    padding: 16px 0 0 0;
+    width: 242px;
 }
 
 

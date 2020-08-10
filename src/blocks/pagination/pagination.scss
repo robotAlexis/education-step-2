@@ -22,14 +22,14 @@
 }
 
 .pagination__button_current {
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
 
     color: white;
     font-weight: bold;
 }
 
 .pagination__button_navigational {
-    @include linear-gradient-background($green, #66d2ea);
+    @include linear-gradient-background($green, $blue-green);
 
     color: white;
     font-family: 'Material Icons';
@@ -42,7 +42,8 @@
 
 .pagination__result-text {
     display: block;
-    margin-top: 13px;
+    margin: 13px 0 0 0;
+    padding: 0;
 
     color: $dark-shade-75;
     font-size: 14px;

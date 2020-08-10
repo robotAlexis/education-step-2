@@ -1,7 +1,6 @@
 .rich-checkbox-button {
     display: block;
     position: relative;
-    width: 236px;
     min-height: 19px;
     padding: 1px 0 0 30px;
     margin: 0;
@@ -11,7 +10,6 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    font-weight: normal;
 }
 
 .rich-checkbox-button__input {
@@ -29,9 +27,9 @@
 .rich-checkbox-button__title::before {
     content: "";
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
-    display: block;
     width: 18px;
     height: 18px;
     border: 1px solid $dark-shade-25;
@@ -52,7 +50,7 @@
     height: 20px;
 }
 .rich-checkbox-button__input:checked + .rich-checkbox-button__title::after {
-    background: $check-image no-repeat 50% 50%;
+    background: url(./check-image.svg) no-repeat 50% 50%;
 }
 
 .rich-checkbox-button__description {

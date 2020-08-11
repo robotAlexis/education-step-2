@@ -41,7 +41,7 @@
     left: -58px;
     margin: 0;
     padding: 0;
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 

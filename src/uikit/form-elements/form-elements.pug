@@ -20,7 +20,10 @@ include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/button/button.pug
 
 include ../../blocks/pagination/pagination.pug
+include ../../blocks/bullet-list/bullet-list.pug
 
+include ../../blocks/note/note.pug
+include ../../blocks/review/review.pug
 
 
 <!DOCTYPE html>
@@ -35,11 +38,9 @@ html(lang="ru")
 
 
       //- Первый ряд
-
       div(class="form-elements__blocks-row-1")
 
         //- Первая колонка
-
         div(class="form-elements__blocks-column-1")
 
           //- TEXT FIELD (DEFAULT)
@@ -103,7 +104,6 @@ html(lang="ru")
 
 
         //- Вторая колонка
-
         div(class="form-elements__blocks-column-2")
 
           //- CHECKBOX BUTTONS
@@ -150,7 +150,6 @@ html(lang="ru")
 
 
         //- Третья колонка
-
         div(class="form-elements__blocks-column-2")
 
           //- RANGE SLIDER
@@ -190,61 +189,45 @@ html(lang="ru")
             +pagination()
 
 
-      //- Второй ряд
 
+
+
+      //- Второй ряд (DROPDOWN)
       div(class="form-elements__blocks-row-2")
 
         //- Первая колонка
-
         div(class="form-elements__blocks-column-1")
-
-          //- DROPDOWN
-
           p(class="form-elements__block-name form-elements__block-name_default-rooms-dropdown") Dropdown
           div(class="form-elements__default-rooms-dropdown")
             p(class="form-elements__block-state form-elements__block-state_default-rooms-dropdown") Default
             +rooms-dropdown()
-
-          //- DROPDOWN
-
           p(class="form-elements__block-name form-elements__block-name_expanded-rooms-dropdown") Dropdown
           div(class="form-elements__expanded-rooms-dropdown")
             p(class="form-elements__block-state form-elements__block-state_expanded-rooms-dropdown") Expanded
             +rooms-dropdown()
 
-
         //- Вторая колонка
-
         div(class="form-elements__blocks-column-2")
-        
-          //- DROPDOWN
-
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
             +customers-dropdown()
 
 
         //- Третья колонка
-
         div(class="form-elements__blocks-column-2")
-
-          //- DROPDOWN
-
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
             +customers-dropdown()
 
 
-      //- Третий ряд
 
+
+
+      //- Третий ряд
       div(class="form-elements__blocks-row-3")
 
-        //- Первая колонка
-
+        //- Первая колонка (EXPANDABLE CHECKBOX LIST)
         div(class="form-elements__blocks-column-1")
-          
-          //- EXPANDABLE CHECKBOX LIST
-
           div(class="form-elements__expandable-checkbox-list-1")
             +expandable-checkbox-list({
               title: "Expandable checkbox list",
@@ -259,9 +242,6 @@ html(lang="ru")
                 { name: "checkbox-5", title: "Шампунь", checked: false }
               ]
             })
-          
-          //- EXPANDABLE CHECKBOX LIST
-
           div(class="form-elements__expandable-checkbox-list-2")
             +expandable-checkbox-list({
               title: "Expandable checkbox list",
@@ -277,15 +257,55 @@ html(lang="ru")
               ]
             })
 
-
-        //- Вторая колонка
-
+        //- Вторая колонка (RICH CHECKBOX BUTTONS)
         div(class="form-elements__blocks-column-2")
-
-          //- RICH CHECKBOX BUTTONS
-
           p(class="form-elements__block-name form-elements__block-name_rich-checkbox-buttons") Rich checkbox buttons
           div(class="form-elements__rich-checkbox-button")
             +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
           div(class="form-elements__rich-checkbox-button")
             +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
+
+        //- Третья колонка (BULLET LIST)
+        div(class="form-elements__blocks-column-2")
+          p(class="form-elements__block-name form-elements__block-name_bullet-list") Bullet list
+          div(class="form-elements__bullet-list")
+            +bullet-list([
+              "Нельзя с питомцами",
+              "Без вечеринок и мероприятий",
+              "Время прибытия — после 13:00, а выезд до 12:00"
+            ])
+
+
+
+
+
+      //- Четвёртый ряд
+      div(class="form-elements__blocks-row-4")
+
+        //- Первая колонка (NOTES)
+        div(class="form-elements__blocks-column-1")
+          div(class="form-elements__notes")
+            +note({
+              title: "Комфорт",
+              description: "Шумопоглощающие стены",
+              icon: "\ue24e"
+            })
+            +note({
+              title: "Удобство",
+              description: "Окно в каждой из спален",
+              icon: "\ue7f1"
+            })
+            //- Пустая запись для разделительной полосы
+            div.note
+
+        //- Вторая колонка (REVIEW)
+        div(class="form-elements__blocks-column-2 form-elements__blocks-column-2_double")
+          div(class="form-elements__review")
+            +review({
+              author: "Мурад Сарафанов",
+              date: "5 дней назад",
+              photo: "87cd4672e40ea433ba05b7215941c678.png",
+              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+            })
+
+

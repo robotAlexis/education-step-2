@@ -20,54 +20,58 @@
 @import "../../blocks/button/button.scss";
 
 @import "../../blocks/pagination/pagination.scss";
+@import "../../blocks/bullet-list/bullet-list.scss";
+
+@import "../../blocks/note/note.scss";
+@import "../../blocks/review/review.scss";
 
 
 // Страница с перечислением блоков
-
 .form-elements {
     background-color: cadetblue;
 }
 
-// Контейнер, содержащий колонки и логотип
-
+// Контейнер, содержащий ряды и логотип
 .form-elements__container {
+    margin-bottom: 10px;
+    padding-left: 140px;
     width: 1440px;
-    //height: 1500px;
+    height: 1853px;
     background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
 }
 
 // Первый ряд
-
 .form-elements__blocks-row-1 {
-    padding: 140px 0 0 140px;
+    padding-top: 140px;
 }
-
 // Второй ряд
-
 .form-elements__blocks-row-2 {
-    padding: 101px 0 0 140px;
+    padding-top: 101px;
 }
-
 // Третий ряд
-
 .form-elements__blocks-row-3 {
-    padding: 168px 0 0 140px;
+    padding-top: 168px;
+}
+// Четвёртый ряд
+.form-elements__blocks-row-4 {
+    padding-top: 40px;
 }
 
 // Первая колонка для группировки блоков
-
 .form-elements__blocks-column-1 {
     display: inline-block;
     width: 447px;
     vertical-align: top;
 }
-
 // Вторая и третья колонки группировки блоков
-
 .form-elements__blocks-column-2 {
     display: inline-block;
     width: 392px;
     vertical-align: top;
+}
+// Сдвоенная вторая колонка
+.form-elements__blocks-column-2_double {
+    width: 784px;
 }
 
 
@@ -341,4 +345,24 @@
     width: 242px;
 }
 
+// BULLET LIST
 
+.form-elements__block-name_bullet-list {
+    padding: 5px 0 12px 0;
+}
+.form-elements__bullet-list {
+    width: 260px;
+}
+
+// Notes
+
+.form-elements__notes {
+    width: 280px;
+}
+
+// Review
+
+.form-elements__review {
+    padding-top: 10px;
+    width: 710px;
+}

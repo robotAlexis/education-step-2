@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
     src: path.join(__dirname, '../src'),
@@ -100,7 +101,14 @@ module.exports = {
             filename: `uikit/${page}.html`,
             chuncks: ["uikit"],
             excludeChunks: ["main"]
-        }))
+        })),
+        new CopyPlugin({
+            patterns: [{
+                  from: `${PATHS.src}/files`,
+                  to: 'files'
+            }],
+          })
+      
 
     ],
 }

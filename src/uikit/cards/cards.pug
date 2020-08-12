@@ -1,0 +1,44 @@
+include ../../blocks/forms/search-form/search-form.pug
+include ../../blocks/forms/registration-form/registration-form.pug
+include ../../blocks/forms/reservation-form/reservation-form.pug
+include ../../blocks/forms/login-form/login-form.pug
+
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Cards
+  body(class="cards")
+    main(class="cards__container")
+
+
+      //- Первая колонка
+      div(class="cards__forms-column-1")
+
+        //- SEARCH FORM
+        div(class="cards__search-form")
+          +search-form({})
+
+        //- REGISTRATION FORM
+        div(class="cards__registration-form")
+          +registration-form({})
+
+
+      //- Вторая колонка
+      div(class="cards__forms-column-2")
+        
+        //- RESERVATION FORM
+        div(class="cards__reservation-form")
+          +reservation-form({})
+
+        //- LOGIN FORM
+        div(class="cards__login-form")
+          +login-form({})
+
+
+
+
+

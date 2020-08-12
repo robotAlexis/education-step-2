@@ -1,0 +1,54 @@
+@import "../../blocks/forms/search-form/search-form.scss";
+@import "../../blocks/forms/registration-form/registration-form.scss";
+@import "../../blocks/forms/reservation-form/reservation-form.scss";
+@import "../../blocks/forms/login-form/login-form.scss";
+
+
+// Страница с перечислением блоков
+.cards {
+    background-color: cadetblue;
+}
+
+// Контейнер, содержащий ряды и логотип
+.cards__container {
+    margin-bottom: 10px;
+    padding: 151px 0 0 141px;
+    width: 1440px;
+    height: 1500px;
+    background: #f4f4f6 url(./uikit-logo.svg) 30px 30px no-repeat;
+}
+
+
+// Первая колонка для группировки форм
+.cards__forms-column-1 {
+    display: inline-block;
+    width: 420px;
+    vertical-align: top;
+}
+// Вторая колонки для группировки форм
+.cards__forms-column-2 {
+    display: inline-block;
+    width: 420px;
+    vertical-align: top;
+}
+
+
+
+// SEARCH FORM
+.cards__search-form {}
+
+
+// REGISTRATION FORM
+.cards__registration-form {
+    padding-top: 42px;
+}
+
+
+// RESERVATION FORM
+.cards__reservation-form {}
+
+
+// LOGIN FORM
+.cards__login-form {
+    padding-top: 42px;
+}

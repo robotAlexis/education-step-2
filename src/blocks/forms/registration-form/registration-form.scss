@@ -6,62 +6,49 @@
 
 .registration-form {
     width: 320px;
-    margin: 0;
-    padding: 17px 30px;
-    padding-bottom: 17px;
-    background: white;
+    padding: 14px 29px;
+    background: $white;
     border-radius: 4px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
-    color: black;
-    line-height: 18px;
+    color: $dark-shade-100;
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: normal;
-    text-align: left;
-    text-transform: none;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .registration-form__form-title {
     margin: 0;
-    padding: 23px 0 15px 0;
+    padding: 25px 0 20px 0;
 
-    line-height: 30px;
     font-family: "Quicksand", sans-serif;
-    font-size: 24px;
-    font-style: normal;
     font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
 }
 
 .registration-form__field-title {
     margin: 0;
-    padding: 15px 0 0 0;
+    padding: 11px 0 5px 0;
 
-    line-height: 15px;
-    font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .registration-form__text-field {
-    margin: 0;
-    padding: 5px 0;
+    padding-bottom: 10px;
 }
 
 .registration-form__radio-button {
     display: inline-block;
-    margin: 0;
-    padding: 5px 20px 10px 0;
+    padding: 0 20px 14px 0;
 }
 
 .registration-form__toggle {
-    margin: 0;
-    padding: 5px 0 9px 0;
+    padding-bottom: 9px;
 }
 
 .registration-form__button {
-    margin: 0;
     padding: 15px 0;
 }
 
@@ -75,10 +62,14 @@
 .registration-form__registration-tip-text {
     display: table-cell;
     vertical-align: middle;
+    margin: 0;
+    padding-bottom: 2px;
+
+    color: $black;
+    font-size: 14px;
+    line-height: 14px;
 }
 
 .registration-form__registration-button {
-    margin: 0;
-    padding: 0;
     float: right;
 }

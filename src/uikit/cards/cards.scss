@@ -3,30 +3,27 @@
 @import "../../blocks/forms/reservation-form/reservation-form.scss";
 @import "../../blocks/forms/login-form/login-form.scss";
 
+@import "../../blocks/calendar/calendar.scss";
+@import "../../blocks/preview/preview.scss";
+
 
 // Страница с перечислением блоков
 .cards {
     background-color: cadetblue;
+    margin: 10px;
 }
 
-// Контейнер, содержащий ряды и логотип
+// Контейнер, колонки с формами и логотип
 .cards__container {
-    margin-bottom: 10px;
-    padding: 151px 0 0 141px;
-    width: 1440px;
-    height: 1500px;
+    padding: 150px 0 0 140px;
+    width: 1300px;
+    height: 1200px;
     background: #f4f4f6 url(./uikit-logo.svg) 30px 30px no-repeat;
 }
 
 
-// Первая колонка для группировки форм
-.cards__forms-column-1 {
-    display: inline-block;
-    width: 420px;
-    vertical-align: top;
-}
-// Вторая колонки для группировки форм
-.cards__forms-column-2 {
+// Колонка для группировки форм
+.cards__forms-column {
     display: inline-block;
     width: 420px;
     vertical-align: top;
@@ -35,20 +32,35 @@
 
 
 // SEARCH FORM
-.cards__search-form {}
+.cards__search-form {
+    padding: 1px 0 0 1px;
+}
 
 
 // REGISTRATION FORM
 .cards__registration-form {
-    padding-top: 42px;
+    padding: 42px 0 0 1px;
 }
 
 
 // RESERVATION FORM
-.cards__reservation-form {}
+.cards__reservation-form {
+    padding: 1px 0 0 1px;
+}
 
 
 // LOGIN FORM
 .cards__login-form {
-    padding-top: 42px;
+    padding: 42px 0 0 1px;
 }
+
+
+// CALENDAR
+.cards__calendar {}
+
+
+// PREVIEW
+.cards__preview {
+    padding-top: 40px;
+}
+

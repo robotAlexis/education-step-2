@@ -1,0 +1,28 @@
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+
+
+// Страница с перечислением блоков
+.headers-and-footers {
+    background-color: cadetblue;
+    margin: 10px;
+}
+
+// Контейнер логотип и всё остальное
+.headers-and-footers__container {
+    padding-top: 100px;
+    width: 1440px;
+    height: 1250px;
+    background: #f4f4f6 url(./uikit-logo.svg) 30px 30px no-repeat;
+}
+
+
+// Header or Footer
+.headers-and-footer__item {
+    padding-top: 40px;
+}
+.headers-and-footer__item_short {
+    width: 768px;
+    margin: 0 auto;
+}

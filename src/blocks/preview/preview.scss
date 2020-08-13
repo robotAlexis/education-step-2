@@ -2,9 +2,7 @@
 
 .preview {
     width: 270px;
-    margin: 0;
-    padding: 0;
-    background: white;
+    background: $white;
     border-radius: 4px;
     box-shadow: 0 10px 20px $dark-shade-5;
 
@@ -12,18 +10,11 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    font-style: normal;
-    font-weight: normal;
-    text-align: left;
-    text-transform: none;
 }
 
 .preview__photo {
     position: relative;
-    display: block;
     height: 151px;
-    padding: 0;
-    margin: 0;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     
@@ -32,12 +23,9 @@
 
 .preview__left-photo-side,
 .preview__right-photo-side {
-    display: block;
     float: left;
     width: 44px;
     height: 151px;
-    padding: 0;
-    margin: 0;
 
     line-height: 151px;
     visibility: hidden;
@@ -56,7 +44,7 @@
     height: 44px;
     vertical-align: middle;
 
-    color: white;
+    color: $white;
     font-family: 'Material Icons';
     font-size: 24px;
     line-height: 44px;
@@ -76,25 +64,23 @@
     width: 5.5px;
     height: 5.5px;
     margin-left: 3.75px;
-    border: 1px solid white;
+    border: 1px solid $white;
     border-radius: 4px;
 }
 
 .preview__round-button_current {
-    background-color: white;
+    background-color: $white;
 }
 
 .preview__room-number {
     display: block;
     height: 44px;
     margin: 10px 20px 0 20px;
-    padding: 0;
     border-bottom: 1px solid $dark-shade-10;
 
     font-family: "Quicksand", sans-serif;
     font-size: 19px;
     line-height: 44px;
-    font-style: normal;
     font-weight: bold;
 }
 .preview__room-number::before {
@@ -105,6 +91,7 @@
 }
 .preview__room-number::after {
     content: "люкс";
+    padding-left: 5px;
 
     color: $purple;
     font-family: "Montserrat", sans-serif;
@@ -114,10 +101,8 @@
 }
 
 .preview__room-price {
-    display: block;
     float: right;
     margin: 24px 17px 0 0;
-    padding: 0;
 
     color: $dark-shade-50;
     font-weight: bold;
@@ -130,16 +115,13 @@
 }
 
 .preview__rate-button {
-    display: block;
     margin: 8px 0 0 20px;
     padding: 0 0 19px 0;
 }
 
 .preview__reviews-numbers {
-    display: block;
     float: right;
     margin: 12px 20px 0 0;
-    padding: 0;
 
     color: $dark-shade-50;
     font-weight: bold;

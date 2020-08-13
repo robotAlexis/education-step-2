@@ -24,7 +24,7 @@ mixin registration-form(values)
             +text-field({name: "last-name", value: "", placeholder: "Фамилия"})
 
         div(class="registration-form__radio-button")
-            +radio-button({name: "gender", value: "male", title: "Мужчина"})
+            +radio-button({name: "gender", value: "male", title: "Мужчина", checked: true})
         div(class="registration-form__radio-button")
             +radio-button({name: "gender", value: "female", title: "Женщина"})
 

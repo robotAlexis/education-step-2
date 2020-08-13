@@ -3,7 +3,7 @@
 
 .header {
     box-shadow: 0 10px 20px $dark-shade-5;
-    background-color: white;
+    background-color: $white;
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -20,11 +20,10 @@
 }
 
 .header__logo {
-    display: block;
     float: left;
     height: 40px;
     width: 106px;
-    background: $logo 0 50% no-repeat;
+    background: url(./logo.svg) 0 50% no-repeat;
 }
 
 .header__buttons {

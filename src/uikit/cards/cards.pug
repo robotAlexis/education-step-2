@@ -3,6 +3,9 @@ include ../../blocks/forms/registration-form/registration-form.pug
 include ../../blocks/forms/reservation-form/reservation-form.pug
 include ../../blocks/forms/login-form/login-form.pug
 
+include ../../blocks/calendar/calendar.pug
+include ../../blocks/preview/preview.pug
+
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -16,7 +19,7 @@ html(lang="ru")
 
 
       //- Первая колонка
-      div(class="cards__forms-column-1")
+      div(class="cards__forms-column")
 
         //- SEARCH FORM
         div(class="cards__search-form")
@@ -28,7 +31,7 @@ html(lang="ru")
 
 
       //- Вторая колонка
-      div(class="cards__forms-column-2")
+      div(class="cards__forms-column")
         
         //- RESERVATION FORM
         div(class="cards__reservation-form")
@@ -39,6 +42,17 @@ html(lang="ru")
           +login-form({})
 
 
+      //- Третья колонка
+      div(class="cards__forms-column")
+
+        //- CALENDAR
+        div(class="cards__calendar")
+          +calendar()
 
 
+        //- PREVIEW
+        div(class="cards__preview")
+          +preview()
+        div(class="cards__preview")
+          +preview()
 

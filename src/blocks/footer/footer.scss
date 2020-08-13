@@ -14,7 +14,7 @@
     padding-top: 100px;
     padding-bottom: 50px;
     box-shadow: 0 1px 0 $dark-shade-10;
-    background-color: white;
+    background-color: $white;
 
 }
 
@@ -41,10 +41,9 @@
 }
 
 .footer__logo {
-    display: block;
     height: 40px;
     width: 106px;
-    background: $logo 0 50% no-repeat;
+    background: url(./logo.svg) 0 50% no-repeat;
 }
 
 .footer__description-text {
@@ -88,7 +87,7 @@
 .footer__second-row {
     margin-top: 1px;
     box-shadow: 0 10px 20px $dark-shade-5;
-    background-color: white;
+    background-color: $white;
 
 }
 
@@ -117,7 +116,7 @@
     margin: 23px 10px;
     width: 24px;
     height: 24px;
-    @include linear-gradient-background($purple, $gradient-end);
+    @include linear-gradient-background($purple, $blue-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: middle;
@@ -131,14 +130,14 @@
     margin-right: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media all and (max-width: 800px) {
     .footer__description-column {width: 100%;}
     .footer__links-column {display: none;}
     .footer__subscription-column {display: none;}
     .footer__copyright-text {display: none;}
 
     .footer {
-        background-color: white;
+        background-color: $white;
         box-shadow: 0 10px 20px $dark-shade-5;
 
     }
@@ -171,3 +170,43 @@
     }
 }
 
+
+
+// Версия для ширины экрана меньше 800px, но показываемая при ширине экрана больше 800px
+.footer_short .footer__description-column {width: 100%;}
+.footer_short .footer__links-column {display: none;}
+.footer_short .footer__subscription-column {display: none;}
+.footer_short .footer__copyright-text {display: none;}
+
+.footer_short {
+    background-color: $white;
+    box-shadow: 0 10px 20px $dark-shade-5;
+
+}
+.footer_short .footer__first-row {
+    min-height: 0;
+    padding-bottom: 4px;
+    box-shadow: none;
+    background: none;
+}
+.footer_short .footer__second-row {
+    padding-bottom: 87px;
+    box-shadow: none;
+    background: none;
+}
+
+.footer_short .footer__logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_short .footer__description-text {text-align: center;}
+
+.footer_short .footer__social-media {
+    float: none;
+
+    text-align: center;
+}
+.footer_short .footer__social-media-button:last-of-type {
+    margin-right: 10px;
+}

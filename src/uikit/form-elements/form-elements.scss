@@ -29,58 +29,56 @@
 // Страница с перечислением блоков
 .form-elements {
     background-color: cadetblue;
+    margin: 10px;
 }
 
 // Контейнер, содержащий ряды и логотип
 .form-elements__container {
-    margin-bottom: 10px;
     padding-left: 140px;
-    width: 1440px;
+    width: 1300px;
     height: 1853px;
     background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
 }
 
 // Первый ряд
-.form-elements__blocks-row-1 {
+.form-elements__1st-row {
     padding-top: 140px;
 }
 // Второй ряд
-.form-elements__blocks-row-2 {
+.form-elements__2nd-row {
     padding-top: 101px;
 }
 // Третий ряд
-.form-elements__blocks-row-3 {
+.form-elements__3rd-row {
     padding-top: 168px;
 }
 // Четвёртый ряд
-.form-elements__blocks-row-4 {
+.form-elements__4th-row {
     padding-top: 40px;
 }
 
 // Первая колонка для группировки блоков
-.form-elements__blocks-column-1 {
+.form-elements__first-column {
     display: inline-block;
     width: 447px;
     vertical-align: top;
 }
 // Вторая и третья колонки группировки блоков
-.form-elements__blocks-column-2 {
+.form-elements__second-column {
     display: inline-block;
     width: 392px;
     vertical-align: top;
 }
 // Сдвоенная вторая колонка
-.form-elements__blocks-column-2_double {
+.form-elements__double-column {
+    display: inline-block;
     width: 784px;
+    vertical-align: top;
 }
 
 
-
-
 // Заголовок для блока (группы блоков)
-
 .form-elements__block-name {
-    padding: 0;
     margin: 0;
 
     color: $dark-shade-100;
@@ -325,23 +323,33 @@
     padding: 40px 0 0 0;
 }
 .form-elements__buttons {
-    padding: 15px 0;
-
     line-height: 12px;
 }
 .form-elements__button {
     display: inline-block;
-    padding: 0 20px 0 0;
+    padding: 15px 20px 15px 0;
+}
+.form-elements__button_default {
+    padding: 15px 19px 15px 1px;
+}
+.form-elements__button_hover-default {}
+.form-elements__button_bordered {}
+.form-elements__button_hover-bordered {}
+.form-elements__button_backgroundless {
+    padding: 16px 19px 14px 1px;
+}
+.form-elements__button_hover-backgroundless {
+    padding: 16px 19px 14px 1px;
 }
 
 
 // PAGINATION
 
 .form-elements__block-name_pagination {
-    padding: 25px 0 0 0;
+    padding: 26px 0 0 1px;
 }
 .form-elements__pagination {
-    padding: 16px 0 0 0;
+    padding: 15px 0 0 0;
     width: 242px;
 }
 

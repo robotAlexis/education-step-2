@@ -1,4 +1,13 @@
 import "../../blocks/masked-text-field/masked-text-field.js"
+import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js"
+
+// Кнопки
+document.querySelector(".form-elements__button_hover-default>.button").classList.add("button_hover");
+document.querySelector(".form-elements__button_hover-bordered>.button").classList.add("button_hover");
+document.querySelector(".form-elements__button_hover-backgroundless>.button").classList.add("button_hover");
+
+
+/*
 
 let formElements = document.querySelector(".form-elements");
 if(formElements) {
@@ -43,4 +52,4 @@ if(formElements) {
     customersDropdown.lastElementChild.classList.add("customers-dropdown__item-list_opened");
 
 
-}
+}*/

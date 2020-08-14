@@ -38,10 +38,10 @@ html(lang="ru")
 
 
       //- Первый ряд
-      div(class="form-elements__blocks-row-1")
+      div(class="form-elements__1st-row")
 
         //- Первая колонка
-        div(class="form-elements__blocks-column-1")
+        div(class="form-elements__first-column")
 
           //- TEXT FIELD (DEFAULT)
 
@@ -104,7 +104,7 @@ html(lang="ru")
 
 
         //- Вторая колонка
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
 
           //- CHECKBOX BUTTONS
 
@@ -150,7 +150,7 @@ html(lang="ru")
 
 
         //- Третья колонка
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
 
           //- RANGE SLIDER
 
@@ -161,26 +161,26 @@ html(lang="ru")
 
           p(class="form-elements__block-name form-elements__block-name_buttons") Buttons
           div(class="form-elements__buttons")
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_default")
               +button({text: "Click me"})
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_hover-default")
               +button({text: "Click me"})
 
           div(class="form-elements__buttons")
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_bordered")
               +button({text: "Click me", theme: "bordered"})
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_hover-bordered")
               +button({text: "Click me", theme: "bordered"})
 
           div(class="form-elements__buttons")
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_backgroundless")
               +button({text: "Click me", theme: "backgroundless"})
-            div(class="form-elements__button")
+            div(class="form-elements__button form-elements__button_hover-backgroundless")
               +button({text: "Click me", theme: "backgroundless"})
 
           div(class="form-elements__buttons")
             div(class="form-elements__button")
-              +button({text: "Перйти к оплате", theme: "with-arrow"})
+              +button({text: "Перейти к оплате", theme: "with-arrow"})
 
           //- PAGINATION
 
@@ -193,28 +193,32 @@ html(lang="ru")
 
 
       //- Второй ряд (DROPDOWN)
-      div(class="form-elements__blocks-row-2")
+      div(class="form-elements__2nd-row")
 
         //- Первая колонка
-        div(class="form-elements__blocks-column-1")
+        div(class="form-elements__first-column")
           p(class="form-elements__block-name form-elements__block-name_default-rooms-dropdown") Dropdown
           div(class="form-elements__default-rooms-dropdown")
             p(class="form-elements__block-state form-elements__block-state_default-rooms-dropdown") Default
-            +rooms-dropdown()
+            +rooms-dropdown({
+              "bedrooms input name": "dropdown-1-bedrooms",
+              "beds input name": "dropdown-1-beds",
+              "bathrooms input name": "dropdown-1-bathrooms"
+            })
           p(class="form-elements__block-name form-elements__block-name_expanded-rooms-dropdown") Dropdown
           div(class="form-elements__expanded-rooms-dropdown")
             p(class="form-elements__block-state form-elements__block-state_expanded-rooms-dropdown") Expanded
-            +rooms-dropdown()
+            +rooms-dropdown({})
 
         //- Вторая колонка
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
             +customers-dropdown()
 
 
         //- Третья колонка
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
             +customers-dropdown()
@@ -224,10 +228,10 @@ html(lang="ru")
 
 
       //- Третий ряд
-      div(class="form-elements__blocks-row-3")
+      div(class="form-elements__3rd-row")
 
         //- Первая колонка (EXPANDABLE CHECKBOX LIST)
-        div(class="form-elements__blocks-column-1")
+        div(class="form-elements__first-column")
           div(class="form-elements__expandable-checkbox-list-1")
             +expandable-checkbox-list({
               title: "Expandable checkbox list",
@@ -258,7 +262,7 @@ html(lang="ru")
             })
 
         //- Вторая колонка (RICH CHECKBOX BUTTONS)
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_rich-checkbox-buttons") Rich checkbox buttons
           div(class="form-elements__rich-checkbox-button")
             +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
@@ -266,7 +270,7 @@ html(lang="ru")
             +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
         //- Третья колонка (BULLET LIST)
-        div(class="form-elements__blocks-column-2")
+        div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_bullet-list") Bullet list
           div(class="form-elements__bullet-list")
             +bullet-list([
@@ -280,10 +284,10 @@ html(lang="ru")
 
 
       //- Четвёртый ряд
-      div(class="form-elements__blocks-row-4")
+      div(class="form-elements__4th-row")
 
         //- Первая колонка (NOTES)
-        div(class="form-elements__blocks-column-1")
+        div(class="form-elements__first-column")
           div(class="form-elements__notes")
             +note({
               title: "Комфорт",
@@ -299,7 +303,7 @@ html(lang="ru")
             div.note
 
         //- Вторая колонка (REVIEW)
-        div(class="form-elements__blocks-column-2 form-elements__blocks-column-2_double")
+        div(class="form-elements__double-column")
           div(class="form-elements__review")
             +review({
               author: "Мурад Сарафанов",

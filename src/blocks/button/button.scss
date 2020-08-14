@@ -12,24 +12,24 @@
     outline: none;
     @include linear-gradient-background($purple, $blue-purple);
 
-    color: white;
-    line-height: 44px;
+    color: $white;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
-    font-style: normal;
+    line-height: 44px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
 }
-.button:active {
+.button_hover,
+.button:hover {
     @include linear-gradient-background(rgba($purple, 0.5), rgba($blue-purple, 0.5));
+    //opacity: .5;
 }
 
 .button__text {
     display: block;
     margin: 0;
-    padding: 0;
     background: none;
     height: 44px;
 }
@@ -46,7 +46,7 @@
 .button__text_bordered {
     height: 40px;
     border-radius: 20px;
-    background-color: white;
+    background-color: $white;
 
     line-height: 40px;
 }
@@ -63,7 +63,8 @@
     color: $purple;
     line-height: 16px;
 }
-.button_backgroundless:active {
+.button_hover.button_backgroundless,
+.button_backgroundless:hover {
     background: none;
     color: $dark-shade-50;
 }

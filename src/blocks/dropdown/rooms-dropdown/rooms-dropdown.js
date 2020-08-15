@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(event){
                 updateText();
             }
 
-            // Изменение количества ванные комнаты
+            // Изменение количества ванных комнат
             bathroomsIncreaseButton.onclick = function(){
                 bathroomsCountText.value++;
                 bathroomsDecreaseButton.classList.remove('rooms-dropdown__count-button_inactive');

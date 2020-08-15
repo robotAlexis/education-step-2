@@ -69,7 +69,7 @@ html(lang="ru")
           p(class="form-elements__block-name form-elements__block-name_default-customers-dropdown") Dropdown
           div(class="form-elements__default-customers-dropdown")
             p(class="form-elements__block-state form-elements__block-state_default-customers-dropdown") Default
-            +customers-dropdown()
+            +customers-dropdown({})
 
           //- MASKED TEXT FIELD (DEFAULT)
 
@@ -214,14 +214,22 @@ html(lang="ru")
         div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
-            +customers-dropdown()
+            +customers-dropdown({
+              "adults input name": "dropdown-1-adults",
+              "children input name": "dropdown-1-children",
+              "babies input name": "dropdown-1-babies"
+            })
 
 
         //- Третья колонка
         div(class="form-elements__second-column")
           p(class="form-elements__block-name form-elements__block-name_customers-dropdown") Dropdown
           div(class="form-elements__customers-dropdown")
-            +customers-dropdown()
+            +customers-dropdown({
+              "adults input name": "dropdown-2-adults",
+              "children input name": "dropdown-2-children",
+              "babies input name": "dropdown-2-babies"
+            })
 
 
 

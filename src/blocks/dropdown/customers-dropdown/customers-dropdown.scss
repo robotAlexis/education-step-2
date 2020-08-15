@@ -53,7 +53,7 @@
     width: 100%;
     top: 44px;
     left: 0;
-    padding: 6px 6px 0 13px;
+    padding: 5px 6px 4px 13px;
     background-color: $white;
     border: 1px solid $dark-shade-50;
     border-top-width: 0;
@@ -124,7 +124,10 @@
     height: 28px;
     padding: 0;
     margin: 0;
+    border: none;
+    background: none;
 
+    font-family: "Montserrat", sans-serif;
     color: $dark-shade-100;
     font-size: 12px;
     line-height: 28px;
@@ -135,11 +138,11 @@
 
 .customers-dropdown__ok-button {
     float: right;
-    padding-top: 15px;
+    padding-top: 14px;
 }
 
 .customers-dropdown__clear-button {
-    padding-top: 15px;
+    padding-top: 14px;
 }
 
 .customers-dropdown__clear-button_inactive {

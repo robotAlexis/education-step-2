@@ -1,33 +1,59 @@
 include ../../button/button.pug
 -
     /*
-        customers-dropdown ()
+        customers-dropdown ({
+            "adults input name": string,
+            "children input name": string,
+            "babies input name": string
+        })
     */
-mixin customers-dropdown()
+mixin customers-dropdown(values)
+    -
+        if(!("adults input name" in values)) values["adults input name"] = "adults-count";
+        if(!("children input name" in values)) values["children input name"] = "children-count";
+        if(!("babies input name" in values)) values["babies input name"] = "babies-count";
     div(class="customers-dropdown")
         p(class="customers-dropdown__text") Сколько гостей
         div(class="customers-dropdown__item-list")
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
-                p(class="customers-dropdown__count-text") 2
-                div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease")
+                input(
+                    type="text"
+                    name=values["adults input name"]
+                    class="customers-dropdown__count-text"
+                    value="0"
+                    disabled="disabled"
+                )
+                div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Взрослые
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
-                p(class="customers-dropdown__count-text") 1
-                div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease")
+                input(
+                    type="text"
+                    name=values["children input name"]
+                    class="customers-dropdown__count-text"
+                    value="0"
+                    disabled="disabled"
+                )
+                div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Дети
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
-                p(class="customers-dropdown__count-text") 0
+                input(
+                    type="text"
+                    name=values["babies input name"]
+                    class="customers-dropdown__count-text"
+                    value="0"
+                    disabled="disabled"
+                )
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Младенцы
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__ok-button")
                     +button({text: "Применить", type: "button", theme: "backgroundless"})
-                div(class="customers-dropdown__clear-button")
+                div(class="customers-dropdown__clear-button customers-dropdown__clear-button_inactive")
                     +button({text: "Очистить", type: "reset", theme: "backgroundless"})

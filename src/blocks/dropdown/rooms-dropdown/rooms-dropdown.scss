@@ -10,11 +10,16 @@
 
 .rooms-dropdown__text {
     height: 42px;
-    padding: 0 45px 0 14px;
+    //padding: 0 45px 0 14px;
+    padding: 0 90px 0 14px;
     margin: 0;
     background-color: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
 }
 
 .rooms-dropdown__text_opened {
@@ -123,6 +128,7 @@
     border: none;
     background: none;
 
+    font-family: "Montserrat", sans-serif;
     color: $dark-shade-100;
     font-size: 12px;
     line-height: 28px;

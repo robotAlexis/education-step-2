@@ -1,10 +1,33 @@
 import "../../blocks/masked-text-field/masked-text-field.js"
 import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js"
 
-// Кнопки
+// Buttons
+
 document.querySelector(".form-elements__button_hover-default>.button").classList.add("button_hover");
 document.querySelector(".form-elements__button_hover-bordered>.button").classList.add("button_hover");
 document.querySelector(".form-elements__button_hover-backgroundless>.button").classList.add("button_hover");
+
+
+
+// Rooms dropdown
+
+let roomsDropdowns = document.querySelectorAll('.rooms-dropdown');
+roomsDropdowns.forEach(dropdown => {
+    dropdown.querySelector('.rooms-dropdown__text').innerHTML = '2 спальни, 2 кровати, 0 ванные комнаты';
+    let dropdownItems = dropdown.querySelectorAll('.rooms-dropdown__item');
+    dropdownItems[0].querySelector('.rooms-dropdown__count-text').value = 2;
+    dropdownItems[0].querySelector('.rooms-dropdown__count-button_decrease').classList.remove('rooms-dropdown__count-button_inactive');
+    dropdownItems[1].querySelector('.rooms-dropdown__count-text').value = 2;
+    dropdownItems[1].querySelector('.rooms-dropdown__count-button_decrease').classList.remove('rooms-dropdown__count-button_inactive');
+});
+// Отключение разворачивания верхнего дропдауна
+roomsDropdowns[0].querySelector('.rooms-dropdown__text').style['pointer-events'] = 'none';
+// Разворачивание нижнего дропдауна
+roomsDropdowns[1].querySelector('.rooms-dropdown__text').classList.add('rooms-dropdown__text_opened');
+roomsDropdowns[1].querySelector('.rooms-dropdown__item-list').classList.add('rooms-dropdown__item-list_opened');
+
+
+
 
 
 /*

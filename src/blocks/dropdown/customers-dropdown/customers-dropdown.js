@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function(event){
                 dropdown.querySelector('.customers-dropdown__item-list').classList.remove('customers-dropdown__item-list_opened');
             }
 
-        })
+        });
 });

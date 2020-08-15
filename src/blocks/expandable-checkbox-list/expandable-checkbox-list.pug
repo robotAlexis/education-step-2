@@ -4,6 +4,7 @@ include ../checkbox/checkbox-button/checkbox-button.pug
     /*
         expandable-checkbox-list ({
             title: string,
+            expanded: bool,
             items: array of {
                             name: string,
                             checked: bool,
@@ -13,8 +14,8 @@ include ../checkbox/checkbox-button/checkbox-button.pug
     */
 mixin expandable-checkbox-list(values)
     div(class="expandable-checkbox-list")
-        p(class="expandable-checkbox-list__title")= values.title
-        div(class="expandable-checkbox-list__body")
+        p(class="expandable-checkbox-list__title" + (values.expanded == true ? " expandable-checkbox-list__title_expanded" : ""))= values.title
+        div(class="expandable-checkbox-list__body" + (values.expanded == true ? " expandable-checkbox-list__body_expanded" : ""))
             each item in values.items
                 div(class="expandable-checkbox-list__checkbox-button")
                     +checkbox-button(item)

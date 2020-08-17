@@ -155,7 +155,11 @@ html(lang="ru")
           //- RANGE SLIDER
 
           div(class="form-elements__range-slider")
-            +range-slider({title: "Range slider"})
+            +range-slider({
+              title: "Range slider",
+              names: ["range-slider-0", "range-slider-1"],
+              limits: [176, 15706]
+            })
 
           //- BUTTONS
 

@@ -1,12 +1,28 @@
 -
     /*
         range-slider ({
-            title: string
+            title: string,
+            names: [first value name strin, second value name string],
+            limits: [min number, max number]
         })
     */
 mixin range-slider(values)
+    -
+        if(!('names' in values)) values.names = ['range-slider-first-value', 'range-slider-second-value'];
+        if(!('limits' in values)) values.limits = [1000, 10000];
     div(class="range-slider")
+        input(
+            class='range-slider__input'
+            type='hidden'
+            name=values.names[0]
+            value=values.limits[0]
+        )
+        input(
+            class='range-slider__input'
+            type='hidden'
+            name=values.names[1]
+            value=values.limits[1]
+        )
         p(class="range-slider__title")= values.title
-        p(class="range-slider__price-text") 5 000 &#8381; - 10 000 &#8381;
-        div(class="range-slider__background")
-            div(class="range-slider__foreground")
+        p(class="range-slider__price-text") 0&#8381; - 0&#8381;
+        div(class="range-slider__target")

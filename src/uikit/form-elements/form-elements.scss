@@ -36,7 +36,7 @@
 .form-elements__container {
     padding-left: 140px;
     width: 1300px;
-    height: 1853px;
+    min-height: 1853px;
     background: $white url(./uikit-logo.svg) 30px 30px no-repeat;
 }
 
@@ -54,7 +54,7 @@
 }
 // Четвёртый ряд
 .form-elements__4th-row {
-    padding-top: 40px;
+    padding-top: 101px;
 }
 
 // Первая колонка для группировки блоков

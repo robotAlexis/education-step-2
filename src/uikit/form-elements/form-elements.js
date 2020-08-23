@@ -7,7 +7,7 @@ import "../../blocks/range-slider/range-slider.js"
 
 document.addEventListener('DOMContentLoaded', function(event){
 
-
+    if(document.querySelector('.form-elements') == null) return;
 
     // Текстовое поле со стилем как при фокусе
     

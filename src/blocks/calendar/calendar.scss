@@ -2,15 +2,22 @@
 
 .calendar {
     position: relative;
+    display: none;
     width: 280px;
-    height: 348px;
-    padding: 19px 19px 0 19px;
+    padding: 19px 19px 18px 19px;
     background-color: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     box-shadow: 0 10px 20px $dark-shade-5;
 
 }
+
+.calendar_uikit,
+.calendar_active {
+    display: block;
+    
+}
+
 
 .calendar__left-arrow {
     float: left;
@@ -19,6 +26,7 @@
     font-family: 'Material Icons';
     font-size: 24px;
     line-height: 24px;
+    cursor: pointer;
 }
 .calendar__right-arrow {
     float: right;
@@ -27,6 +35,7 @@
     font-family: 'Material Icons';
     font-size: 24px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .calendar__title {
@@ -58,15 +67,12 @@
     height: 40px;
     background: none;
 
+    cursor: pointer;
 }
 
 .calendar__day-cell_selected,
 .calendar__day-cell_first-selected,
-.calendar__day-cell_last-selected,
-.calendar__day-cell_top-left-selected,
-.calendar__day-cell_top-right-selected,
-.calendar__day-cell_bottom-left-selected,
-.calendar__day-cell_bottom-right-selected {
+.calendar__day-cell_last-selected {
     @include linear-gradient-background(rgba($purple, .25), rgba($blue-purple, .25));
 
 }
@@ -78,18 +84,7 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.calendar__day-cell_top-left-selected {
-    border-top-left-radius: 20px;
-}
-.calendar__day-cell_top-right-selected {
-    border-top-right-radius: 20px;
-}
-.calendar__day-cell_bottom-left-selected {
-    border-bottom-left-radius: 20px;
-}
-.calendar__day-cell_bottom-right-selected {
-    border-bottom-right-radius: 20px;
-}
+
 
 .calendar__day-text {
     width: 40px;
@@ -113,7 +108,7 @@
 
     color: $dark-shade-25;
 }
-.calendar__day-text_theme_holiday {
+.calendar__day-text_theme_today {
     @include linear-gradient-background($green, $blue-green);
     border-radius: 20px;
 

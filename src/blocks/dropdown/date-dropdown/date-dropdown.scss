@@ -1,30 +1,15 @@
 .date-dropdown {
     position: relative;
-    height: 42px;
-    padding: 0 45px 0 14px;
-    background-color: $white;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
 
-    color: $dark-shade-75;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    line-height: 39px;
 }
-
-.date-dropdown__text {
-    padding: 0;
-    margin: 0;
-}
-
-.date-dropdown__text::after {
+.date-dropdown::after {
     content: "\e5cf";
     position: absolute;
     display: block;
     width: 42px;
     height: 44px;
-    top: 0;
-    right: 0;
+    top: 1px;
+    right: 1px;
 
     color: $dark-shade-50;
     font-family: 'Material Icons';
@@ -34,16 +19,32 @@
     text-align: center;
 }
 
-.date-dropdown__calendar {
-    position: absolute;
-    width: 320px;
-    height: 100px;
-    top: 44px;
-    left: 0;
 
-    visibility: hidden;
+.date-dropdown__input {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 0 0 1px 14px;
+    margin: 0;
+    background-color: $white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    outline: none;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 41px;
+}
+.date-dropdown__input:hover,
+.date-dropdown__input:focus {
+    color: $dark-shade-75;
 }
 
-.date-dropdown__calendar_opened {
-    visibility: visible;
+.date-dropdown__input {
+    @include placeholder {
+        color: $dark-shade-75;
+    }
 }

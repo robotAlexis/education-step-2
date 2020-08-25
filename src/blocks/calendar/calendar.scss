@@ -11,6 +11,11 @@
     box-shadow: 0 10px 20px $dark-shade-5;
 
 }
+.calendar::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .calendar_uikit,
 .calendar_active {
@@ -131,6 +136,7 @@
 }
 
 .calendar__clear-button {
+    float: left;
     padding-top: 20px;
 }
 

@@ -1,4 +1,5 @@
 @import "../../dropdown/date-dropdown/date-dropdown.scss";
+@import "../../calendar/calendar.scss";
 @import "../../dropdown/customers-dropdown/customers-dropdown.scss";
 @import "../../button/button.scss";
 
@@ -33,12 +34,23 @@
     text-transform: uppercase;
 }
 
+.search-form__date {
+    position: relative;
+}
+
 .search-form__date-field {
     display: inline-block;
     width: 150px;
 }
 .search-form__date-field:first-of-type {
     margin-right: 20px;
+}
+
+.search-form__calendar {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 70px;
 }
 
 .search-form__customers-field {

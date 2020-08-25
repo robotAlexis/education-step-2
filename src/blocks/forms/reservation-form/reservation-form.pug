@@ -19,10 +19,10 @@ mixin reservation-form(values)
 
         div(class="reservation-form__date-field")
             p(class="reservation-form__field-title") Прибытие
-            +date-dropdown()
+            +date-dropdown({name: "first-reservation-date"})
         div(class="reservation-form__date-field")
             p(class="reservation-form__field-title") Выезд
-            +date-dropdown()
+            +date-dropdown({name: "second-reservation-date"})
 
         div(class="reservation-form__customers-field")
             p(class="reservation-form__field-title") Гости

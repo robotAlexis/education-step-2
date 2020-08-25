@@ -1,4 +1,5 @@
 include ../../dropdown/date-dropdown/date-dropdown.pug
+include ../../calendar/calendar.pug
 include ../../dropdown/customers-dropdown/customers-dropdown.pug
 include ../../button/button.pug
 -
@@ -16,12 +17,15 @@ mixin search-form(values)
 
         p(class="search-form__title") Найдём номера под ваши пожелания
 
-        div(class="search-form__date-field")
-            p(class="search-form__field-title") Прибытие
-            +date-dropdown()
-        div(class="search-form__date-field")
-            p(class="search-form__field-title") Выезд
-            +date-dropdown()
+        div(class="search-form__date")
+            div(class="search-form__date-field")
+                p(class="search-form__field-title") Прибытие
+                +date-dropdown({name: "first-search-date"})
+            div(class="search-form__date-field")
+                p(class="search-form__field-title") Выезд
+                +date-dropdown({name: "second-search-date"})
+            div(class="search-form__calendar")
+                +calendar()
 
         div(class="search-form__customers-field")
             p(class="search-form__field-title") Гости

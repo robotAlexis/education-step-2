@@ -19,8 +19,11 @@ document.addEventListener('DOMContentLoaded', function(event){
         let daysFieldElement = calendarElement.querySelector('.calendar__days-field');
         daysFieldElement.onmouseout = onFieldMouseOut;
 
-        // Ссылка на функцию, вызываемую по нажатию кнопки ok
+        // Ссылка на функцию, вызываемую по нажатию кнопки "Применить"
         let onOk = function(startDate, endDate) {}
+
+        // Сллылки на формы, связанные с календарём
+        let inputElements = [];
 
         // Текущая дата
         let todayDate = new Date();
@@ -42,20 +45,27 @@ document.addEventListener('DOMContentLoaded', function(event){
 
 
         // Открытие календаря
-        calendarElement.openCalendar = function(input/* callback, start, end, today = (new Date())*/){
+        calendarElement.openCalendar = function(input){
             /*{
                 callback,
+                inputElements,
                 startDate,
                 endDate,
                 todayDate
             }*/
-            if(!input.todayDate) input.todayDate = new Date();
+            if(calendarElement.classList.contains('calendar_active')) return;
 
-            onOk = input.callback;
+            // Функция, вызываемая при нажатии "Применить"
+            if(input.callback) onOk = input.callback;
+
+            // Сллылки на формы, связанные с календарём
+            if(input.inputElements) inputElements = input.inputElements;
+
 
             // Установка и проверка значений
 
             // Сегодняшняя дата
+            if(!input.todayDate) input.todayDate = new Date();
             todayDate = new Date(input.todayDate.getFullYear(), input.todayDate.getMonth(), input.todayDate.getDate());
             // Проверка введёных выбранных дат
             startDate = input.startDate ? (new Date(input.startDate.getFullYear(), input.startDate.getMonth(), input.startDate.getDate())) : null;
@@ -74,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             else {
                 startDate = endDate = null;
             }
+
 
             // Выбор месяца и года
             let calendarDate = startDate ? startDate : todayDate;
@@ -158,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function(event){
                             dayCellElement.onmouseover = function() { onDayMouseOver(dayNumber); }
                             dayCellElement.onclick = function() { onDayClick(dayNumber); }
                         }
-
                     }
                 }
             }
@@ -295,6 +305,24 @@ document.addEventListener('DOMContentLoaded', function(event){
                 calendarElement.classList.remove('calendar_active');
             }
         }
+
+        
+
+        // Обработка нажатия или фокуса вне календаря и полей ввода
+        function checkClickOrFocus(event) {
+            if(!calendarElement.classList.contains('calendar_active')) return;
+
+            let isOk = event.target == calendarElement || calendarElement.contains(event.target);
+            inputElements.forEach(inputElement => {
+                isOk = isOk || event.target == inputElement || inputElement.contains(event.target);
+            });
+            if(!isOk) {
+                calendarElement.classList.remove('calendar_active');
+            }
+        }
+        window.addEventListener('click', checkClickOrFocus);
+        window.addEventListener('focusin', checkClickOrFocus);
+
 
     });
 

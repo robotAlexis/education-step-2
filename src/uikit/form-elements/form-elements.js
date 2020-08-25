@@ -1,4 +1,5 @@
 import "../../blocks/masked-text-field/masked-text-field.js"
+import "../../blocks/dropdown/date-dropdown/date-dropdown.js"
 import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js"
 import "../../blocks/dropdown/customers-dropdown/customers-dropdown.js"
 import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.js"
@@ -12,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function(event){
     // Текстовое поле со стилем как при фокусе
     
     document.querySelector('.form-elements__focus-text-field').querySelector('.text-field').classList.add('text-field_hover');
+
+
+    // Заполнени поля с датой
+    document.querySelectorAll('.form-elements__date-dropdown input').forEach(dateDropdownInput => {
+        if(dateDropdownInput.getAttribute('name') == 'date-dropdown-2'){
+            dateDropdownInput.value = '19082019';
+        }
+    });
 
 
     // Слайдер

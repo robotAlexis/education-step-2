@@ -1,10 +1,10 @@
-import "../../blocks/forms/search-form/search-form.js"
-import "../../blocks/forms/registration-form/registration-form.js"
-import "../../blocks/forms/reservation-form/reservation-form.js"
-import "../../blocks/forms/login-form/login-form.js"
+import "../../blocks/forms/search-form/search-form.js";
+import "../../blocks/forms/registration-form/registration-form.js";
+import "../../blocks/forms/reservation-form/reservation-form.js";
+import "../../blocks/forms/login-form/login-form.js";
 
-import "../../blocks/calendar/calendar.js"
-import "../../blocks/preview/preview.js"
+import "../../blocks/calendar/calendar.js";
+import "../../blocks/preview/preview.js";
 
 document.addEventListener('DOMContentLoaded', function(event){
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
     // Календарь
 
-    document.querySelector('.calendar').openCalendar({
+    document.querySelector('.cards__calendar').firstElementChild.openCalendar({
         todayDate: new Date(2019, 7, 8),
         startDate: new Date(2019, 7, 19),
         endDate: new Date(2019, 7, 23),
@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function(event){
             alert(start.toLocaleDateString() + ' - ' + end.toLocaleDateString());
         }
     });
-    document.querySelector('.calendar').classList.add('calendar_uikit');
+    document.querySelector('.cards__calendar').firstElementChild.classList.add('calendar_uikit');
+
+    
 
 });

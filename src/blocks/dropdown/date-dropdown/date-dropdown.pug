@@ -1,9 +1,16 @@
 -
     /*
-        date-dropdown ()
+        date-dropdown ({
+            name: string,
+            value: string
+        })
     */
-mixin date-dropdown()
+mixin date-dropdown(values)
     div(class="date-dropdown")
-        p(class="date-dropdown__text") ДД.ММ.ГГГГ
-        div(class="date-dropdown__calendar")
-
+        input(
+            class="date-dropdown__input"
+            type="text"
+            name=values.name
+            value=values.value
+            placeholder="ДД.ММ.ГГГГ"
+        )

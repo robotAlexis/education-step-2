@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function(event){
         .forEach(dropdown => {
 
             let dropdownText = dropdown.querySelector('.customers-dropdown__text');
-            let dropdownItems = dropdown.querySelectorAll('.customers-dropdown__item');
+            let dropdownItemList = dropdown.querySelector('.customers-dropdown__item-list');
+            let dropdownItems = dropdownItemList.querySelectorAll('.customers-dropdown__item');
 
             // Взрослые
             let adultsCountText = dropdownItems[0].querySelector('.customers-dropdown__count-text');
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             // Переключатель для разворота и скрытия
             dropdownText.onclick = function(){
                 dropdownText.classList.toggle('customers-dropdown__text_opened');
-                dropdown.querySelector('.customers-dropdown__item-list').classList.toggle('customers-dropdown__item-list_opened');
+                dropdownItemList.classList.toggle('customers-dropdown__item-list_opened');
             }
 
             // Кнопка очистки
@@ -88,6 +89,20 @@ document.addEventListener('DOMContentLoaded', function(event){
                 dropdownText.classList.remove('customers-dropdown__text_opened');
                 dropdown.querySelector('.customers-dropdown__item-list').classList.remove('customers-dropdown__item-list_opened');
             }
+
+
+            // Скрытие списка по нажатию где-нибудь в другом месте
+            window.addEventListener('click', (event) => {
+                if(!dropdownItemList.classList.contains('customers-dropdown__item-list_opened')) return;
+
+                let isOk = event.target == dropdown || dropdown.contains(event.target);
+
+                if(!isOk) {
+                    dropdownText.classList.remove('customers-dropdown__text_opened');
+                    dropdownItemList.classList.remove('customers-dropdown__item-list_opened');
+                }
+            });
+
 
         });
 });

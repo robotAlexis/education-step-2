@@ -19,6 +19,7 @@
     border-radius: 4px;
 }
 
+.customers-dropdown__text_uikit,
 .customers-dropdown__text_opened {
     border-color: $dark-shade-50;
     border-radius: 4px 4px 0 0;
@@ -41,6 +42,7 @@
     text-align: center;
 }
 
+.customers-dropdown__text_uikit::after,
 .customers-dropdown__text_opened::after {
     color: $dark-shade-75;
 }
@@ -58,10 +60,12 @@
     border: 1px solid $dark-shade-50;
     border-top-width: 0;
     border-radius: 0 0 4px 4px;
+    z-index: 1;
 
     visibility: hidden;
 }
 
+.customers-dropdown__item-list_uikit,
 .customers-dropdown__item-list_opened {
     visibility: visible;
 }
@@ -142,6 +146,7 @@
 }
 
 .customers-dropdown__clear-button {
+    float: left;
     padding-top: 14px;
 }
 

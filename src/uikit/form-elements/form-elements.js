@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function(event){
     // Отключение разворачивания верхнего дропдауна
     roomsDropdowns[0].querySelector('.rooms-dropdown__text').style['pointer-events'] = 'none';
     // Разворачивание нижнего дропдауна
-    roomsDropdowns[1].querySelector('.rooms-dropdown__text').classList.add('rooms-dropdown__text_opened');
-    roomsDropdowns[1].querySelector('.rooms-dropdown__item-list').classList.add('rooms-dropdown__item-list_opened');
+    roomsDropdowns[1].querySelector('.rooms-dropdown__text').classList.add('rooms-dropdown__text_uikit');
+    roomsDropdowns[1].querySelector('.rooms-dropdown__item-list').classList.add('rooms-dropdown__item-list_uikit');
 
 
 
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function(event){
     let customersDropdowns = document.querySelectorAll('.customers-dropdown');
     // Разворачивание
     [1, 2].forEach(i => {
-        customersDropdowns[i].querySelector('.customers-dropdown__text').classList.add('customers-dropdown__text_opened');
-        customersDropdowns[i].querySelector('.customers-dropdown__item-list').classList.add('customers-dropdown__item-list_opened');    
+        customersDropdowns[i].querySelector('.customers-dropdown__text').classList.add('customers-dropdown__text_uikit');
+        customersDropdowns[i].querySelector('.customers-dropdown__item-list').classList.add('customers-dropdown__item-list_uikit');    
     })
     // Расстановка значений
     customersDropdowns[2].querySelector('.customers-dropdown__text').innerHTML = '3 гостя';

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         .forEach(dropdown => {
 
             let dropdownText = dropdown.querySelector('.rooms-dropdown__text');
+            let dropdownItemList = dropdown.querySelector('.rooms-dropdown__item-list');
             let dropdownItems = dropdown.querySelectorAll('.rooms-dropdown__item');
 
             // Спальни
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             // Переключатель для разворота и скрытия
             dropdownText.onclick = function(){
                 dropdownText.classList.toggle('rooms-dropdown__text_opened');
-                dropdown.querySelector('.rooms-dropdown__item-list').classList.toggle('rooms-dropdown__item-list_opened');
+                dropdownItemList.classList.toggle('rooms-dropdown__item-list_opened');
             }
 
             // Изменение текста
@@ -67,6 +68,19 @@ document.addEventListener('DOMContentLoaded', function(event){
                 if(bathroomsCountText.value < 1) bathroomsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
                 updateText();
             }
+
+            // Скрытие списка по нажатию где-нибудь в другом месте
+            window.addEventListener('click', (event) => {
+                if(!dropdownItemList.classList.contains('rooms-dropdown__item-list_opened')) return;
+
+                let isOk = event.target == dropdown || dropdown.contains(event.target);
+
+                if(!isOk) {
+                    dropdownText.classList.remove('rooms-dropdown__text_opened');
+                    dropdownItemList.classList.remove('rooms-dropdown__item-list_opened');
+                }
+            });
+
 
 
         })

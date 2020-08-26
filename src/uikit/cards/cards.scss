@@ -15,7 +15,7 @@
 
 // Контейнер, колонки с формами и логотип
 .cards__container {
-    padding: 150px 0 0 140px;
+    padding: 110px 0 0 140px;
     width: 1300px;
     height: 1200px;
     background: #f4f4f6 url(./uikit-logo.svg) 30px 30px no-repeat;
@@ -30,33 +30,16 @@
 }
 
 
-
-// SEARCH FORM
-.cards__search-form {
-    padding: 1px 0 0 1px;
-}
-
-
-// REGISTRATION FORM
-.cards__registration-form {
-    padding: 42px 0 0 1px;
-}
-
-
-// RESERVATION FORM
-.cards__reservation-form {
-    padding: 1px 0 0 1px;
-}
-
-
-// LOGIN FORM
-.cards__login-form {
-    padding: 42px 0 0 1px;
+// FORM
+.cards__form {
+    padding-top: 40px;
 }
 
 
 // CALENDAR
-.cards__calendar {}
+.cards__calendar {
+    padding-top: 40px;
+}
 
 
 // PREVIEW

@@ -1,9 +1,21 @@
 include ../rate-button/rate-button.pug
 -
     /*
-        preview ()
+        preview ({
+            photos: [{
+                url: string,
+                size: [width, height],
+                offset: [top, right]
+            }, ... ],
+            stars: int,
+            room: int,
+            luxe: bool,
+            price: int,
+            stars: int,
+            reviews: int
+        })
     */
-mixin preview()
+mixin preview(values)
 
     div(class="preview")
 

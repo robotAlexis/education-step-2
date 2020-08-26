@@ -1,4 +1,5 @@
 import "../../blocks/masked-text-field/masked-text-field.js"
+import "../../blocks/rate-button/rate-button.js"
 import "../../blocks/dropdown/date-dropdown/date-dropdown.js"
 import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js"
 import "../../blocks/dropdown/customers-dropdown/customers-dropdown.js"
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
     // Заполнени поля с датой
     document.querySelectorAll('.form-elements__date-dropdown input').forEach(dateDropdownInput => {
-        if(dateDropdownInput.getAttribute('name') == 'date-dropdown-2'){
+        if(dateDropdownInput.getAttribute('name') == 'date-dropdown-2') {
             dateDropdownInput.value = '19082019';
         }
     });

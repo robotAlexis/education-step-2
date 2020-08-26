@@ -65,14 +65,10 @@ document.addEventListener('DOMContentLoaded', function(event){
         customersDropdowns[i].querySelector('.customers-dropdown__item-list').classList.add('customers-dropdown__item-list_uikit');    
     })
     // Расстановка значений
-    customersDropdowns[2].querySelector('.customers-dropdown__text').innerHTML = '3 гостя';
-    let customersDropdownItems = customersDropdowns[2].querySelectorAll('.customers-dropdown__item');
-    customersDropdownItems[0].querySelector('.customers-dropdown__count-text').value = 2;
-    customersDropdownItems[0].querySelector('.customers-dropdown__count-button_decrease').classList.remove('customers-dropdown__count-button_inactive');
-    customersDropdownItems[1].querySelector('.customers-dropdown__count-text').value = 1;
-    customersDropdownItems[1].querySelector('.customers-dropdown__count-button_decrease').classList.remove('customers-dropdown__count-button_inactive');
-    customersDropdowns[2].querySelector('.customers-dropdown__clear-button').classList.remove('customers-dropdown__clear-button_inactive');
-
+    let customersButtons = customersDropdowns[2].querySelectorAll('.customers-dropdown__count-button_increase');
+    customersButtons[0].dispatchEvent(new Event('click'));
+    customersButtons[0].dispatchEvent(new Event('click'));
+    customersButtons[1].dispatchEvent(new Event('click'));
 
 
 });

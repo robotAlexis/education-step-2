@@ -1,4 +1,5 @@
 include ../../dropdown/date-dropdown/date-dropdown.pug
+include ../../calendar/calendar.pug
 include ../../dropdown/customers-dropdown/customers-dropdown.pug
 include ../../button/button.pug
 -
@@ -17,30 +18,35 @@ mixin reservation-form(values)
         p(class="reservation-form__room-price") 9 990&#x20bd; 
         p(class="reservation-form__room-number") 888
 
-        div(class="reservation-form__date-field")
-            p(class="reservation-form__field-title") Прибытие
-            +date-dropdown({name: "first-reservation-date"})
-        div(class="reservation-form__date-field")
-            p(class="reservation-form__field-title") Выезд
-            +date-dropdown({name: "second-reservation-date"})
+        div(class="reservation-form__date")
+            div(class="reservation-form__date-field")
+                p(class="reservation-form__field-title") Прибытие
+                +date-dropdown({name: "first-reservation-date"})
+            div(class="reservation-form__date-field")
+                p(class="reservation-form__field-title") Выезд
+                +date-dropdown({name: "second-reservation-date"})
+            div(class="reservation-form__calendar")
+                +calendar()
+            
 
         div(class="reservation-form__customers-field")
             p(class="reservation-form__field-title") Гости
             +customers-dropdown({})
 
-        div(class="reservation-form__check-item")
-            p(class="reservation-form__check-item-cost") 39 960&#x20bd;
-            p(class="reservation-form__check-item-text") 9 990&#x20bd; х 4 суток
-        div(class="reservation-form__check-item")
-            p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 0&#x20bd;
-            p(class="reservation-form__check-item-text") Сбор за услуги: скидка 2 179&#x20bd;
-        div(class="reservation-form__check-item")
-            p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 300&#x20bd;
-            p(class="reservation-form__check-item-text") Сбор за дополнительные услуги
+        div(class="reservation-form__check")
+            div(class="reservation-form__check-item")
+                p(class="reservation-form__check-item-cost") 39 960&#x20bd;
+                p(class="reservation-form__check-item-text") 9 990&#x20bd; х 4 суток
+            div(class="reservation-form__check-item")
+                p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 0&#x20bd;
+                p(class="reservation-form__check-item-text") Сбор за услуги: скидка 2 179&#x20bd;
+            div(class="reservation-form__check-item")
+                p(class="reservation-form__check-item-cost reservation-form__check-item-cost_with-alert") 300&#x20bd;
+                p(class="reservation-form__check-item-text") Сбор за дополнительные услуги
 
-        div(class="reservation-form__check-total")
-            p(class="reservation-form__check-total-text") Итого
-            p(class="reservation-form__check-total-cost") 38 081&#x20bd;
+            div(class="reservation-form__check-total")
+                p(class="reservation-form__check-total-cost") 38 081&#x20bd;
+                p(class="reservation-form__check-total-text") Итого
 
         div(class="reservation-form__button")
             +button({

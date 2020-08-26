@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', function(event){
     if(document.querySelector('.cards') == null) return;
 
 
+    // Форма бронирования
+
+    // Даты
+    document.querySelectorAll('.reservation-form .date-dropdown__input').forEach((dateInput, index) => {
+        dateInput.value = ['19082019', '23082019'][index];
+    });
+    // Гости
+    let customersButtons = document.querySelectorAll('.reservation-form .customers-dropdown__count-button_increase');
+    customersButtons[0].dispatchEvent(new Event('click'));
+    customersButtons[0].dispatchEvent(new Event('click'));
+    customersButtons[1].dispatchEvent(new Event('click'));
+
     // Календарь
 
     document.querySelector('.cards__calendar').firstElementChild.openCalendar({

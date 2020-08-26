@@ -1,4 +1,5 @@
 @import "../../dropdown/date-dropdown/date-dropdown.scss";
+@import "../../calendar/calendar.scss";
 @import "../../dropdown/customers-dropdown/customers-dropdown.scss";
 @import "../../button/button.scss";
 
@@ -68,6 +69,10 @@
     text-transform: uppercase;
 }
 
+.reservation-form__date {
+    position: relative;
+}
+
 .reservation-form__date-field {
     display: inline-block;
     width: 150px;
@@ -77,9 +82,19 @@
     margin-right: 20px;
 }
 
+.reservation-form__calendar {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 70px;
+}
+
+
 .reservation-form__customers-field {
     padding: 20px 0 14px 0;
 }
+
+.reservation-form__check {}
 
 .reservation-form__check-item {
     padding: 7px 0 7px 1px;

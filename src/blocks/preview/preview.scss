@@ -17,24 +17,33 @@
     height: 151px;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    overflow: hidden;
     
     background-color: gray;
 }
 
+.preview__photo-image {
+    position: absolute;
+}
+
 .preview__left-photo-side,
 .preview__right-photo-side {
+    position: relative;
     float: left;
     width: 44px;
     height: 151px;
+    z-index: 1;
+    @include horizontal-linear-gradient-background(rgba($black, 0.5), rgba($black, 0));
 
     line-height: 151px;
     visibility: hidden;
 }
 .preview__right-photo-side {
     float: right;
+    @include horizontal-linear-gradient-background(rgba($black, 0), rgba($black, 0.5));
 }
-.preview__photo:hover > .preview__left-photo-side,
-.preview__photo:hover > .preview__right-photo-side {
+.preview__photo:hover .preview__left-photo-side,
+.preview__photo:hover .preview__right-photo-side {
     visibility: visible;
 }
 
@@ -49,12 +58,14 @@
     font-size: 24px;
     line-height: 44px;
     text-align: center;
+    cursor: pointer;
 }
 
 .preview__round-button-list {
     position: absolute;
     right: 15px;
     bottom: 11px;
+    z-index: 2;
 
     text-align: right;
 }
@@ -66,6 +77,7 @@
     margin-left: 3.75px;
     border: 1px solid $white;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .preview__round-button_current {
@@ -89,7 +101,7 @@
     font-size: 14px;
     font-weight: bold;
 }
-.preview__room-number::after {
+.preview__room-number_luxe::after {
     content: "люкс";
     padding-left: 5px;
 

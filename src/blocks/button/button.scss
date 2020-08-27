@@ -24,7 +24,6 @@
 .button_hover,
 .button:hover {
     @include linear-gradient-background(rgba($purple, 0.5), rgba($blue-purple, 0.5));
-    //opacity: .5;
 }
 
 .button__text {

@@ -7,7 +7,7 @@ import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.js"
 import "../../blocks/range-slider/range-slider.js"
 
 
-document.addEventListener('DOMContentLoaded', function(event){
+document.addEventListener('DOMContentLoaded', function(event) {
 
     if(document.querySelector('.form-elements') == null) return;
 

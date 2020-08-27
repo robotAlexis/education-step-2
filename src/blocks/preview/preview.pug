@@ -4,36 +4,58 @@ include ../rate-button/rate-button.pug
         preview ({
             photos: [{
                 url: string,
-                size: [width, height],
-                offset: [top, right]
+                width: string,
+                height: string,
+                top: string,
+                left: string
             }, ... ],
-            stars: int,
             room: int,
             luxe: bool,
             price: int,
-            stars: int,
+            rating: int,
             reviews: int
         })
     */
 mixin preview(values)
 
+    -
+        let imagesData = '';
+        for(let i = 0; i < values.photos.length; ++i) {
+            if(!values.photos[i].width) values.photos[i].width = '100%';
+            if(!values.photos[i].height) values.photos[i].height = '100%';
+            if(!values.photos[i].top) values.photos[i].top = '0';
+            if(!values.photos[i].left) values.photos[i].left = '0';
+            imagesData += (i > 0 ? ';' : '') + values.photos[i].url +
+                ';' + values.photos[i].width + ';' + values.photos[i].height +
+                ';' + values.photos[i].top + ';' + values.photos[i].left;
+        }
     div(class="preview")
-
         div(class="preview__photo")
+            img(
+                class="preview__photo-image"
+                src= `/files/${values.photos[0].url}`
+                width= values.photos[0].width
+                height=  values.photos[0].height
+                style= {
+                    top: values.photos[0].top,
+                    left: values.photos[0].left
+                }
+                data-images= imagesData
+            )
             div(class="preview__left-photo-side")
                 p(class="preview__side-button") &#xe5cb;
             div(class="preview__right-photo-side")
                 p(class="preview__side-button") &#xe5cc;
 
             div(class="preview__round-button-list")
-                div(class="preview__round-button preview__round-button_current")
-                div(class="preview__round-button")
-                div(class="preview__round-button")
-                div(class="preview__round-button")
+                - for(let i = 0; i < values.photos.length; ++i)
+                    div(class= i > 0 ? "preview__round-button" : "preview__round-button preview__round-button_current")
 
-        p(class="preview__room-price") 9 990&#x20bd; 
-        p(class="preview__room-number") 888
+        p(class="preview__room-price")= values.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') + '\u20bd'
+        p(
+            class= (values.luxe == true) ? "preview__room-number preview__room-number_luxe" : "preview__room-number"
+        )= values.room
 
-        p(class="preview__reviews-numbers") 145 
+        p(class="preview__reviews-numbers")= values.reviews 
         div(class="preview__rate-button")
-            +rate-button()
+            +rate-button(values.rating)

@@ -5,7 +5,9 @@ include ../like-button/like-button.pug
             author: string,
             date: string,
             photo: string,
-            text: string
+            text: string,
+            likesCount: int,
+            liked: bool
         })
     */
 mixin review(values)
@@ -18,7 +20,7 @@ mixin review(values)
         div(class="review__photo" style=backgroundImage)
         p(class="review__text")= values.text
         div(class="review__like-button")
-            +like-button()
+            +like-button({count: values.likesCount, liked: values.liked})
 
 
 

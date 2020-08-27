@@ -1,7 +1,12 @@
 -
     /*
-        like-button ()
+        like-button ({
+            count: int,
+            liked: bool
+        })
     */
-mixin like-button()
-    div(class="like-button")
-        p(class="like-button__counter") 0
+mixin like-button(values)
+    div(
+        class= (values.liked == true) ? "like-button like-button_liked" : "like-button"
+    )
+        p(class="like-button__counter")= values.count

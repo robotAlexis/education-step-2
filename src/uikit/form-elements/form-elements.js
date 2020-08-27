@@ -1,10 +1,12 @@
-import "../../blocks/masked-text-field/masked-text-field.js"
-import "../../blocks/rate-button/rate-button.js"
-import "../../blocks/dropdown/date-dropdown/date-dropdown.js"
-import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js"
-import "../../blocks/dropdown/customers-dropdown/customers-dropdown.js"
-import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.js"
-import "../../blocks/range-slider/range-slider.js"
+import "../../blocks/masked-text-field/masked-text-field.js";
+import "../../blocks/like-button/like-button.js";
+import "../../blocks/rate-button/rate-button.js";
+import "../../blocks/dropdown/date-dropdown/date-dropdown.js";
+import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js";
+import "../../blocks/dropdown/customers-dropdown/customers-dropdown.js";
+import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.js";
+import "../../blocks/range-slider/range-slider.js";
+import "../../blocks/review/review.js";
 
 
 document.addEventListener('DOMContentLoaded', function(event) {

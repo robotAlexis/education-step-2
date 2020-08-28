@@ -1,9 +1,27 @@
+include ../../calendar/calendar.pug
+
 -
     /*
-        filter-date-dropdown ()
+        filter-date-dropdown ({
+            firstInputName: string,
+            secondInputName: string
+        })
     */
-mixin filter-date-dropdown()
+mixin filter-date-dropdown(values)
     div(class="filter-date-dropdown")
-        p(class="filter-date-dropdown__text") 19 авг - 23 авг
+        input(
+            class="filter-date-dropdown__input"
+            type="hidden"
+            name=values.firstInputName
+            value=""
+        )
+        input(
+            class="filter-date-dropdown__input"
+            type="hidden"
+            name=values.secondInputName
+            value=""
+        )
+        p(class="filter-date-dropdown__text")
         div(class="filter-date-dropdown__calendar")
+            +calendar()
 

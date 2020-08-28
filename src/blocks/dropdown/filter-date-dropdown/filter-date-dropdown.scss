@@ -1,3 +1,5 @@
+@import "../../calendar/calendar.scss";
+
 .filter-date-dropdown {
     position: relative;
     height: 42px;
@@ -40,15 +42,9 @@
 
 .filter-date-dropdown__calendar {
     position: absolute;
-    width: 266px;
-    height: 111px;
-    top: 43px;
+    z-index: 1;
     left: -1px;
-
-    visibility: hidden;
+    top: 50px;
 }
 
-.filter-date-dropdown__calendar_opened {
-    visibility: visible;
-}
 

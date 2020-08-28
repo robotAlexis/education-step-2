@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
 
         // Открытие календаря
-        calendarElement.openCalendar = function(input){
+        calendarElement.openCalendar = function(input) {
             /*{
                 callback,
                 inputElements,
@@ -99,6 +99,16 @@ document.addEventListener('DOMContentLoaded', function(event){
             // Включение отображения календаря
             calendarElement.classList.add('calendar_active');
         };
+
+        // Закрытие календаря
+        calendarElement.closeCalendar = function() {
+            calendarElement.classList.remove('calendar_active');
+        }
+
+        // Проверка на открытый календарь
+        calendarElement.isCalendarOpen = function() {
+            return calendarElement.classList.contains('calendar_active');
+        }
 
 
 

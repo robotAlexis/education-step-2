@@ -2,6 +2,7 @@ import "../../blocks/masked-text-field/masked-text-field.js";
 import "../../blocks/like-button/like-button.js";
 import "../../blocks/rate-button/rate-button.js";
 import "../../blocks/dropdown/date-dropdown/date-dropdown.js";
+import "../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.js";
 import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.js";
 import "../../blocks/dropdown/customers-dropdown/customers-dropdown.js";
 import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.js";
@@ -18,11 +19,18 @@ document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelector('.form-elements__focus-text-field').querySelector('.text-field').classList.add('text-field_hover');
 
 
-    // Заполнени поля с датой
+    // Заполнение поля с датой
     document.querySelectorAll('.form-elements__date-dropdown input').forEach(dateDropdownInput => {
         if(dateDropdownInput.getAttribute('name') == 'date-dropdown-2') {
             dateDropdownInput.value = '19082019';
         }
+    });
+
+    // Заполнение блока filter-date-dropdown
+    let m = [(new Date(2019, 7, 19)), (new Date(2019, 7, 23))];
+    document.querySelectorAll('.filter-date-dropdown .filter-date-dropdown__input').forEach((dropdownInput, index) => {
+        dropdownInput.value = m[index].getTime();
+        dropdownInput.onchange();
     });
 
 

@@ -11,8 +11,7 @@
 
 .footer__first-row {
     min-height: 222px;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding: 100px 0 50px 0;
     box-shadow: 0 1px 0 $dark-shade-10;
     background-color: $white;
 
@@ -92,7 +91,7 @@
 }
 
 .footer__second-row-content {
-    height: 70px;
+    min-height: 70px;
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
@@ -132,38 +131,44 @@
 
 @media all and (max-width: 800px) {
     .footer__description-column {width: 100%;}
+    .footer__description-text {display: none;}
     .footer__links-column {display: none;}
     .footer__subscription-column {display: none;}
-    .footer__copyright-text {display: none;}
-
+    
     .footer {
         background-color: $white;
         box-shadow: 0 10px 20px $dark-shade-5;
-
+    
     }
     .footer__first-row {
         min-height: 0;
-        padding-bottom: 4px;
+        padding: 120px 0 0 0;
         box-shadow: none;
         background: none;
     }
     .footer__second-row {
-        padding-bottom: 87px;
+        margin: 0;
+        padding-bottom: 97px;
         box-shadow: none;
         background: none;
     }
-
+    
     .footer__logo {
         margin-left: auto;
         margin-right: auto;
     }
-
-    .footer__description-text {text-align: center;}
-
+    
+    .footer__second-row-content {
+        text-align: center;
+        line-height: 18px;
+    }
+    
+    .footer__copyright-text {
+        padding: 20px 0 2px 0;
+    }
+    
     .footer__social-media {
         float: none;
-
-        text-align: center;
     }
     .footer__social-media-button:last-of-type {
         margin-right: 10px;
@@ -174,9 +179,9 @@
 
 // Версия для ширины экрана меньше 800px, но показываемая при ширине экрана больше 800px
 .footer_short .footer__description-column {width: 100%;}
+.footer_short .footer__description-text {display: none;}
 .footer_short .footer__links-column {display: none;}
 .footer_short .footer__subscription-column {display: none;}
-.footer_short .footer__copyright-text {display: none;}
 
 .footer_short {
     background-color: $white;
@@ -185,12 +190,13 @@
 }
 .footer_short .footer__first-row {
     min-height: 0;
-    padding-bottom: 4px;
+    padding: 120px 0 0 0;
     box-shadow: none;
     background: none;
 }
 .footer_short .footer__second-row {
-    padding-bottom: 87px;
+    margin: 0;
+    padding-bottom: 97px;
     box-shadow: none;
     background: none;
 }
@@ -200,12 +206,17 @@
     margin-right: auto;
 }
 
-.footer_short .footer__description-text {text-align: center;}
+.footer_short .footer__second-row-content {
+    text-align: center;
+    line-height: 18px;
+}
+
+.footer_short .footer__copyright-text {
+    padding: 20px 0 2px 0;
+}
 
 .footer_short .footer__social-media {
     float: none;
-
-    text-align: center;
 }
 .footer_short .footer__social-media-button:last-of-type {
     margin-right: 10px;

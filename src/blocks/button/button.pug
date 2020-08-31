@@ -5,37 +5,15 @@
             name: string,
             value: string,
             text: string,
-            theme: string,  // default(any value) | bordered | backgroundless | with-arrow
-            low: boolean    // for header
+            theme: string,  // default(any value) | bordered | backgroundless | with-arrow | low | low-bordered
         })
     */
 mixin button(values)
     -
-        values.class = "button"
-
         if(!(values.type == "button" || values.type == "reset" || values.type == "submit")) values.type = "submit";
 
-        values["text class"] = "button__text";
-        switch(values.theme){
-            case "bordered":
-                values["class"] += values.low == true ? " button_low-bordered" : " button_bordered";
-                values["text class"] += values.low == true ? " button__text_low-bordered" : " button__text_bordered";
-                break;
-            case "backgroundless":
-                values["class"] += " button_backgroundless";
-                values["text class"] += " button__text_backgroundless";
-                break;
-            case "with-arrow":
-                values["class"] += " button_with-arrow";
-                values["text class"] += " button__text_with-arrow";
-                break;
-            default:
-                if(values.low == true) {
-                    values["class"] += " button_low";
-                    values["text class"] += " button__text_low";
-                }
-                break;
-        }
+        values.class = values.theme ? ["button", "button_" + values.theme] : ["button"];
+        values["text class"] = values.theme ? ["button__text", "button__text_" + values.theme] : ["button__text"];
     button(
         class=values.class
         type=values.type

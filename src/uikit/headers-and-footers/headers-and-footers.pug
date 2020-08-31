@@ -17,9 +17,27 @@ html(lang="ru")
       //- HEADERS
 
       div(class="headers-and-footer__item")
-        +header({logged: false})
+        +header({
+          items: [
+            { text: "О нас", url: '#', current: true },
+            { text: "Услуги", url: '#', withArrow: true },
+            { text: "Вакансии", url: '#' },
+            { text: "Новости", url: '#' },
+            { text: "Соглашения", url: '#', withArrow: true }
+          ],
+          logged: false
+        })
       div(class="headers-and-footer__item")
-        +header({logged: true})
+        +header({
+          items: [
+            { text: "О нас", url: '#', current: true },
+            { text: "Услуги", url: '#', withArrow: true },
+            { text: "Вакансии", url: '#' },
+            { text: "Новости", url: '#' },
+            { text: "Соглашения", url: '#', withArrow: true }
+          ],
+          logged: true
+        })
 
       //- FOOTERS
 

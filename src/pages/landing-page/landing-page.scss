@@ -1,0 +1,59 @@
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+@import "../../blocks/forms/search-form/search-form.scss";
+
+
+html {
+    height: 100%;
+}
+
+.landing-page {
+    display: table;
+    height: 100%;
+    width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.landing-page__main-container {
+    display: table-row;
+    height: 100%;
+    background: url(./landing-page-bg.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.landing-page__container {
+    position: relative;
+    max-width: 1160px;
+    min-height: 690px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 70px 10px;
+}
+
+.landing-page__text {
+    position: absolute;
+    width: 300px;
+    margin: 0;
+    right: 4px;
+    bottom: 20px;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+}
+
+.landing-page__header {
+    padding: 0 10px;
+}
+
+.landing-page__footer {
+    padding: 0 10px;
+}

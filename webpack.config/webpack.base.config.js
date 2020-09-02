@@ -26,7 +26,7 @@ module.exports = {
     },
 
     entry: {
-        main: `${PATHS.src}/index.js`,
+        main: `${PATHS.src}/pages/pages.js`,
         uikit: `${PATHS.src}/uikit/uikit.js`
     },
 
@@ -76,7 +76,7 @@ module.exports = {
 
         }, {
 
-            test: /\.(svg)$/,
+            test: /\.(png|svg)$/,
             loader: "file-loader",
             exclude: /fonts/,            
             options: {

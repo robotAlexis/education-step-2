@@ -17,11 +17,20 @@
     margin-left: auto;
     margin-right: auto;
 }
+.header__content::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 
 .header__logo {
+    display: block;
     float: left;
     height: 40px;
     width: 106px;
+    padding: 0;
+    margin: 0;
     background: url(./logo.svg) 0 50% no-repeat;
 }
 
@@ -67,30 +76,33 @@
 
 .header__menu {
     display: block;
+    float: right;
 
     line-height: 40px;
     text-align: right;
-}
-.header__menu::after {
-    content: "";
-    display: block;
-    clear: both;
+    white-space: nowrap;
 }
 
 .header__menu-item {
     display: inline-block;
     margin: 0 10px 0 10px;
+}
+
+.header__item-link {
+    display: inline-block;
+    margin: 0;
 
     color: $dark-shade-50;
     text-decoration: none;
     white-space: nowrap;
 }
 
-.header__menu-item_with-arrow {
+
+.header__item-link_with-arrow {
     position: relative;
     padding-right: 25px;
 }
-.header__menu-item_with-arrow::after {
+.header__item-link_with-arrow::after {
     content: "\e5cf";
     position: absolute;
     display: block;
@@ -105,8 +117,73 @@
     line-height: 24px;
 }
 
-.header__menu-item_current {
+.header__item-link_current {
 
     color: $dark-shade-75;
     font-weight: bold;
+}
+
+
+
+@media all and (max-width: 520px) {
+    
+    .header__buttons {
+        float: none;
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10px;
+
+        text-align: center;
+    }
+
+    .header__button {
+        margin: 5px;
+    }
+    .header__button:first-of-type {
+        margin: 5px;
+    }
+
+    .header__menu {
+        clear: both;
+        float: none;
+        padding-top: 10px;
+    
+        text-align: left;
+        white-space: normal;
+    }
+
+    .header__menu-item {
+        display: block;
+
+        line-height: 30px;
+    }
+
+    .header__item-link_with-arrow::after {
+        top: 4px;
+        right: 0;
+    }    
+
+}
+
+@media all and (max-width: 400px) {
+
+    .header__account {
+        float: none;
+        clear: both;
+        padding-top: 10px 0 0 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+    
+    .header__account-name {
+        display: inline;
+        margin: 0;
+        padding: 0 0 5px 0;
+        border-left: none;
+        border-bottom: 1px solid $dark-shade-10;
+    }
+
 }

@@ -18,7 +18,14 @@ mixin header(values)
 
     header(class="header")
         div(class="header__content")
-            div(class="header__logo")
+
+            a(class="header__logo" href="#")
+
+
+            div(class= (values.logged == true) ? "header__account" : "header__account header__account_disabled")
+                p(class="header__account-name") Юлий Цезарь
+
+
             div(class= (values.logged == true) ? "header__buttons header__buttons_disabled" : "header__buttons")
                 div(class="header__button")
                     +button({
@@ -37,16 +44,15 @@ mixin header(values)
                         theme: "low"
                     })
 
-            div(class= (values.logged == true) ? "header__account" : "header__account header__account_disabled")
-                p(class="header__account-name") Юлий Цезарь
 
             
             nav(class="header__menu")
                 - for (let item of values.items)
-                    a(
-                        class= "header__menu-item" + (item.current ? "  header__menu-item_current" : "") + (item.withArrow ? "  header__menu-item_with-arrow" : "")
-                        href= item.url
-                    )= item.text
+                    div(class= "header__menu-item")
+                        a(
+                            class= "header__item-link" + (item.current ? "  header__item-link_current" : "") + (item.withArrow ? "  header__item-link_with-arrow" : "")
+                            href= item.url
+                        )= item.text
 
 
 

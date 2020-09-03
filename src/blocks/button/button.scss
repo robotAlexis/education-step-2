@@ -84,7 +84,8 @@
 /* Long button theme  */
 
 .button_with-arrow {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
 }
 
 .button__text_with-arrow::after {

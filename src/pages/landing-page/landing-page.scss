@@ -12,6 +12,7 @@ html {
     display: table;
     height: 100%;
     width: 100%;
+    min-width: 300px;
 	margin: 0;
 	padding: 0;
 }
@@ -56,4 +57,13 @@ html {
 
 .landing-page__footer {
     padding: 0 10px;
+}
+
+
+@media all and (max-width: 520px) {
+
+    .landing-page__container {
+        padding: 30px 5px;
+    }
+
 }

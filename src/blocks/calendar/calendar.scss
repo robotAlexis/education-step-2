@@ -3,8 +3,9 @@
 .calendar {
     position: relative;
     display: none;
-    width: 280px;
-    padding: 19px 19px 18px 19px;
+    max-width: 318px;
+    min-width: 280px;
+    padding: 19px 0 18px 0;
     background-color: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
@@ -26,6 +27,7 @@
 
 .calendar__left-arrow {
     float: left;
+    margin-left: 19px;
 
     color: $purple;
     font-family: 'Material Icons';
@@ -35,6 +37,7 @@
 }
 .calendar__right-arrow {
     float: right;
+    margin-right: 19px;
 
     color: $purple;
     font-family: 'Material Icons';
@@ -57,10 +60,10 @@
 
 .calendar__week-row {
     display: block;
-    width: 290px;
+    width: 280px;
     height: 40px;
-    padding: 0 0 0 1px;
-    margin: 0;
+    padding: 0;// 0 0 1px;
+    margin: 0 auto;
 
     list-style-type: none;
     font-size: 0;
@@ -132,11 +135,13 @@
 
 .calendar__ok-button {
     float: right;
+    margin-right: 19px;
     padding-top: 20px;
 }
 
 .calendar__clear-button {
     float: left;
+    margin-left: 19px;
     padding-top: 20px;
 }
 

@@ -3,18 +3,26 @@
 @import "../../dropdown/customers-dropdown/customers-dropdown.scss";
 @import "../../button/button.scss";
 
+
 .search-form {
-    width: 320px;
-    padding: 17px 29px;
+    max-width: 380px;
+    padding: 17px 10px;
     background: $white;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 
     color: $dark-shade-100;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 14px;
+}
+
+.search-form__container {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search-form__title {
@@ -38,21 +46,32 @@
 .search-form__date {
     position: relative;
 }
+.search-form__date::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .search-form__date-field {
-    display: inline-block;
-    width: 150px;
+    width: 47%;
+    max-width: 150px;
 }
-.search-form__date-field:first-of-type {
-    margin-right: 20px;
+.search-form__date-field_first {
+    float: left;
+}
+.search-form__date-field_last {
+    float: right;
 }
 
 .search-form__calendar {
     position: absolute;
-    z-index: 1;
+    width: 100%;
     left: 0;
     top: 70px;
+    z-index: 1;
 }
+
+
 
 .search-form__customers-field {
     padding: 21px 0 31px 0;
@@ -60,4 +79,30 @@
 
 .search-form__button {
     padding-bottom: 12px;
+}
+
+
+
+
+
+
+@media all and (max-width: 330px) {
+
+    .search-form__date-field {
+        width: 100%;
+        max-width: none;
+    }
+    .search-form__date-field_first {
+        float: none;
+    }
+    .search-form__date-field_last {
+        float: none;
+        padding-top: 5px;
+    }
+
+    .search-form__calendar {
+        top: 145px;
+        left: -5px;
+    }
+
 }

@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
             calendarElement.openCalendar({
                 callback: onCalendarOk,
                 inputElements: [textElement], 
-                startDate: new Date(parseInt(dropdownInputs[0].value, 10)),
-                endDate: new Date(parseInt(dropdownInputs[1].value, 10))
+                startDate: (dropdownInputs[0].value ? new Date(parseInt(dropdownInputs[0].value, 10)) : new Date()),
+                endDate: (dropdownInputs[1].value ? new Date(parseInt(dropdownInputs[1].value, 10)) : new Date())
             });
         }
         

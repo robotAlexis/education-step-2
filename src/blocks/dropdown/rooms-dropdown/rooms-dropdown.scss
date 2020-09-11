@@ -10,7 +10,6 @@
 
 .rooms-dropdown__text {
     height: 42px;
-    //padding: 0 45px 0 14px;
     padding: 0 90px 0 14px;
     margin: 0;
     background-color: $white;
@@ -56,7 +55,7 @@
     border: 1px solid $dark-shade-50;
     border-top-width: 0;
     border-radius: 0 0 4px 4px;
-    z-index: 1;
+    z-index: 8;
 
     visibility: hidden;
 }

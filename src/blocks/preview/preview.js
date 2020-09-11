@@ -10,31 +10,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
             // Массив круглых кнопочек
             let roundButtonElements = Array.prototype.slice.call(previewElement.querySelectorAll('.preview__round-button'));
 
-            // Чтение dataset
-            let imagesDataset = imageElement.dataset.images.split(';');
-            // Данные для картинок
-            let photos = [];
-            photos.length = Math.floor(imagesDataset.length/5);
-            for(let i = 0; i < photos.length; ++i) {
-                photos[i] = {
-                    url: imagesDataset[i * 5],
-                    width: imagesDataset[i * 5 + 1],
-                    height: imagesDataset[i * 5 + 2],
-                    top: imagesDataset[i * 5 + 3],
-                    left: imagesDataset[i * 5 + 4],
-                }
-            }
+            // Ссылки для картинок
+            let photos = imageElement.dataset.images.split(';');
 
             // Номер текущей фотографии
             let currentPhotoIndex = 0;
 
-            // Перелистывание к фотографии под новым индексом
+            // Обновление фотографии
             function resetPhoto() {
-                imageElement.src = '/files/' + photos[currentPhotoIndex].url;
-                imageElement.setAttribute('width', photos[currentPhotoIndex].width);
-                imageElement.setAttribute('height', photos[currentPhotoIndex].height);
-                imageElement.style.top = photos[currentPhotoIndex].top;
-                imageElement.style.left = photos[currentPhotoIndex].left;
+                imageElement.src = '/files/' + photos[currentPhotoIndex];
 
                 roundButtonElements.forEach((buttonElement, i) => {
                     buttonElement.classList.toggle('preview__round-button_current', i == currentPhotoIndex);

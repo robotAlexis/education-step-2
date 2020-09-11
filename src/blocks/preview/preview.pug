@@ -2,13 +2,10 @@ include ../rate-button/rate-button.pug
 -
     /*
         preview ({
-            photos: [{
+            photos: [
                 url: string,
-                width: string,
-                height: string,
-                top: string,
-                left: string
-            }, ... ],
+                ...
+            ],
             room: int,
             luxe: bool,
             price: int,
@@ -18,29 +15,12 @@ include ../rate-button/rate-button.pug
     */
 mixin preview(values)
 
-    -
-        let imagesData = '';
-        for(let i = 0; i < values.photos.length; ++i) {
-            if(!values.photos[i].width) values.photos[i].width = '100%';
-            if(!values.photos[i].height) values.photos[i].height = '100%';
-            if(!values.photos[i].top) values.photos[i].top = '0';
-            if(!values.photos[i].left) values.photos[i].left = '0';
-            imagesData += (i > 0 ? ';' : '') + values.photos[i].url +
-                ';' + values.photos[i].width + ';' + values.photos[i].height +
-                ';' + values.photos[i].top + ';' + values.photos[i].left;
-        }
     div(class="preview")
         div(class="preview__photo")
             img(
                 class="preview__photo-image"
-                src= `/files/${values.photos[0].url}`
-                width= values.photos[0].width
-                height=  values.photos[0].height
-                style= {
-                    top: values.photos[0].top,
-                    left: values.photos[0].left
-                }
-                data-images= imagesData
+                src= `/files/${values.photos[0]}`
+                data-images= values.photos.join(';')
             )
             div(class="preview__left-photo-side")
                 p(class="preview__side-button") &#xe5cb;

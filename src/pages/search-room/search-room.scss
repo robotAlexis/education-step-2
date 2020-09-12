@@ -1,0 +1,156 @@
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+@import "../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.scss";
+@import "../../blocks/dropdown/customers-dropdown/customers-dropdown.scss";
+@import "../../blocks/dropdown/rooms-dropdown/rooms-dropdown.scss";
+@import "../../blocks/checkbox/checkbox-button/checkbox-button.scss";
+@import "../../blocks/checkbox/rich-checkbox-button/rich-checkbox-button.scss";
+@import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
+
+@import "../../blocks/preview/preview.scss";
+
+
+
+.search-room {
+
+}
+
+.search-room__main-background {
+    background-color: $white;
+    border-bottom: 1px solid $dark-shade-25;
+}
+
+.search-room__main-container {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+.search-room__main-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+
+
+/* Меню со всякими кнопочками, слайдерами и т.п. */
+
+
+.search-room__filter-menu {
+    float: left;
+    width: 266px;
+    padding: 0;
+}
+
+// Заголовок элемента меню
+
+.search-room__filter-element-title {
+    margin: 0;
+
+    color: $dark-shade-100;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+// filter-date-dropdown
+
+.search-room__filter-date-dropdown {
+    margin: 4px 0 21px 0;
+}
+
+// customers-dropdown
+
+.search-room__customers-dropdown {
+    margin: 4px 0 31px 0;
+}
+
+// range-slider
+
+.search-room__range-slider {
+    margin-bottom: 10px;
+}
+
+.search-room__range-slider-description {
+    margin: 0 0 30px 0;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+// checkbox-button
+
+.search-room__checkbox-list {
+    margin: 16px 0 32px 0;
+}
+
+.search-room__checkbox-button {
+    max-width: 240px;
+    margin: 10px 0;
+}
+
+// rich-checkbox-button
+
+.search-room__rich-checkbox-list {
+    margin: 15px 0 30px 0;
+}
+
+.search-room__rich-checkbox-button {
+    margin: 9px 0;
+    padding-right: 10px;
+}
+
+// rooms-dropdown
+
+.search-room__rooms-dropdown {
+    margin: 4px 0 26px 0;
+}
+
+// expandable-checkbox-list
+
+.search-room__filter-element_expandable-checkbox-list {
+    padding-right: 10px;
+}
+
+
+
+
+
+/* Список комнат */
+
+
+.search-room__rooms-list {
+    margin-left: 300px;
+
+    //text-align: right;
+}
+
+// Заголовок
+
+.search-room__rooms-list-title {
+    margin: 0 0 0 12px;
+
+    color: $dark-shade-100;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+// Превью
+
+.search-room__preview {
+    display: inline-block;
+    width: 33%;
+    //margin: 0 0 0 12px;
+}

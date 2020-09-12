@@ -1,0 +1,268 @@
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+
+include ../../blocks/dropdown/filter-date-dropdown/filter-date-dropdown.pug
+include ../../blocks/dropdown/customers-dropdown/customers-dropdown.pug
+include ../../blocks/dropdown/rooms-dropdown/rooms-dropdown.pug
+include ../../blocks/checkbox/checkbox-button/checkbox-button.pug
+include ../../blocks/checkbox/rich-checkbox-button/rich-checkbox-button.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+
+include ../../blocks/preview/preview.pug
+
+
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Search room
+  body(class="search-room")
+
+    +header({
+          items: [
+            { text: "О нас", url: '#', current: true },
+            { text: "Услуги", url: '#', withArrow: true },
+            { text: "Вакансии", url: '#' },
+            { text: "Новости", url: '#' },
+            { text: "Соглашения", url: '#', withArrow: true }
+          ],
+          logged: false
+    })
+
+    main(class="search-room__main-background")
+      div(class="search-room__main-container")
+
+        menu(class="search-room__filter-menu")
+
+          p(class="search-room__filter-element-title") Даты пребывания в отеле
+          div(class="search-room__filter-date-dropdown")
+            +filter-date-dropdown({ firstInputName: "first-day", secondInputName: "last-day" })
+
+          p(class="search-room__filter-element-title") Гости
+          div(class="search-room__customers-dropdown")
+            +customers-dropdown({ })
+
+          div(class="search-room__range-slider")
+            +range-slider({ 
+              title: "Диапазон цены",
+              names: ["min-price", "max-price"],
+              limits: [176, 15706]
+            })
+          p(class="search-room__range-slider-description") Стоимость за сутки пребывания в номере
+
+          p(class="search-room__filter-element-title") Checkbox buttons
+          div(class="search-room__checkbox-list")
+            div(class="search-room__checkbox-button")
+              +checkbox-button({ name: "checkbox-button-1", title: "Можно курить" })
+            div(class="search-room__checkbox-button")
+              +checkbox-button({ name: "checkbox-button-2", title: "Можно с питомцами" })
+            div(class="search-room__checkbox-button")
+              +checkbox-button({ name: "checkbox-button-3", title: "Можно пригласить гостей (до 10 человек)" })
+
+          p(class="search-room__filter-element-title") Доступность
+          div(class="search-room__rich-checkbox-list")
+            div(class="search-room__rich-checkbox-button")
+              +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
+            div(class="search-room__rich-checkbox-button")
+              +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
+
+          p(class="search-room__filter-element-title") Удобства номера
+          div(class="search-room__rooms-dropdown")
+            +rooms-dropdown({ })
+
+          div(class="search-room__filter-element search-room__filter-element_expandable-checkbox-list")
+            +expandable-checkbox-list({
+              title: "Дополнительные удобства",
+              expanded: false,
+              items: [
+                { name: "checkbox-11", title: "Завтрак", checked: false },
+                { name: "checkbox-12", title: "Письменный стол", checked: false },
+                { name: "checkbox-13", title: "Стул для кормления", checked: false },
+                { name: "checkbox-14", title: "Кроватка", checked: false },
+                { name: "checkbox-15", title: "Телевизор", checked: false },
+                { name: "checkbox-16", title: "Шампунь", checked: false }
+              ]
+            })
+
+
+        section(class="search-room__rooms-list")
+          p(class="search-room__rooms-list-title") Номера, которые мы для вас подобрали
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "2510dccc3aab21597da711673f509391.jpg",
+                "2510dccc3aab21597da711673f509391.jpg",
+                "2510dccc3aab21597da711673f509391.jpg",
+                "2510dccc3aab21597da711673f509391.jpg"
+              ],
+              room: 888,
+              luxe: true,
+              price: 9990,
+              rating: 5,
+              reviews: 145 
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "c196edfce8e208d3d142ceb4cd85380f.jpg",
+                "c196edfce8e208d3d142ceb4cd85380f.jpg",
+                "c196edfce8e208d3d142ceb4cd85380f.jpg",
+                "c196edfce8e208d3d142ceb4cd85380f.jpg"
+              ],
+              room: 840,
+              price: 9900,
+              rating: 4,
+              reviews: 65
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "1791c99bdf8b1c98ff3469ad7ae61424.jpg",
+                "1791c99bdf8b1c98ff3469ad7ae61424.jpg",
+                "1791c99bdf8b1c98ff3469ad7ae61424.jpg",
+                "1791c99bdf8b1c98ff3469ad7ae61424.jpg"
+              ],
+              room: 980,
+              luxe: true,
+              price: 8500,
+              rating: 3,
+              reviews: 35
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "5b146b0b02905e0f276597370834ff82.jpg",
+                "5b146b0b02905e0f276597370834ff82.jpg",
+                "5b146b0b02905e0f276597370834ff82.jpg",
+                "5b146b0b02905e0f276597370834ff82.jpg"
+              ],
+              room: 856,
+              price: 7300,
+              rating: 5,
+              reviews: 19
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "190237d9570862add629ca51388cab2f.jpg",
+                "190237d9570862add629ca51388cab2f.jpg",
+                "190237d9570862add629ca51388cab2f.jpg",
+                "190237d9570862add629ca51388cab2f.jpg"
+              ],
+              room: 740,
+              price: 6000,
+              rating: 4,
+              reviews: 44
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "913678abe8f61f3d02794a875c8f13d6.jpg",
+                "913678abe8f61f3d02794a875c8f13d6.jpg",
+                "913678abe8f61f3d02794a875c8f13d6.jpg",
+                "913678abe8f61f3d02794a875c8f13d6.jpg"
+              ],
+              room: 982,
+              price: 5800,
+              rating: 3,
+              reviews: 56
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "d523bf8fa987bc74e26a23a8d5711a8a.jpg",
+                "d523bf8fa987bc74e26a23a8d5711a8a.jpg",
+                "d523bf8fa987bc74e26a23a8d5711a8a.jpg",
+                "d523bf8fa987bc74e26a23a8d5711a8a.jpg"
+              ],
+              room: 678,
+              price: 5500,
+              rating: 5,
+              reviews: 45
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "07382bbd82b3d15a2914108aa278b6af.jpg",
+                "07382bbd82b3d15a2914108aa278b6af.jpg",
+                "07382bbd82b3d15a2914108aa278b6af.jpg",
+                "07382bbd82b3d15a2914108aa278b6af.jpg"
+              ],
+              room: 450,
+              price: 5300,
+              rating: 4,
+              reviews: 39
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "cc01fba653b36e675f65924bdd6828eb.jpg",
+                "cc01fba653b36e675f65924bdd6828eb.jpg",
+                "cc01fba653b36e675f65924bdd6828eb.jpg",
+                "cc01fba653b36e675f65924bdd6828eb.jpg"
+              ],
+              room: 350,
+              price: 5000,
+              rating: 3,
+              reviews: 77
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "b930b472e8006c33b4f26ab7e130a1da.jpg",
+                "b930b472e8006c33b4f26ab7e130a1da.jpg",
+                "b930b472e8006c33b4f26ab7e130a1da.jpg",
+                "b930b472e8006c33b4f26ab7e130a1da.jpg"
+              ],
+              room: 666,
+              price: 5000,
+              rating: 5,
+              reviews: 25
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "413691015542c6a7ba3d4f49fbb5f2b6.jpg",
+                "413691015542c6a7ba3d4f49fbb5f2b6.jpg",
+                "413691015542c6a7ba3d4f49fbb5f2b6.jpg",
+                "413691015542c6a7ba3d4f49fbb5f2b6.jpg"
+              ],
+              room: 444,
+              price: 5000,
+              rating: 3,
+              reviews: 15
+            })
+
+          div(class="search-room__preview")
+            +preview({
+              photos: [
+                "19485bbd6d6f8fa504fa254cd3f85471.jpg",
+                "19485bbd6d6f8fa504fa254cd3f85471.jpg",
+                "19485bbd6d6f8fa504fa254cd3f85471.jpg",
+                "19485bbd6d6f8fa504fa254cd3f85471.jpg"
+              ],
+              room: 352,
+              price: 5000,
+              rating: 3,
+              reviews: 55
+            })
+
+
+
+
+    +footer()

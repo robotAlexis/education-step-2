@@ -4,6 +4,7 @@
     background: $white;
     border-radius: 4px;
     box-shadow: 0 10px 20px $dark-shade-5;
+    overflow: hidden;
 
     color: $dark-shade-100;
     font-family: "Montserrat", sans-serif;
@@ -20,8 +21,6 @@
 .preview__photo-image {
     display: block;
     width: 100%;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
 }
 
 .preview__left-photo-side {

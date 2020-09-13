@@ -2,7 +2,6 @@
 
 
 .footer {
-    padding: 0 10px;
 
     color: $dark-shade-75;
     font-family: "Montserrat", sans-serif;
@@ -12,7 +11,7 @@
 
 .footer__first-row {
     min-height: 222px;
-    padding: 100px 0 50px 0;
+    padding: 100px 10px 50px 10px;
     box-shadow: 0 1px 0 $dark-shade-10;
     background-color: $white;
 
@@ -86,6 +85,7 @@
 
 .footer__second-row {
     margin-top: 1px;
+    padding: 0 10px;
     box-shadow: 0 10px 20px $dark-shade-5;
     background-color: $white;
 

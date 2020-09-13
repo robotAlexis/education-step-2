@@ -10,15 +10,16 @@
 @import "../../blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
 
 @import "../../blocks/preview/preview.scss";
+@import "../../blocks/pagination/pagination.scss";
 
 
 
 .search-room {
-
+    margin: 0;
+    background: $white;
 }
 
 .search-room__main-background {
-    background-color: $white;
     border-bottom: 1px solid $dark-shade-25;
 }
 
@@ -26,7 +27,7 @@
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 10px;
+    padding: 15px 10px 51px 10px;
 }
 .search-room__main-container::after {
     content: "";
@@ -47,6 +48,49 @@
     width: 266px;
     padding: 0;
 }
+
+// Кнопка для сворачивания и разворачивания меню
+
+.search-room__menu-toggle-button {
+    display: none;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 25px auto;
+    border: 1px solid $dark-shade-25;
+    border-radius: 22px;
+
+    color: $dark-shade-50;
+    font-family: "Material Icons";
+    font-size: 24px;
+    line-height: 42px;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+}
+.search-room__menu-toggle-button::after {
+    content: "\e5cf";
+    position: absolute;
+    width: 42px;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+}
+.search-room__menu-toggle-button_expanded::after {
+    content: "\e5ce";
+    position: absolute;
+    width: 42px;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+}
+
+
+// Контейнер для элементов меню, чтобы можно было скрывать его
+.search-room__menu-elements {
+    margin-bottom: 50px;
+}
+
 
 // Заголовок элемента меню
 
@@ -130,15 +174,18 @@
 
 
 .search-room__rooms-list {
-    margin-left: 300px;
+    max-width: 846px;
+    margin-left: auto;
+    padding-left: 290px;
 
-    //text-align: right;
+    line-height: 0px;
 }
 
 // Заголовок
 
 .search-room__rooms-list-title {
-    margin: 0 0 0 12px;
+    margin: 15px 0;
+    padding-left: 12px;
 
     color: $dark-shade-100;
     font-family: "Quicksand", sans-serif;
@@ -151,6 +198,94 @@
 
 .search-room__preview {
     display: inline-block;
-    width: 33%;
-    //margin: 0 0 0 12px;
+    box-sizing: border-box;
+    width: 33.33%;
+    max-width: 368px;
+    padding: 5px 0 15px 12px;
+}
+
+// Pagination
+
+.search-room__pagination {
+    margin: 26px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+// Переключение на две колонки
+
+@media all and (max-width: 1110px) {
+
+    .search-room__preview {
+        width: 50%;
+    }
+
+}
+
+
+
+// Переключение на одну колонку
+
+@media all and (max-width: 850px) {
+
+    .search-room__preview {
+        width: 100%;
+    }
+    
+}
+
+
+
+// Расположение меню фильтра сверху
+
+@media all and (max-width: 600px) {
+
+    .search-room__main-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .search-room__filter-menu {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-room__menu-toggle-button {
+        display: block;
+    }
+
+    .search-room__menu-elements {
+        display: none;
+    }
+    .search-room__menu-elements_expanded {
+        display: block;
+    }
+
+    .search-room__rooms-list {
+        min-width: 290px;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid $dark-shade-10;
+    }
+
+    .search-room__rooms-list-title {
+        padding: 0;
+    }
+
+    .search-room__preview {
+        display: block;
+        max-width: 368px;
+        padding-left: 0;
+        margin: 0 auto;
+    }
+
 }

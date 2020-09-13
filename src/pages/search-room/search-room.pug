@@ -10,6 +10,7 @@ include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 
 include ../../blocks/preview/preview.pug
+include ../../blocks/pagination/pagination.pug
 
 
 
@@ -38,55 +39,58 @@ html(lang="ru")
 
         menu(class="search-room__filter-menu")
 
-          p(class="search-room__filter-element-title") Даты пребывания в отеле
-          div(class="search-room__filter-date-dropdown")
-            +filter-date-dropdown({ firstInputName: "first-day", secondInputName: "last-day" })
+          div(class="search-room__menu-toggle-button")
 
-          p(class="search-room__filter-element-title") Гости
-          div(class="search-room__customers-dropdown")
-            +customers-dropdown({ })
+          div(class="search-room__menu-elements")
+            p(class="search-room__filter-element-title") Даты пребывания в отеле
+            div(class="search-room__filter-date-dropdown")
+              +filter-date-dropdown({ firstInputName: "first-day", secondInputName: "last-day" })
 
-          div(class="search-room__range-slider")
-            +range-slider({ 
-              title: "Диапазон цены",
-              names: ["min-price", "max-price"],
-              limits: [176, 15706]
-            })
-          p(class="search-room__range-slider-description") Стоимость за сутки пребывания в номере
+            p(class="search-room__filter-element-title") Гости
+            div(class="search-room__customers-dropdown")
+              +customers-dropdown({ })
 
-          p(class="search-room__filter-element-title") Checkbox buttons
-          div(class="search-room__checkbox-list")
-            div(class="search-room__checkbox-button")
-              +checkbox-button({ name: "checkbox-button-1", title: "Можно курить" })
-            div(class="search-room__checkbox-button")
-              +checkbox-button({ name: "checkbox-button-2", title: "Можно с питомцами" })
-            div(class="search-room__checkbox-button")
-              +checkbox-button({ name: "checkbox-button-3", title: "Можно пригласить гостей (до 10 человек)" })
+            div(class="search-room__range-slider")
+              +range-slider({ 
+                title: "Диапазон цены",
+                names: ["min-price", "max-price"],
+                limits: [176, 15706]
+              })
+            p(class="search-room__range-slider-description") Стоимость за сутки пребывания в номере
 
-          p(class="search-room__filter-element-title") Доступность
-          div(class="search-room__rich-checkbox-list")
-            div(class="search-room__rich-checkbox-button")
-              +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
-            div(class="search-room__rich-checkbox-button")
-              +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
+            p(class="search-room__filter-element-title") Checkbox buttons
+            div(class="search-room__checkbox-list")
+              div(class="search-room__checkbox-button")
+                +checkbox-button({ name: "checkbox-button-1", title: "Можно курить" })
+              div(class="search-room__checkbox-button")
+                +checkbox-button({ name: "checkbox-button-2", title: "Можно с питомцами" })
+              div(class="search-room__checkbox-button")
+                +checkbox-button({ name: "checkbox-button-3", title: "Можно пригласить гостей (до 10 человек)" })
 
-          p(class="search-room__filter-element-title") Удобства номера
-          div(class="search-room__rooms-dropdown")
-            +rooms-dropdown({ })
+            p(class="search-room__filter-element-title") Доступность
+            div(class="search-room__rich-checkbox-list")
+              div(class="search-room__rich-checkbox-button")
+                +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
+              div(class="search-room__rich-checkbox-button")
+                +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
-          div(class="search-room__filter-element search-room__filter-element_expandable-checkbox-list")
-            +expandable-checkbox-list({
-              title: "Дополнительные удобства",
-              expanded: false,
-              items: [
-                { name: "checkbox-11", title: "Завтрак", checked: false },
-                { name: "checkbox-12", title: "Письменный стол", checked: false },
-                { name: "checkbox-13", title: "Стул для кормления", checked: false },
-                { name: "checkbox-14", title: "Кроватка", checked: false },
-                { name: "checkbox-15", title: "Телевизор", checked: false },
-                { name: "checkbox-16", title: "Шампунь", checked: false }
-              ]
-            })
+            p(class="search-room__filter-element-title") Удобства номера
+            div(class="search-room__rooms-dropdown")
+              +rooms-dropdown({ })
+
+            div(class="search-room__filter-element search-room__filter-element_expandable-checkbox-list")
+              +expandable-checkbox-list({
+                title: "Дополнительные удобства",
+                expanded: false,
+                items: [
+                  { name: "checkbox-11", title: "Завтрак", checked: false },
+                  { name: "checkbox-12", title: "Письменный стол", checked: false },
+                  { name: "checkbox-13", title: "Стул для кормления", checked: false },
+                  { name: "checkbox-14", title: "Кроватка", checked: false },
+                  { name: "checkbox-15", title: "Телевизор", checked: false },
+                  { name: "checkbox-16", title: "Шампунь", checked: false }
+                ]
+              })
 
 
         section(class="search-room__rooms-list")
@@ -262,6 +266,8 @@ html(lang="ru")
               reviews: 55
             })
 
+          div(class="search-room__pagination")
+            +pagination()
 
 
 

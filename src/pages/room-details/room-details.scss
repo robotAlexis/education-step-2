@@ -1,0 +1,459 @@
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+@import "../../blocks/forms/reservation-form/reservation-form.scss";
+
+@import "../../blocks/note/note.scss";
+@import "../../blocks/review/review.scss";
+@import "../../blocks/bullet-list/bullet-list.scss";
+
+
+
+.room-details {
+    min-width: 300px;
+    margin: 0;
+    background: $white;
+}
+
+
+
+
+/* Фотографии */
+
+.room-details__photos::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.room-details__first-photo {
+    float: left;
+    width: 34%;
+    max-width: 1200px;
+    height: 485px;
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.room-details__second-photo {
+    float: left;
+    width: 33%;
+    max-width: 1200px;
+    height: 485px;
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.room-details__third-photo {
+    float: left;
+    width: 33%;
+    max-width: 1200px;
+    height: 485px;
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+// Этот контейнер нужен только для разделительной линии
+.room-details__main-background {
+    border-bottom: 1px solid $dark-shade-25;
+}
+// Этот контейнер ограничивает ширину содержимого
+.room-details__main-container {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 70px 10px 60px 10px;
+}
+.room-details__main-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+// Форма бронирования
+.room-details__reservation-form {
+    width: 380px;
+    max-width: 380px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+
+
+// Заголовок секции
+.room-details__section-title {
+    margin: 0;
+
+    color: $dark-shade-100;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+
+
+
+/* Заметки и диаграмма */
+
+.room-details__notes-and-diagram {
+    margin-right: 450px;
+}
+
+// Секция notes
+.room-details__notes-section {
+    display: inline-block;
+    width: 51%;
+    vertical-align: top;
+}
+// Блоки notes
+.room-details__notes {
+    max-width: 280px;
+    margin: 20px 30px 33px 0;
+}
+
+// Секция диаграммы
+.room-details__diagram-section {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+// Диаграмма
+.room-details__diagram {
+    margin: 21px 0 33px 0;
+}
+// Svg картинка диаграммы
+.room-details__diagram-image {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin-right: 25px;
+    vertical-align: top;
+}
+// Цвета градиентов диаграммы
+.room-details__diagram-gradient-stop_excellent-begin {
+    stop-color: $cream-brulee;
+}
+.room-details__diagram-gradient-stop_excellent-end {
+    stop-color: $mandys-pink;
+}
+.room-details__diagram-gradient-stop_good-begin {
+    stop-color: $green;
+}
+.room-details__diagram-gradient-stop_good-end {
+    stop-color: $blue-green;
+}
+.room-details__diagram-gradient-stop_fair-begin {
+    stop-color: $purple;
+}
+.room-details__diagram-gradient-stop_fair-end {
+    stop-color: $blue-purple;
+}
+.room-details__diagram-gradient-stop_poor-begin {
+    stop-color: $suva-grey;
+}
+.room-details__diagram-gradient-stop_poor-end {
+    stop-color: $port-gore;
+}
+// Количество голосов
+.room-details__votes-count {
+    position: relative;
+    width: 100%;
+    margin: -86px 0 0 0;
+
+    color: $purple;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+.room-details__votes-count::after {
+    content: "голосов";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -18px;
+
+    color: $purple;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+// Легенда диаграммы
+.room-details__diagram-legend {
+    display: inline-block;
+    margin-top: 26px;
+    vertical-align: top;
+}
+.room-details__diagram-legend-item {
+    position: relative;
+    margin: 0;
+    padding-left: 20px;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+.room-details__diagram-legend-item::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    left: 5px;
+    border-radius: 5px;
+}
+.room-details__diagram-legend-item_excellent::after {
+    @include linear-gradient-background($cream-brulee, $mandys-pink);
+}
+.room-details__diagram-legend-item_good::after {
+    @include linear-gradient-background($green, $blue-green);
+}
+.room-details__diagram-legend-item_fair::after {
+    @include linear-gradient-background($purple, $blue-purple);
+}
+.room-details__diagram-legend-item_poor::after {
+    @include linear-gradient-background($suva-grey, $port-gore);
+}
+
+
+
+
+/* Комментарии */
+
+.room-details__reviews-section {
+    position: relative;
+    margin-right: 450px;
+}
+
+// Блок review
+.room-details__reviews {
+    margin: 20px 0 33px 0;
+}
+.room-details__review {
+    margin-bottom: 23px;
+}
+.room-details__section-title_reviews {
+    padding-right: 70px;
+}
+.room-details__review-count {
+    position: absolute;
+    margin: 0;
+    top: 7px;
+    right: 0;
+
+    color: $dark-shade-50;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+
+
+
+/* Правила и отмена */
+
+.room-details__rules-and-cancel {
+    margin-right: 450px;
+}
+
+// Секция bullet-list
+.room-details__rules-section {
+    display: inline-block;
+    width: 51%;
+    vertical-align: top;
+}
+// Блок bullet-list
+.room-details__bullet-list {
+    max-width: 260px;
+    margin: 17px 30px 2px 0;
+}
+.room-details__section-title_rules {
+    margin-left: 20px;
+}
+
+// Секция про отмену
+.room-details__cancel-section {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+// Текст про отмену
+.room-details__cancel-text {
+    max-width: 340px;
+    margin: 17px 0 0 0;
+
+    color: $dark-shade-75;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Медиазапросики */
+
+
+// Фотографии в два столбика
+@media all and (max-width: 1800px) {
+    .room-details__first-photo {
+        width: 68%;
+        height: 485px;
+    }
+    .room-details__second-photo {
+        width: 32%;
+        height: 243px;
+    }
+    .room-details__third-photo {
+        width: 32%;
+        height: 242px;
+    }
+}
+
+// Выстраивание заметок и диаграммы в столбик
+@media all and (max-width: 960px) {
+    .room-details__notes-and-diagram {
+        margin-right: 410px;
+    }
+    .room-details__notes-section {
+        display: block;
+        width: 100%;
+    }
+    .room-details__notes {
+        margin-right: 0;
+    }
+    .room-details__diagram-section {
+        display: block;
+        width: 100%;
+    }
+}
+
+// Фотографии в два ряда
+@media all and (max-width: 900px) {
+    .room-details__first-photo {
+        width: 100%;
+        height: 400px;
+    }
+    .room-details__second-photo {
+        width: 50%;
+        height: 200px;
+    }
+    .room-details__third-photo {
+        width: 50%;
+        height: 200px;
+    }
+}
+
+// Растягивание комментариев, правил и отмены на всю ширину
+@media all and (max-width: 860px) {
+    .room-details__reviews-section {
+        margin: 0;
+        clear: both;
+    }
+    .room-details__rules-and-cancel {
+        margin: 0;
+    }
+}
+
+// Перенос формы бронирования от края в центр
+@media all and (max-width: 720px) {
+    .room-details__reservation-form {
+        float: none;
+        width: auto;
+        margin: 0 auto 50px auto;
+    }
+    .room-details__notes-and-diagram {
+        margin: 0;
+    }
+    .room-details__notes-section {
+        display: inline-block;
+        width: 55%;
+        vertical-align: top;
+    }
+    .room-details__notes {
+        margin-right: 30px;
+    }
+    .room-details__diagram-section {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+    }
+    .room-details__rules-section {
+        width: 50%;
+    }
+    .room-details__cancel-section {
+        width: 50%;
+    }
+}
+
+// Фотографии в три ряда
+@media all and (max-width: 520px) {
+    .room-details__first-photo {
+        height: 200px;
+    }
+    .room-details__second-photo {
+        width: 100%;
+    }
+    .room-details__third-photo {
+        width: 100%;
+    }
+}
+
+// Выстраивание заметок, диаграммы, правил и отмены в столбик
+@media all and (max-width: 500px) {
+    .room-details__main-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .room-details__notes-section {
+        display: block;
+        width: 100%;
+    }
+    .room-details__notes {
+        margin-right: 0;
+    }
+    .room-details__diagram-section {
+        display: block;
+        width: 100%;
+    }
+
+    .room-details__rules-section {
+        display: block;
+        width: 100%;
+    }
+    .room-details__bullet-list {
+        margin-right: 0;
+    }
+    .room-details__cancel-section {
+        display: block;
+        width: 100%;
+    }
+}

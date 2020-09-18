@@ -25,7 +25,7 @@ html(lang="ru")
 
     +header({
           items: [
-            { text: "О нас", url: '#', current: true },
+            { text: "О нас", url: '#', current: false },
             { text: "Услуги", url: '#', withArrow: true },
             { text: "Вакансии", url: '#' },
             { text: "Новости", url: '#' },
@@ -42,11 +42,11 @@ html(lang="ru")
           div(class="search-room__menu-toggle-button")
 
           div(class="search-room__menu-elements")
-            p(class="search-room__filter-element-title") Даты пребывания в отеле
+            h3(class="search-room__filter-element-title") Даты пребывания в отеле
             div(class="search-room__filter-date-dropdown")
               +filter-date-dropdown({ firstInputName: "first-day", secondInputName: "last-day" })
 
-            p(class="search-room__filter-element-title") Гости
+            h3(class="search-room__filter-element-title") Гости
             div(class="search-room__customers-dropdown")
               +customers-dropdown({ })
 
@@ -58,7 +58,7 @@ html(lang="ru")
               })
             p(class="search-room__range-slider-description") Стоимость за сутки пребывания в номере
 
-            p(class="search-room__filter-element-title") Checkbox buttons
+            h3(class="search-room__filter-element-title") Checkbox buttons
             div(class="search-room__checkbox-list")
               div(class="search-room__checkbox-button")
                 +checkbox-button({ name: "checkbox-button-1", title: "Можно курить" })
@@ -67,14 +67,14 @@ html(lang="ru")
               div(class="search-room__checkbox-button")
                 +checkbox-button({ name: "checkbox-button-3", title: "Можно пригласить гостей (до 10 человек)" })
 
-            p(class="search-room__filter-element-title") Доступность
+            h3(class="search-room__filter-element-title") Доступность
             div(class="search-room__rich-checkbox-list")
               div(class="search-room__rich-checkbox-button")
                 +rich-checkbox-button({name: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не"+"\xa0"+"менее 91 см."})
               div(class="search-room__rich-checkbox-button")
                 +rich-checkbox-button({name: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
-            p(class="search-room__filter-element-title") Удобства номера
+            h3(class="search-room__filter-element-title") Удобства номера
             div(class="search-room__rooms-dropdown")
               +rooms-dropdown({ })
 
@@ -94,7 +94,7 @@ html(lang="ru")
 
 
         section(class="search-room__rooms-list")
-          p(class="search-room__rooms-list-title") Номера, которые мы для вас подобрали
+          h2(class="search-room__rooms-list-title") Номера, которые мы для вас подобрали
 
           div(class="search-room__preview")
             +preview({

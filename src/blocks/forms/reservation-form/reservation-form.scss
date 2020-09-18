@@ -4,17 +4,24 @@
 @import "../../button/button.scss";
 
 .reservation-form {
-    width: 320px;
-    padding: 17px 29px 29px 29px;
+    max-width: 380px;
+    padding: 17px 10px 29px 10px;
     background: $white;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 
     color: $dark-shade-100;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 15px;
+}
+
+.reservation-form__container {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .reservation-form__room-number {
@@ -73,18 +80,26 @@
 .reservation-form__date {
     position: relative;
 }
+.reservation-form__date::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .reservation-form__date-field {
-    display: inline-block;
-    width: 150px;
-    padding-bottom: 1px;
+    width: 47%;
+    max-width: 150px;
 }
-.reservation-form__date-field:first-of-type {
-    margin-right: 20px;
+.reservation-form__date-field_first {
+    float: left;
+}
+.reservation-form__date-field_last {
+    float: right;
 }
 
 .reservation-form__calendar {
     position: absolute;
+    width: 100%;
     z-index: 1;
     left: 0;
     top: 70px;
@@ -186,3 +201,27 @@
 }
 
 .reservation-form__button {}
+
+
+
+
+@media all and (max-width: 330px) {
+
+    .reservation-form__date-field {
+        width: 100%;
+        max-width: none;
+    }
+    .reservation-form__date-field_first {
+        float: none;
+    }
+    .reservation-form__date-field_last {
+        float: none;
+        padding-top: 5px;
+    }
+
+    .reservation-form__calendar {
+        top: 145px;
+        left: -5px;
+    }
+
+}

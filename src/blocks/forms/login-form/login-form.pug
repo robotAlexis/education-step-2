@@ -14,31 +14,33 @@ mixin login-form(values)
         action=values.action
     )
 
-        p(class="login-form__title") Войти
+        div(class="login-form__container")
 
-        div(class="login-form__field")
-            +text-field({name: "email", value: "", placeholder: "Email"})
-        div(class="login-form__field")
-            +text-field({name: "pass", value: "", placeholder: "Пароль", password: true})
+            p(class="login-form__title") Войти
 
-        div(class="login-form__button")
-            +button({
-                type: "submit",
-                name: "submit",
-                value: "submit",
-                text: "Войти",
-                theme: "with-arrow"
-            })
-            
-        div(class="login-form__button")
-            div(class="login-form__registration-button")
+            div(class="login-form__field")
+                +text-field({name: "email", value: "", placeholder: "Email"})
+            div(class="login-form__field")
+                +text-field({name: "pass", value: "", placeholder: "Пароль", password: true})
+
+            div(class="login-form__button")
                 +button({
-                    type: "button",
-                    name: "registration",
-                    value: "registration",
-                    text: "Создать",
-                    theme: "bordered"
+                    type: "submit",
+                    name: "submit",
+                    value: "submit",
+                    text: "Войти",
+                    theme: "with-arrow"
                 })
-            div(class="login-form__registration-tip")
-                p(class="login-form__registration-tip-text") Нет аккаунта на Toxin?
+                
+            div(class="login-form__button")
+                div(class="login-form__registration-button")
+                    +button({
+                        type: "button",
+                        name: "registration",
+                        value: "registration",
+                        text: "Создать",
+                        theme: "bordered"
+                    })
+                div(class="login-form__registration-tip")
+                    p(class="login-form__registration-tip-text") Нет аккаунта на Toxin?
 

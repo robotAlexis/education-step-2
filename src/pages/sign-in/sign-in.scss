@@ -1,25 +1,25 @@
 @import "../../blocks/header/header.scss";
 @import "../../blocks/footer/footer.scss";
 
-@import "../../blocks/forms/registration-form/registration-form.scss";
+@import "../../blocks/forms/login-form/login-form.scss";
 
 
-.registration {
+.sign-in {
     min-width: 300px;
 	margin: 0;
 	padding: 0;
 }
 
-.registration__main-container {
-    padding: 19px 5px;
-    background: url(./registration_bg.jpg) no-repeat center center;
+.sign-in__main-container {
+    padding: 172px 5px;
+    background: url(./sign-in_bg.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-.registration__registration-form {
+.sign-in__login-form {
     max-width: 380px;
     margin: 0 auto;
 }

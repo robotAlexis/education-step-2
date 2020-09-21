@@ -16,48 +16,51 @@ mixin registration-form(values)
         class="registration-form"
         action=values.action
     )
-        p(class="registration-form__form-title") Регистрация аккаунта
 
-        div(class="registration-form__text-field")
-            +text-field({name: "first-name", value: "", placeholder: "Имя"})
-        div(class="registration-form__text-field")
-            +text-field({name: "last-name", value: "", placeholder: "Фамилия"})
+        div(class="registration-form__container")
 
-        div(class="registration-form__radio-button")
-            +radio-button({name: "gender", value: "male", title: "Мужчина", checked: true})
-        div(class="registration-form__radio-button")
-            +radio-button({name: "gender", value: "female", title: "Женщина"})
+            p(class="registration-form__form-title") Регистрация аккаунта
 
-        p(class="registration-form__field-title") Дата рождения
-        div(class="registration-form__text-field")
-            +masked-text-field({name: "be", value: ""})
+            div(class="registration-form__text-field")
+                +text-field({name: "first-name", value: "", placeholder: "Имя"})
+            div(class="registration-form__text-field")
+                +text-field({name: "last-name", value: "", placeholder: "Фамилия"})
 
-        p(class="registration-form__field-title") Данные для входа в сервис
-        div(class="registration-form__text-field")
-            +text-field({name: "email", value: "", placeholder: "Email"})
-        div(class="registration-form__text-field")
-            +text-field({name: "pass", value: "", placeholder: "Пароль", password: true})
+            div(class="registration-form__radio-button")
+                +radio-button({name: "gender", value: "male", title: "Мужчина", checked: true})
+            div(class="registration-form__radio-button")
+                +radio-button({name: "gender", value: "female", title: "Женщина"})
 
-        div(class="registration-form__toggle")
-            +toggle({name: "toggle", checked: false, title: "Получать спецпредложения"})
+            p(class="registration-form__field-title") Дата рождения
+            div(class="registration-form__text-field")
+                +masked-text-field({name: "be", value: ""})
 
-        div(class="registration-form__button")
-            +button({
-                type: "submit",
-                name: "submit",
-                value: "submit",
-                text: "Перейти к оплате",
-                theme: "with-arrow"
-            })
-        div(class="registration-form__button")
-            div(class="registration-form__registration-button")
+            p(class="registration-form__field-title") Данные для входа в сервис
+            div(class="registration-form__text-field")
+                +text-field({name: "email", value: "", placeholder: "Email"})
+            div(class="registration-form__text-field")
+                +text-field({name: "pass", value: "", placeholder: "Пароль", password: true})
+
+            div(class="registration-form__toggle")
+                +toggle({name: "toggle", checked: false, title: "Получать спецпредложения"})
+
+            div(class="registration-form__button")
                 +button({
-                    type: "button",
-                    name: "registration",
-                    value: "registration",
-                    text: "Войти",
-                    theme: "bordered"
+                    type: "submit",
+                    name: "submit",
+                    value: "submit",
+                    text: "Перейти к оплате",
+                    theme: "with-arrow"
                 })
-            div(class="registration-form__registration-tip")
-                p(class="registration-form__registration-tip-text") Уже есть аккаунт на Toxin
+            div(class="registration-form__button")
+                div(class="registration-form__registration-button")
+                    +button({
+                        type: "button",
+                        name: "registration",
+                        value: "registration",
+                        text: "Войти",
+                        theme: "bordered"
+                    })
+                div(class="registration-form__registration-tip")
+                    p(class="registration-form__registration-tip-text") Уже есть аккаунт на Toxin
 

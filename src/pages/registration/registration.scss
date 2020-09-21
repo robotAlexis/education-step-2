@@ -1,0 +1,47 @@
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+@import "../../blocks/forms/registration-form/registration-form.scss";
+
+
+html {
+    height: 100%;
+}
+
+.registration {
+    display: table;
+    height: 100%;
+    width: 100%;
+    min-width: 300px;
+	margin: 0;
+	padding: 0;
+}
+
+.registration__main-container {
+    display: table-row;
+    height: 100%;
+    background: url(./registration_bg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.registration__registration-form {
+    position: relative;
+    max-width: 380px;
+    padding: 19px 5px;
+    margin: 0 auto;
+}
+
+
+
+
+
+@media all and (max-width: 520px) {
+
+    .registration__registration-form {
+        padding: 19px 5px;
+    }
+
+}

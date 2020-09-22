@@ -6,7 +6,7 @@
 
 .registration-form {
     max-width: 380px;
-    padding: 14px 10px;
+    padding: 14px 15px;
     background: $white;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -80,4 +80,14 @@
 
 .registration-form__registration-button {
     float: right;
+}
+
+
+
+
+@media all and (max-width: 400px) {
+    .registration-form__form-title {
+        font-size: 22px;
+        line-height: 28px;
+    }
 }

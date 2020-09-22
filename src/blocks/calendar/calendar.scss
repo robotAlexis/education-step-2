@@ -3,13 +3,14 @@
 .calendar {
     position: relative;
     display: none;
-    max-width: 318px;
-    min-width: 280px;
-    padding: 19px 0 18px 0;
+    max-width: 320px;
+    min-width: 300px;
+    padding: 19px 10px 18px 10px;
     background-color: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     box-shadow: 0 10px 20px $dark-shade-5;
+    box-sizing: border-box;
 
 }
 .calendar::after {
@@ -27,7 +28,7 @@
 
 .calendar__left-arrow {
     float: left;
-    margin-left: 19px;
+    margin-left: 9px;
 
     color: $purple;
     font-family: 'Material Icons';
@@ -37,7 +38,7 @@
 }
 .calendar__right-arrow {
     float: right;
-    margin-right: 19px;
+    margin-right: 9px;
 
     color: $purple;
     font-family: 'Material Icons';
@@ -62,7 +63,7 @@
     display: block;
     width: 280px;
     height: 40px;
-    padding: 0;// 0 0 1px;
+    padding: 0;
     margin: 0 auto;
 
     list-style-type: none;
@@ -135,14 +136,87 @@
 
 .calendar__ok-button {
     float: right;
-    margin-right: 19px;
+    margin-right: 9px;
     padding-top: 20px;
 }
 
 .calendar__clear-button {
     float: left;
-    margin-left: 19px;
+    margin-left: 9px;
     padding-top: 20px;
 }
 
 
+
+@media all and (max-width: 400px) {
+    .calendar {
+        max-width: 320px;
+        min-width: 286px;
+    }
+
+    .calendar__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .calendar__week-row {
+        width: 266px;
+        height: 38px;
+    }
+    
+    .calendar__day-cell {
+        width: 38px;
+        height: 38px;
+    }
+
+    .calendar__day-text {
+        width: 38px;
+        height: 38px;
+
+        line-height: 38px;
+    }
+    .calendar__day-text_theme_today {
+        border-radius: 19px;
+    }
+    .calendar__day-text_theme_selected {
+        border-radius: 19px;
+    }
+}
+
+
+@media all and (max-width: 350px) {
+    .calendar {
+        max-width: 306px;
+        min-width: 272px;
+        padding: 15px 10px 15px 10px;
+    }
+
+    .calendar__title {
+        font-size: 17px;
+        line-height: 21px;
+    }
+
+    .calendar__week-row {
+        width: 252px;
+        height: 36px;
+    }
+    
+    .calendar__day-cell {
+        width: 36px;
+        height: 36px;
+    }
+
+    .calendar__day-text {
+        width: 36px;
+        height: 36px;
+
+        font-size: 11px;
+        line-height: 36px;    
+    }
+    .calendar__day-text_theme_today {
+        border-radius: 18px;
+    }
+    .calendar__day-text_theme_selected {
+        border-radius: 18px;
+    }
+}

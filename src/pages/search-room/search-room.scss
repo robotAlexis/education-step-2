@@ -174,9 +174,9 @@
 
 
 .search-room__rooms-list {
-    max-width: 846px;
+    max-width: 836px;
     margin-left: auto;
-    padding-left: 290px;
+    padding-left: 300px;
 
     line-height: 0px;
 }
@@ -222,7 +222,7 @@
 
 // Переключение на две колонки
 
-@media all and (max-width: 1110px) {
+@media all and (max-width: 1120px) {
 
     .search-room__preview {
         width: 50%;
@@ -234,7 +234,7 @@
 
 // Переключение на одну колонку
 
-@media all and (max-width: 850px) {
+@media all and (max-width: 860px) {
 
     .search-room__preview {
         width: 100%;

@@ -27,10 +27,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
     });
 
     // Заполнение блока filter-date-dropdown
-    let m = [(new Date(2019, 7, 19)), (new Date(2019, 7, 23))];
-    document.querySelectorAll('.filter-date-dropdown .filter-date-dropdown__input').forEach((dropdownInput, index) => {
-        dropdownInput.value = m[index].getTime();
-        dropdownInput.onchange();
+    document.querySelectorAll('.filter-date-dropdown').forEach(dropdown => {
+        dropdown.updateFilterDateValues(new Date(2019, 7, 19), new Date(2019, 7, 23));
     });
 
 
@@ -52,12 +50,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let roomsDropdowns = document.querySelectorAll('.rooms-dropdown');
     // Расстановка значений
     roomsDropdowns.forEach(dropdown => {
-        dropdown.querySelector('.rooms-dropdown__text').innerHTML = '2 спальни, 2 кровати, 0 ванные комнаты';
-        let dropdownItems = dropdown.querySelectorAll('.rooms-dropdown__item');
-        dropdownItems[0].querySelector('.rooms-dropdown__count-text').value = 2;
-        dropdownItems[0].querySelector('.rooms-dropdown__count-button_decrease').classList.remove('rooms-dropdown__count-button_inactive');
-        dropdownItems[1].querySelector('.rooms-dropdown__count-text').value = 2;
-        dropdownItems[1].querySelector('.rooms-dropdown__count-button_decrease').classList.remove('rooms-dropdown__count-button_inactive');
+        dropdown.setRoomsCounts({
+            bedrooms: 2,
+            beds: 2,
+            bathrooms: 0
+        });
     });
     // Отключение разворачивания верхнего дропдауна
     roomsDropdowns[0].querySelector('.rooms-dropdown__text').style['pointer-events'] = 'none';
@@ -76,10 +73,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
         customersDropdowns[i].querySelector('.customers-dropdown__item-list').classList.add('customers-dropdown__item-list_uikit');    
     })
     // Расстановка значений
-    let customersButtons = customersDropdowns[2].querySelectorAll('.customers-dropdown__count-button_increase');
-    customersButtons[0].dispatchEvent(new Event('click'));
-    customersButtons[0].dispatchEvent(new Event('click'));
-    customersButtons[1].dispatchEvent(new Event('click'));
+    customersDropdowns[2].setCustomersCounts({
+        adults: 2,
+        children: 1,
+        babies: 0
+    });
+
 
 
 });

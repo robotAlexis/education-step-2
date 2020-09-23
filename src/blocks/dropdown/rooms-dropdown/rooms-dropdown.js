@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', function(event){
             let dropdownItems = dropdown.querySelectorAll('.rooms-dropdown__item');
 
             // Спальни
+            let bedroomsCountInput = dropdownItems[0].querySelector('.rooms-dropdown__count-input');
             let bedroomsCountText = dropdownItems[0].querySelector('.rooms-dropdown__count-text');
             let bedroomsIncreaseButton = dropdownItems[0].querySelector('.rooms-dropdown__count-button_increase');
             let bedroomsDecreaseButton = dropdownItems[0].querySelector('.rooms-dropdown__count-button_decrease');
 
             // Кровати
+            let bedsCountInput = dropdownItems[1].querySelector('.rooms-dropdown__count-input');
             let bedsCountText = dropdownItems[1].querySelector('.rooms-dropdown__count-text');
             let bedsIncreaseButton = dropdownItems[1].querySelector('.rooms-dropdown__count-button_increase');
             let bedsDecreaseButton = dropdownItems[1].querySelector('.rooms-dropdown__count-button_decrease');
 
             // Ванные комнаты
+            let bathroomsCountInput = dropdownItems[2].querySelector('.rooms-dropdown__count-input');
             let bathroomsCountText = dropdownItems[2].querySelector('.rooms-dropdown__count-text');
             let bathroomsIncreaseButton = dropdownItems[2].querySelector('.rooms-dropdown__count-button_increase');
             let bathroomsDecreaseButton = dropdownItems[2].querySelector('.rooms-dropdown__count-button_decrease');
@@ -30,42 +33,45 @@ document.addEventListener('DOMContentLoaded', function(event){
 
             // Изменение текста
             function updateText(){
-                dropdownText.innerHTML = `${bedroomsCountText.value} спальни, ${bedsCountText.value} кровати, ${bathroomsCountText.value} ванные комнаты`;
+                bedroomsCountText.innerHTML = bedroomsCountInput.value;
+                bedsCountText.innerHTML = bedsCountInput.value;
+                bathroomsCountText.innerHTML = bathroomsCountInput.value;
+                dropdownText.innerHTML = `${bedroomsCountInput.value} спальни, ${bedsCountInput.value} кровати, ${bathroomsCountInput.value} ванные комнаты`;
             }
 
             // Изменение количества спален
             bedroomsIncreaseButton.onclick = function(){
-                bedroomsCountText.value++;
+                bedroomsCountInput.value++;
                 bedroomsDecreaseButton.classList.remove('rooms-dropdown__count-button_inactive');
                 updateText();
             }
             bedroomsDecreaseButton.onclick = function(){
-                if(--bedroomsCountText.value < 0) bedroomsCountText.value = 0;
-                if(bedroomsCountText.value < 1) bedroomsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
+                if(--bedroomsCountInput.value < 0) bedroomsCountInput.value = 0;
+                if(bedroomsCountInput.value < 1) bedroomsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
                 updateText();
             }
 
             // Изменение количества кроватей
             bedsIncreaseButton.onclick = function(){
-                bedsCountText.value++;
+                bedsCountInput.value++;
                 bedsDecreaseButton.classList.remove('rooms-dropdown__count-button_inactive');
                 updateText();
             }
             bedsDecreaseButton.onclick = function(){
-                if(--bedsCountText.value < 0) bedsCountText.value = 0;
-                if(bedsCountText.value < 1) bedsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
+                if(--bedsCountInput.value < 0) bedsCountInput.value = 0;
+                if(bedsCountInput.value < 1) bedsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
                 updateText();
             }
 
             // Изменение количества ванных комнат
             bathroomsIncreaseButton.onclick = function(){
-                bathroomsCountText.value++;
+                bathroomsCountInput.value++;
                 bathroomsDecreaseButton.classList.remove('rooms-dropdown__count-button_inactive');
                 updateText();
             }
             bathroomsDecreaseButton.onclick = function(){
-                if(--bathroomsCountText.value < 0) bathroomsCountText.value = 0;
-                if(bathroomsCountText.value < 1) bathroomsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
+                if(--bathroomsCountInput.value < 0) bathroomsCountInput.value = 0;
+                if(bathroomsCountInput.value < 1) bathroomsDecreaseButton.classList.add('rooms-dropdown__count-button_inactive');
                 updateText();
             }
 
@@ -82,6 +88,16 @@ document.addEventListener('DOMContentLoaded', function(event){
             });
 
 
+            // Установка значений {bedrooms, beds, bathrooms}
+            dropdown.setRoomsCounts = function(counts) {
+                bedroomsCountInput.value = counts.bedrooms;
+                bedroomsDecreaseButton.classList.toggle('rooms-dropdown__count-button_inactive', bedroomsCountInput.value < 1);
+                bedsCountInput.value = counts.beds;
+                bedsDecreaseButton.classList.toggle('rooms-dropdown__count-button_inactive', bedsCountInput.value < 1);
+                bathroomsCountInput.value = counts.bathrooms;
+                bathroomsDecreaseButton.classList.toggle('rooms-dropdown__count-button_inactive', bathroomsCountInput.value < 1);
+                updateText();
+            }
 
         })
 });

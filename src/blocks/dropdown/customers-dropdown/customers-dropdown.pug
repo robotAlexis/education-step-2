@@ -19,36 +19,36 @@ mixin customers-dropdown(values)
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="customers-dropdown__count-input"
+                    type="hidden"
                     name=values["adults input name"]
-                    class="customers-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="customers-dropdown__count-text") 0
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Взрослые
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="customers-dropdown__count-input"
+                    type="hidden"
                     name=values["children input name"]
-                    class="customers-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="customers-dropdown__count-text") 0
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Дети
 
             div(class="customers-dropdown__item")
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="customers-dropdown__count-input"
+                    type="hidden"
                     name=values["babies input name"]
-                    class="customers-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="customers-dropdown__count-text") 0
                 div(class="customers-dropdown__count-button customers-dropdown__count-button_decrease customers-dropdown__count-button_inactive")
                 p(class="customers-dropdown__item-text") Младенцы
 

@@ -17,37 +17,35 @@ mixin rooms-dropdown(values)
             div(class="rooms-dropdown__item")
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="rooms-dropdown__count-input"
+                    type="hidden"
                     name=values["bedrooms input name"]
-                    class="rooms-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="rooms-dropdown__count-text") 0
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_decrease rooms-dropdown__count-button_inactive")
                 p(class="rooms-dropdown__item-text") Спальни
 
             div(class="rooms-dropdown__item")
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="rooms-dropdown__count-input"
+                    type="hidden"
                     name=values["beds input name"]
-                    class="rooms-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="rooms-dropdown__count-text") 0
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_decrease rooms-dropdown__count-button_inactive")
                 p(class="rooms-dropdown__item-text") Кровати
 
             div(class="rooms-dropdown__item")
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_increase")
                 input(
-                    type="text"
+                    class="rooms-dropdown__count-input"
+                    type="hidden"
                     name=values["bathrooms input name"]
-                    class="rooms-dropdown__count-text"
                     value="0"
-                    disabled="disabled"
                 )
+                p(class="rooms-dropdown__count-text") 0
                 div(class="rooms-dropdown__count-button rooms-dropdown__count-button_decrease rooms-dropdown__count-button_inactive")
                 p(class="rooms-dropdown__item-text") Ванные комнаты
-
-

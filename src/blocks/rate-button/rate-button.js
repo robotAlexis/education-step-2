@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             }
         }
 
-        // Расстановка звёзд в зависимости от курсора
+        // Расстановка звёзд в зависимости от того, над какой звездой находится курсор
         function setMouseStars(event) {
             let isStar = true;
             for (let i = 0; i < starElements.length; ++i) {
@@ -49,11 +49,13 @@ document.addEventListener('DOMContentLoaded', function(event){
         }
 
         // Обработчики
-        rateButtonElement.addEventListener('mouseover', setMouseStars);
-        rateButtonElement.addEventListener('mouseout', setRateStars);
-        starElements.forEach(starElement => {
-            starElement.addEventListener('click', onStarClick);
-        });
+        if(!rateButtonElement.classList.contains('rate-button__disabled')) {
+            rateButtonElement.addEventListener('mouseover', setMouseStars);
+            rateButtonElement.addEventListener('mouseout', setRateStars);
+            starElements.forEach(starElement => {
+                starElement.addEventListener('click', onStarClick);
+            });
+        }
 
     });
 

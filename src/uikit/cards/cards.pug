@@ -35,7 +35,13 @@ html(lang="ru")
         
         //- RESERVATION FORM
         div(class="cards__form")
-          +reservation-form({})
+          +reservation-form({
+            room: 888,
+            luxe: true,
+            price: 9990,
+            firstDate: "19.08.2019",
+            lastDate: "23.08.2019"
+          })
 
         //- LOGIN FORM
         div(class="cards__form")

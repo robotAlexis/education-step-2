@@ -7,11 +7,13 @@ include ../../button/button.pug
     /*
         registration-form ({
             action: string
+            sign-in-href: string
         })
     */
 mixin registration-form(values)
     -
         if(!("action" in values)) values.action = "#";
+        if(!("sign-in-href" in values)) values["sign-in-href"] = "#";
     form(
         class="registration-form"
         action=values.action
@@ -53,11 +55,11 @@ mixin registration-form(values)
                     theme: "with-arrow"
                 })
             div(class="registration-form__button")
-                div(class="registration-form__registration-button")
+                a(class="registration-form__sign-in-button" href=values["sign-in-href"])
                     +button({
                         type: "button",
-                        name: "registration",
-                        value: "registration",
+                        name: "sign-in",
+                        value: "sign-in",
                         text: "Войти",
                         theme: "bordered"
                     })

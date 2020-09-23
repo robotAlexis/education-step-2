@@ -78,8 +78,12 @@
     line-height: 14px;
 }
 
-.registration-form__registration-button {
+
+.registration-form__sign-in-button {
+    display: block;
     float: right;
+
+    text-decoration: none;
 }
 
 

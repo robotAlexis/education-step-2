@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', function(event){
         // Какая-то херня
         let Inputmask = require('inputmask');
 
+        // Количество милисекунд в дне
+        const ONE_DAY = 1000 * 60 * 60 * 24;
+
+        // Цена
+        let dailyCost = parseInt(reservationFormElement.querySelector('.reservation-form__daily-cost').value, 10);
+
         // Елементы ввода даты
         let dateInputElements = Array.prototype.slice.call(reservationFormElement.querySelectorAll('.date-dropdown__input'));
         dateInputElements.forEach(dateInputElement => {
@@ -18,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function(event){
 
         // Календарь
         let calendarElement = reservationFormElement.querySelector('.calendar');
+
+        // Записи с ценой
+        let roomPriceText = reservationFormElement.querySelector('.reservation-form__check').firstElementChild.querySelector('.reservation-form__check-item-text');
+        let roomPriceCount = reservationFormElement.querySelector('.reservation-form__check').firstElementChild.querySelector('.reservation-form__check-item-cost');
+        let totalPriceCount = reservationFormElement.querySelector('.reservation-form__check-total-cost');
+        //
+        updatePrices(getInputDate(dateInputElements[0]), getInputDate(dateInputElements[1]));
+
+
+
+        /* Функции */
+
         // Открытие календаря
         function openCalendar() {
             calendarElement.openCalendar({
@@ -32,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         function onCalendarOk(startDate, endDate) {
             setInputDate(dateInputElements[0], startDate);
             setInputDate(dateInputElements[1], endDate);
+            updatePrices(startDate, endDate);
         }
 
         // Попытка получения даты из поля
@@ -48,6 +67,21 @@ document.addEventListener('DOMContentLoaded', function(event){
                 (date.getMonth() > 8 ? (date.getMonth() + 1).toString() : '0' + (date.getMonth() + 1)) + 
                 date.getFullYear();
             element.value = dateString;
+        }
+
+        // Обновление цен
+        function updatePrices(startDate, endDate) {
+            let days = 0
+            if(startDate && endDate) {
+                days = Math.round((endDate.getTime() - startDate.getTime()) / ONE_DAY);
+            }
+            let roomPrice = days * dailyCost;
+            let totalPrice = roomPrice + 300 - 2179;
+            if(totalPrice < 0) totalPrice = 0;
+
+            roomPriceText.innerHTML = `${dailyCost.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')}\u20bd х ${days} суток`;
+            roomPriceCount.innerHTML = `${roomPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')}\u20bd`;
+            totalPriceCount.innerHTML = `${totalPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')}\u20bd`;
         }
 
     });

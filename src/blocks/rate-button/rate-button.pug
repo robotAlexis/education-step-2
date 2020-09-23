@@ -1,14 +1,15 @@
 -
     /*
-        rate-button (
+        rate-button ({
             stars: int
-        )
+            disabled: bool
+        })
     */
-mixin rate-button(value=0)
+mixin rate-button(values={stars: 0, disabled: false})
     -
         let classes = [0, 1, 2, 3, 4].map(i => {
-            return i < value ? "rate-button__star rate-button__star_checked" : "rate-button__star";
+            return i < values.stars ? "rate-button__star rate-button__star_checked" : "rate-button__star";
         });
-    div(class="rate-button")
+    div(class=(values.disabled==true) ? "rate-button rate-button__disabled" : "rate-button")
         each classString in classes
             div(class=classString)

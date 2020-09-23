@@ -27,22 +27,24 @@ mixin header(values)
 
 
             div(class= (values.logged == true) ? "header__buttons header__buttons_disabled" : "header__buttons")
-                div(class="header__button")
-                    +button({
-                        type: "login",
-                        name: "login",
-                        value: "login",
-                        text: "Войти",
-                        theme: "low-bordered"
-                    })
-                div(class="header__button")
-                    +button({
-                        type: "register",
-                        name: "register",
-                        value: "register",
-                        text: "Зарегистрироваться",
-                        theme: "low"
-                    })
+                a(class="header__button-link" href="/sign-in.html")
+                    div(class="header__button")
+                        +button({
+                            type: "login",
+                            name: "login",
+                            value: "login",
+                            text: "Войти",
+                            theme: "low-bordered"
+                        })
+                a(class="header__button-link" href="/registration.html")
+                    div(class="header__button")
+                        +button({
+                            type: "register",
+                            name: "register",
+                            value: "register",
+                            text: "Зарегистрироваться",
+                            theme: "low"
+                        })
 
 
             

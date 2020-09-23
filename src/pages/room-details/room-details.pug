@@ -39,7 +39,11 @@ html(lang="ru")
 
         div(class="room-details__main-container")
           div(class="room-details__reservation-form")
-            +reservation-form({})
+            +reservation-form({
+              room: 888,
+              luxe: true,
+              price: 9990
+            })
           
           div(class="room-details__notes-and-diagram")
             section(class="room-details__notes-section")

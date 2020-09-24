@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
             // Обновление фотографии
             function resetPhoto() {
-                imageElement.src = '/files/' + photos[currentPhotoIndex];
+                imageElement.src = photos[currentPhotoIndex];
 
                 roundButtonElements.forEach((buttonElement, i) => {
                     buttonElement.classList.toggle('preview__round-button_current', i == currentPhotoIndex);

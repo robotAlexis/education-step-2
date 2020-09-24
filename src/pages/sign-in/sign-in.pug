@@ -26,7 +26,7 @@ html(lang="ru")
 
     main(class="sign-in__main-container")
       div(class="sign-in__login-form")
-        +login-form({"registration-href": "/registration.html"})
+        +login-form({"registration-href": `${webpackConfig.output.publicPath}registration.html`})
 
 
     +footer()

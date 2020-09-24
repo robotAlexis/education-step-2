@@ -26,7 +26,7 @@ html(lang="ru")
 
     main(class="landing-page__main-container")
       div(class="landing-page__container")
-        +search-form({action: "/search-room.html"})
+        +search-form({action: `${webpackConfig.output.publicPath}search-room.html`})
 
         p(class="landing-page__text") Лучшие номера для вашей работы, отдыха и просто вдохновения
 

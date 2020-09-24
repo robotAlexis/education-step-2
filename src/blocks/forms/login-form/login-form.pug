@@ -8,12 +8,9 @@ include ../../button/button.pug
         })
     */
 mixin login-form(values)
-    -
-        if(!("action" in values)) values.action = "#";
-        if(!("registration-href" in values)) values["registration-href"] = "#";
     form(
         class="login-form"
-        action=values.action
+        action=("action" in values) ? values.action : "#"
     )
 
         div(class="login-form__container")
@@ -35,7 +32,10 @@ mixin login-form(values)
                 })
                 
             div(class="login-form__button")
-                a(class="login-form__registration-button" href=values["registration-href"])
+                a(
+                    class="login-form__registration-button"
+                    href=("registration-href" in values) ? values["registration-href"] : "#"
+                )
                     +button({
                         type: "button",
                         name: "registration",

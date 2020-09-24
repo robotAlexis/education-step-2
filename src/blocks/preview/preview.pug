@@ -21,7 +21,7 @@ mixin preview(values)
             a(class="preview__link" href=values.href ? values.href : "#")
                 img(
                     class="preview__photo-image"
-                    src= `/files/${values.photos[0]}`
+                    src= values.photos[0]
                     data-images= values.photos.join(';')
                 )
             div(class="preview__left-photo-side")

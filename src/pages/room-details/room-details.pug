@@ -33,9 +33,9 @@ html(lang="ru")
     main(class="room-details__main-background")
 
         div(class="room-details__photos")
-            div(class="room-details__first-photo" style={"background-image": "url(/files/roomphoto1.jpg)"})
-            div(class="room-details__second-photo" style={"background-image": "url(/files/roomphoto2.jpg)"})
-            div(class="room-details__third-photo" style={"background-image": "url(/files/roomphoto3.jpg)"})
+            div(class="room-details__first-photo" style={"background-image": `url(${webpackConfig.output.publicPath}files/roomphoto1.jpg)`})
+            div(class="room-details__second-photo" style={"background-image": `url(${webpackConfig.output.publicPath}files/roomphoto2.jpg)`})
+            div(class="room-details__third-photo" style={"background-image": `url(${webpackConfig.output.publicPath}files/roomphoto3.jpg)`})
 
         div(class="room-details__main-container")
           div(class="room-details__reservation-form")
@@ -120,7 +120,7 @@ html(lang="ru")
                 +review({
                   author: "Мурад Сарафанов",
                   date: "5 дней назад",
-                  photo: "user-1-photo.jpg",
+                  photo: `${webpackConfig.output.publicPath}files/user-1-photo.jpg`,
                   text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                   likesCount: 12,
                   liked: true
@@ -129,7 +129,7 @@ html(lang="ru")
                 +review({
                   author: "Патрисия Стёклышкова",
                   date: "Неделю назад",
-                  photo: "user-2-photo.jpg",
+                  photo: `${webpackConfig.output.publicPath}files/user-2-photo.jpg`,
                   text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
                   likesCount: 2,
                   liked: false

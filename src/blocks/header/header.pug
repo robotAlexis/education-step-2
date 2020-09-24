@@ -1,5 +1,6 @@
 include ../button/button.pug
 
+
 -
     /*
         header ({
@@ -15,11 +16,10 @@ include ../button/button.pug
         })
     */
 mixin header(values)
-
     header(class="header")
         div(class="header__content")
 
-            a(class="header__logo" href="/landing-page.html")
+            a(class="header__logo" href=`${webpackConfig.output.publicPath}landing-page.html`)
 
 
             div(class= (values.logged == true) ? "header__account" : "header__account header__account_disabled")
@@ -27,7 +27,7 @@ mixin header(values)
 
 
             div(class= (values.logged == true) ? "header__buttons header__buttons_disabled" : "header__buttons")
-                a(class="header__sign-in-button" href="/sign-in.html")
+                a(class="header__sign-in-button" href=`${webpackConfig.output.publicPath}sign-in.html`)
                     +button({
                         type: "login",
                         name: "login",
@@ -35,7 +35,7 @@ mixin header(values)
                         text: "Войти",
                         theme: "low-bordered"
                     })
-                a(class="header__registration-button" href="/registration.html")
+                a(class="header__registration-button" href=`${webpackConfig.output.publicPath}registration.html`)
                     +button({
                         type: "register",
                         name: "register",

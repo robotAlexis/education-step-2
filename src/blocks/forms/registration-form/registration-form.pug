@@ -11,12 +11,9 @@ include ../../button/button.pug
         })
     */
 mixin registration-form(values)
-    -
-        if(!("action" in values)) values.action = "#";
-        if(!("sign-in-href" in values)) values["sign-in-href"] = "#";
     form(
         class="registration-form"
-        action=values.action
+        action=("action" in values) ? values.action : "#"
     )
 
         div(class="registration-form__container")
@@ -55,7 +52,10 @@ mixin registration-form(values)
                     theme: "with-arrow"
                 })
             div(class="registration-form__button")
-                a(class="registration-form__sign-in-button" href=values["sign-in-href"])
+                a(
+                    class="registration-form__sign-in-button"
+                    href=("sign-in-href" in values) ? values["sign-in-href"] : "#"
+                )
                     +button({
                         type: "button",
                         name: "sign-in",

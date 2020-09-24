@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const PATHS = {
     src: path.join(__dirname, '../src'),
     dist: path.join(__dirname, '../docs'),
+    publicPath: '/education-step-2/',
     pagesDir: path.join(__dirname, '../src/pages'),
     uikitDir: path.join(__dirname, '../src/uikit')
 }
@@ -33,7 +34,7 @@ module.exports = {
     output: {
         filename: "js/[name].js",
         path: PATHS.dist,
-        publicPath: "/"
+        publicPath: PATHS.publicPath
     },
 
     module: {
@@ -105,7 +106,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [{
                   from: `${PATHS.src}/files`,
-                  to: 'files'
+                  to: `files`
             }],
           })
       

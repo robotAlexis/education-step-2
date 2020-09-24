@@ -11,13 +11,12 @@ include ../like-button/like-button.pug
         })
     */
 mixin review(values)
-    - let backgroundImage = `background-image: url(/files/${values.photo})`;
     div(class="review")
         p(class="review__author")
             | #{values.author}
             br
             | #{values.date}
-        div(class="review__photo" style=backgroundImage)
+        div(class="review__photo" style=`background-image: url(${values.photo})`)
         p(class="review__text")= values.text
         div(class="review__like-button")
             +like-button({count: values.likesCount, liked: values.liked})

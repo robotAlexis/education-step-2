@@ -9,10 +9,9 @@ include ../../button/button.pug
         })
     */
 mixin search-form(values)
-    - if(!("action" in values)) values.action = "#";
     form(
         class="search-form"
-        action=values.action
+        action=("action" in values) ? values.action : "#"
     )
 
         div(class="search-form__container")

@@ -46,17 +46,19 @@
     display: none;
 }
 
-.header__button-link {
-    text-decoration: none;
-}
-
-.header__button {
+.header__registration-button {
     display: inline-block;
     margin-left: 10px;
     vertical-align: top;
+
+    text-decoration: none;
 }
-.header__button:first-of-type {
-    margin-right: 10px;
+.header__sign-in-button {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+
+    text-decoration: none;
 }
 
 .header__account {
@@ -129,6 +131,8 @@
 
 
 
+
+
 @media all and (max-width: 520px) {
     
     .header__buttons {
@@ -141,10 +145,10 @@
         text-align: center;
     }
 
-    .header__button {
+    .header__registration-button {
         margin: 5px;
     }
-    .header__button:first-of-type {
+    .header__sign-in-button {
         margin: 5px;
     }
 

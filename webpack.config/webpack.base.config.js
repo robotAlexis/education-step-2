@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
     src: path.join(__dirname, '../src'),
-    dist: path.join(__dirname, '../dist'),
+    dist: path.join(__dirname, '../docs'),
     pagesDir: path.join(__dirname, '../src/pages'),
     uikitDir: path.join(__dirname, '../src/uikit')
 }
